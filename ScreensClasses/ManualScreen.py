@@ -57,6 +57,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_LampFront_Off.clicked.connect(self.LampFront_Off)
         self.btn_TestLampFront.clicked.connect(self.TestLampFront)
 
+        self.btn_MainFan_ON.clicked.connect(self.MainFan_ON)
+        self.btn_MainFanOff.clicked.connect(self.MainFan_Off)
+        self.btn_TestMainFan.clicked.connect(self.TestMainFan)
+
         self.btn_GetState.clicked.connect(self.GetState)
 
     def AutomaticManual(self):
@@ -93,6 +97,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_RemovedTop.setChecked(0)
         self.checkBox_UnlockTopLeft.setChecked(0)
         self.checkBox_UnlockTopRight.setChecked(0)
+        self.checkBox_TestMainFan_Passed.setChecked(0)
+        self.checkBox_TestMainFan_NotPassed.setChecked(0)
 
     def MainMotor_Start(self):
         self.checkBox_UnlockTopRight.setChecked(0)
@@ -180,6 +186,16 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def GetState(self):
         self.checkBox_UnlockTopRight.setChecked(0)
+
+    def MainFan_ON(self):
+        self.checkBox_UnlockTopRight.setChecked(0)
+
+    def MainFan_Off(self):
+        self.checkBox_UnlockTopRight.setChecked(0)
+
+    def TestMainFan(self):
+        self.checkBox_UnlockTopRight.setChecked(0)
+
 
 
 

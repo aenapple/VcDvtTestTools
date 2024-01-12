@@ -4,12 +4,12 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from Screens_py.VcDvtTestTools_screen_settings import Ui_Settings
 from ScreensClasses.ScreenIndex import *
+from IniFile import IniFile
+
 from images import *
 from PyQt5.QtCore import QMutex
 from IniFile import IniFile
 import sys
-
-COM_PORT = 'COM1'
 
 
 class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
@@ -18,23 +18,10 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.setupUi(self)
         self.widget = w
 
-
-
-        #self.label_green.setPixmap(QtGui.QPixmap('connect.png'))
-        #pixmap = QPixmap("connect_red.png")
-        #self.label_red.setPixmap(pixmap)
-        #self.label_red.setPixmap(QtGui.QPixmap("images/connect_red.png"))
-        #self.show()
-
-        """ pixmap = QPixmap("connect.png")
-        self.label_green.setPixmap(pixmap)
-        pixmap = QPixmap('connect_red.png')
-        self.label_red.setPixmap(pixmap) """
-
+        self.init()
         self.btn_CleanSettings.clicked.connect(self.CleanSettings)
         self.btn_ManualSettings.clicked.connect(self.setManualScreen)
         self.btn_AutomaticSettings.clicked.connect(self.setAutomatedScreen)
-        self.lineEdit_ComPort.setText('')
         self.btn_ConnectSettings.clicked.connect(self.connect_sett)
         self.btn_DisconnectSettings.clicked.connect(self.disconnect_sett)
         self.btn_GetStateSettings.clicked.connect(self.getstate_sett)
@@ -42,9 +29,19 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.connectLabel.setPixmap(pixmap)
         self.connectLabel.setEnabled(0)
 
+    def init(self):
+        f = IniFile()
+        state = f.get_ComPort()
+        del f
+        self.lineEdit_ComPort.setText(state)
+
+    def save_Comport_settings(self):
+        port = self.lineEdit_ComPort.text()
+        f = IniFile()
+        f.set_ComPort(str(port))
+        del f
 
     def CleanSettings(self):
-        self.lineEdit_ComPort.setText(' ')
         self.lineEdit_GetState.setText(' ')
         pixmap = QPixmap("connect_red.png")
         self.connectLabel.setPixmap(pixmap)
@@ -61,6 +58,8 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         pixmap = QPixmap("connect.png")
         self.connectLabel.setPixmap(pixmap)
         self.connectLabel.setEnabled(1)
+
+        self.save_Comport_settings()
 
     def disconnect_sett(self):
         pixmap = QPixmap("connect_red.png")
