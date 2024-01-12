@@ -8,13 +8,13 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5 import Qt
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
-# from ScreensClasses.SettingsScreen import SettingsScreen
+from ScreensClasses.SettingsScreen import SettingsScreen
 from PyQt5.QtCore import QMutex
 from PyQt5.QtGui import QFont
 import platform
 
-#QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) # enable highdpi scaling
-#QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)    # use highdpi icons
+# QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) # enable highdpi scaling
+# QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)    # use highdpi icons
 
 
 TASK_GUI_RESULT_OK = 0
@@ -23,7 +23,7 @@ TASK_GUI_EXIT_FROM_APPLICATION = 2
 
 
 class TaskGui(threading.Thread):
-    def __init__(self):cd
+    def __init__(self):
         self.exitFlag = True
         threading.Thread.__init__(self)
         self.queueLock = threading.Lock()
@@ -33,28 +33,13 @@ class TaskGui(threading.Thread):
 
         #self.widget.setWindowFlags(Qt.FramelessWindowHint)
 
-        #self.SettingsScreen = SettingsScreen(self.widget)
+        self.SettingsScreen = SettingsScreen(self.widget)
+        self.ManualScreen = ManualScreen(self.widget)
+        self.AutomaticScreen = AutomaticScreen(self.widget)
 
-       # gpio_control = GpioControl(self.SettingsScreen)
-       # charger_control = GhargerControl(self.SettingsScreen)
-       # service_cmd = ServiceCmd(self.SettingsScreen)
-       # self.GpioState = GpioState(self.SettingsScreen)
-       # self.ChargerState = ChargerState(self.SettingsScreen)
-       # self.ServiceData = ServiceData(self.SettingsScreen)
-
-        #self.ManualScreen = ManualScreen(self.widget, gpio_control, charger_control, service_cmd)
-        #self.AutomaticScreen = AutomaticScreen(self.widget, charger_control, service_cmd)
-
-
-        self.ManualScreen = ManualScreen(self)
-        self.AutomaticScreen = AutomaticScreen(self)
-
-
-        #self.widget.addWidget(self.SettingsScreen)
+        self.widget.addWidget(self.SettingsScreen)
         self.widget.addWidget(self.AutomaticScreen)
         self.widget.addWidget(self.ManualScreen)
-
-
 
         self.widget.adjustSize()
 
@@ -67,7 +52,6 @@ class TaskGui(threading.Thread):
             font = QFont('Roboto')
             self.widget.setFont(font)
 
-
     def stop(self):
         self.mutex.lock()
         self.exitFlag = False
@@ -79,7 +63,7 @@ class TaskGui(threading.Thread):
         self.mutex.unlock()
         return flag
 
-    def CloseAllConnection(self):
+    """ def CloseAllConnection(self):
         self.ChargerState.terminate()
         if self.ChargerState.wait(1000):
             self.GpioState.terminate()
@@ -88,9 +72,9 @@ class TaskGui(threading.Thread):
         elif self.ServiceData.wait(1000):
             return TASK_GUI_RESULT_OK
         else:
-            return TASK_GUI_RESULT_ERROR
+            return TASK_GUI_RESULT_ERROR """
 
-    def WaitingHardwareServer(self):
+    """ def WaitingHardwareServer(self):
         while True:
             exit_flag = self.GetExitFlag()
             if exit_flag is False:
@@ -110,17 +94,17 @@ class TaskGui(threading.Thread):
                 else:
                     continue
             else:
-                return TASK_GUI_RESULT_OK
+                return TASK_GUI_RESULT_OK """
 
     def run(self):
         while True:
 
-            if self.WaitingHardwareServer() == TASK_GUI_EXIT_FROM_APPLICATION:
+            """ if self.WaitingHardwareServer() == TASK_GUI_EXIT_FROM_APPLICATION:
                 break
 
             self.ChargerState.start()
             self.GpioState.start()
-            self.ServiceData.start()
+            self.ServiceData.start() """
 
             while self.GetExitFlag():
                 """if not workQueue.empty():
@@ -130,7 +114,7 @@ class TaskGui(threading.Thread):
                 # self.queueLock.release()
                 time.sleep(0.1)
 
-                if self.SettingsScreen.GetFlagPresentHardwareSensor() is False:
+                """ if self.SettingsScreen.GetFlagPresentHardwareSensor() is False:
                     # self.result = self.CloseAllConnection()
                     break
 
@@ -141,12 +125,9 @@ class TaskGui(threading.Thread):
 
                 data = self.ServiceData.GetSringData()
                 self.ManualScreen.setGetSringData(data)
-                self.AutomaticScreen.setGetSringData(data)
+                self.AutomaticScreen.setGetSringData(data) """
 
-            if self.result == TASK_GUI_RESULT_OK:
-                continue
-            else:
-                break
+            break
 
         self.queueLock.acquire()
         print("Stop TaskGui")

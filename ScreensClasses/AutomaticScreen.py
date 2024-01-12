@@ -32,14 +32,14 @@ class AutomaticScreen(QtWidgets.QMainWindow, Ui_Automatic):
 
 
     def setManualScreen(self):
-        #self.progressBar_start.setValue(0)
-        self.btn_CleanClicked()
+        # self.progressBar_start.setValue(0)
+        # self.btn_CleanClicked()
         self.widget.setCurrentIndex(MANUAL_SCREEN_INDEX)
 
 
     def setSettingsScreen(self):
-        #self.progressBar_start.setValue(0)
-        self.btn_CleanClicked()
+        # self.progressBar_start.setValue(0)
+        # self.btn_CleanClicked()
         self.widget.setCurrentIndex(SETTINGS_SCREEN_INDEX)
 
     def btnStartClicked(self):

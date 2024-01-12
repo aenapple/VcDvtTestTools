@@ -6,19 +6,12 @@ import self
 from PyQt5.QtWidgets import QApplication
 from ScreensClasses.ScreenIndex import *
 from PyQt5 import QtWidgets
-#import Tasks.TaskGui
+import Tasks.TaskGui
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
 from ScreensClasses.SettingsScreen import SettingsScreen
-#from Tasks.TaskEvseController import TaskEvseController
-#import paho.mqtt.client as mqtt
-#from random import randrange, uniform
-#from Mqtt.GpioState import GpioState
 from PyQt5 import QtGui
-from PyQt5 import QtWidgets
 import sys
-
-# STANDBY,2000,24000,18,238,0,OFF
 
 
 class TaskSystem(threading.Thread):
@@ -51,16 +44,16 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setStyle('Windows')
 
-    #taskSystem = TaskSystem()
-    #taskSystem.start()
+    # taskSystem = TaskSystem()
+    # taskSystem.start()
 
     # taskEvseController = TaskEvseController()
     # taskEvseController.start()
 
-    #taskGui = Tasks.TaskGui.TaskGui()
-    #taskGui.start()
+    taskGui = Tasks.TaskGui.TaskGui()
+    taskGui.start()
 
-    w1 = ManualScreen(self)
+    """ w1 = ManualScreen(self)
     w1.setWindowTitle("VcDvtTestTools")
     w1.show()
     w2 = AutomaticScreen(self)
@@ -68,16 +61,10 @@ if __name__ == '__main__':
     w2.show()
     w3 = SettingsScreen(self)
     w3.setWindowTitle("VcDvtTestTools")
-    w3.show()
-
-
-    #taskGpioState = GpioState()
-    #taskGpioState = GpioState.start()
+    w3.show() """
 
     app.exec_()
 
-    #taskSystem.stop()
-    #taskEvseController.stop()
-    #taskGui.stop()
+    taskGui.stop()
     time.sleep(0.5)
-    #print("Stop Application")
+    print("Stop Application")

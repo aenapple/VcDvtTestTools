@@ -15,7 +15,7 @@
   </property>
   <widget class="QGroupBox" name="grBox_AutomaticMode">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -1132,6 +1132,9 @@
     </widget>
    </widget>
    <widget class="QPushButton" name="btn_AutomaticStart">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -1199,6 +1202,9 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="btn_CleanAutomatic">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>11</pointsize>

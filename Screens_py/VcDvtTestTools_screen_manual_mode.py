@@ -16,7 +16,7 @@ class Ui_Manual(object):
         Manual.setObjectName("Manual")
         Manual.resize(1280, 720)
         self.grBox_manualMode = QtWidgets.QGroupBox(Manual)
-        self.grBox_manualMode.setEnabled(False)
+        self.grBox_manualMode.setEnabled(True)
         self.grBox_manualMode.setGeometry(QtCore.QRect(0, 0, 1280, 720))
         font = QtGui.QFont()
         font.setFamily("Verdana")

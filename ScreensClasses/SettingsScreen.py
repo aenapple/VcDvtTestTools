@@ -3,38 +3,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from Screens_py.VcDvtTestTools_screen_settings import Ui_Settings
-#import Mqtt.Control
 from ScreensClasses.ScreenIndex import *
 from images import *
-#from Mqtt.Control import *
-#import paho.mqtt.publish as publish
 from PyQt5.QtCore import QMutex
 from IniFile import IniFile
 import sys
 
 COM_PORT = 'COM1'
-
-HARDWARE_SERVER_IP = 0
-HARDWARE_SERVER_PORT = 1
-HARDWARE_SERVER_CLIENT = 2
-HARDWARE_SERVER_NAME = 3
-HARDWARE_SERVER_PASSWORD = 4
-
-HARDWARE_SERVER_TOPIC_GPIO_CONTROL = 'CONTROL'
-HARDWARE_SERVER_TOPIC_GPIO_STATE = 'SWITCHES'
-HARDWARE_SERVER_TOPIC_CHARGER_CONTROL = 'CHARGER'
-HARDWARE_SERVER_TOPIC_CHARGER_STATE = 'STATE'
-HARDWARE_SERVER_TOPIC_SERVICE_DATA = 'SERVICE_DATA'
-HARDWARE_SERVER_TOPIC_SERVICE_CMD = 'SERVICE_CMD'
-
-
-TS_CMD_SET_INTERFACE_V5 = 'SET_INTERFACE_V5'
-TS_CMD_SET_INTERFACE_V6 = 'SET_INTERFACE_V6'
-TS_CMD_SET_INTERFACE_V7 = 'SET_INTERFACE_V7'
-TS_CMD_SET_NO_INTERFACE = 'SET_NO_INTERFACE'
-
-TS_CMD_GET_VERSION_APP = 'GET_VERSION_APP'
-TS_CMD_GET_SERIAL_NUMBER = 'GET_SERIAL_NUMBER'
 
 
 class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
@@ -51,10 +26,10 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         #self.label_red.setPixmap(QtGui.QPixmap("images/connect_red.png"))
         #self.show()
 
-        pixmap = QPixmap("connect.png")
+        """ pixmap = QPixmap("connect.png")
         self.label_green.setPixmap(pixmap)
         pixmap = QPixmap('connect_red.png')
-        self.label_red.setPixmap(pixmap)
+        self.label_red.setPixmap(pixmap) """
 
         self.btn_CleanSettings.clicked.connect(self.CleanSettings)
         self.btn_ManualSettings.clicked.connect(self.setManualScreen)
