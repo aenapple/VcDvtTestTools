@@ -3,7 +3,6 @@ import time
 import threading
 
 import roboto as Roboto
-import self
 from PyQt5 import QtWidgets, QtCore
 from PyQt5 import Qt
 from PyQt5 import QtGui

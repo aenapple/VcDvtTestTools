@@ -2,7 +2,6 @@ import time
 import platform
 import threading
 
-import self
 from PyQt5.QtWidgets import QApplication
 from ScreensClasses.ScreenIndex import *
 from PyQt5 import QtWidgets
@@ -40,7 +39,7 @@ class TaskSystem(threading.Thread):
 
 
 if __name__ == '__main__':
-    print(platform.system())
+    # print(platform.system())
     app = QApplication(sys.argv)
     app.setStyle('Windows')
 
