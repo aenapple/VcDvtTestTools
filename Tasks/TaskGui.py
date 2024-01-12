@@ -6,6 +6,7 @@ import roboto as Roboto
 import self
 from PyQt5 import QtWidgets, QtCore
 from PyQt5 import Qt
+from PyQt5 import QtGui
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
 from ScreensClasses.SettingsScreen import SettingsScreen
@@ -31,8 +32,6 @@ class TaskGui(threading.Thread):
         self.mutex = QMutex()
         self.result = TASK_GUI_RESULT_OK
 
-        #self.widget.setWindowFlags(Qt.FramelessWindowHint)
-
         self.SettingsScreen = SettingsScreen(self.widget)
         self.ManualScreen = ManualScreen(self.widget)
         self.AutomaticScreen = AutomaticScreen(self.widget)
@@ -43,14 +42,12 @@ class TaskGui(threading.Thread):
 
         self.widget.adjustSize()
 
-        if platform.system() == 'Windows':
-            self.widget.setFixedHeight(720)
-            self.widget.setFixedWidth(1280)
-            self.widget.show()
-        else:
-            self.widget.showFullScreen()
-            font = QFont('Roboto')
-            self.widget.setFont(font)
+        self.widget.setFixedHeight(720)
+        self.widget.setFixedWidth(1280)
+        self.widget.setWindowIcon(QtGui.QIcon('Vc_icon4.png'))
+        self.widget.setWindowTitle("VcDVT TEST TOOL")
+
+        self.widget.show()
 
     def stop(self):
         self.mutex.lock()

@@ -38,11 +38,17 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.btn_ConnectSettings.clicked.connect(self.connect_sett)
         self.btn_DisconnectSettings.clicked.connect(self.disconnect_sett)
         self.btn_GetStateSettings.clicked.connect(self.getstate_sett)
+        pixmap = QPixmap("connect_red.png")
+        self.connectLabel.setPixmap(pixmap)
+        self.connectLabel.setEnabled(0)
 
 
     def CleanSettings(self):
         self.lineEdit_ComPort.setText(' ')
         self.lineEdit_GetState.setText(' ')
+        pixmap = QPixmap("connect_red.png")
+        self.connectLabel.setPixmap(pixmap)
+        self.connectLabel.setEnabled(0)
 
     def setManualScreen(self):
         # self.progressBar_start.setValue(0)
@@ -52,12 +58,14 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.widget.setCurrentIndex(AUTOMATIC_SCREEN_INDEX)
 
     def connect_sett(self):
-        self.label_Connect.setVisible(1)
-        self.label_Connect.setEnabled(1)
+        pixmap = QPixmap("connect.png")
+        self.connectLabel.setPixmap(pixmap)
+        self.connectLabel.setEnabled(1)
 
     def disconnect_sett(self):
-        self.label_green.setVisible(0)
-        self.label_red.setEnabled(1)
+        pixmap = QPixmap("connect_red.png")
+        self.connectLabel.setPixmap(pixmap)
+        self.connectLabel.setEnabled(1)
 
     def getstate_sett(self):
         self.lineEdit_GetState.setText('State')

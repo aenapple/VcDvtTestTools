@@ -16,7 +16,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.widget = w
         #self.widget.setWindowTitle("VcDvtTestTools | Manual Mode")
         self.btn_AutomaticManual.clicked.connect(self.AutomaticManual)
-        self.btn_SettingsManual.clicked.connect(self.AutomaticManual)
+        self.btn_SettingsManual.clicked.connect(self.SettingsManual)
         self.btn_CleanManual.clicked.connect(self.CleanManual)
 
         self.btn_MainMotor_Start.clicked.connect(self.MainMotor_Start)

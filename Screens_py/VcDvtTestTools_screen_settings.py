@@ -133,6 +133,12 @@ class Ui_Settings(object):
         self.lineEdit_GetState.setFont(font)
         self.lineEdit_GetState.setFrame(True)
         self.lineEdit_GetState.setObjectName("lineEdit_GetState")
+        self.connectLabel = QtWidgets.QLabel(self.grBox_SettingsMode)
+        self.connectLabel.setEnabled(False)
+        self.connectLabel.setGeometry(QtCore.QRect(610, 170, 101, 111))
+        self.connectLabel.setText("")
+        self.connectLabel.setPixmap(QtGui.QPixmap("..\\Screens\\../connect_red.png"))
+        self.connectLabel.setObjectName("connectLabel")
 
         self.retranslateUi(Settings)
         QtCore.QMetaObject.connectSlotsByName(Settings)
