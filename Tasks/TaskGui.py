@@ -3,23 +3,18 @@ import time
 import threading
 
 import roboto as Roboto
+import self
 from PyQt5 import QtWidgets, QtCore
 from PyQt5 import Qt
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
-from ScreensClasses.SettingsScreen import SettingsScreen
-from Mqtt.GpioState import GpioState
-from Mqtt.ChargerState import ChargerState
-from Mqtt.ServiceData import ServiceData
-from Mqtt.Control import GpioControl
-from Mqtt.Control import ServiceCmd
-from Mqtt.Control import GhargerControl
+# from ScreensClasses.SettingsScreen import SettingsScreen
 from PyQt5.QtCore import QMutex
 from PyQt5.QtGui import QFont
 import platform
 
-QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) #enable highdpi scaling
-QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True) #use highdpi icons
+#QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) # enable highdpi scaling
+#QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)    # use highdpi icons
 
 
 TASK_GUI_RESULT_OK = 0
@@ -28,7 +23,7 @@ TASK_GUI_EXIT_FROM_APPLICATION = 2
 
 
 class TaskGui(threading.Thread):
-    def __init__(self):
+    def __init__(self):cd
         self.exitFlag = True
         threading.Thread.__init__(self)
         self.queueLock = threading.Lock()
@@ -38,20 +33,24 @@ class TaskGui(threading.Thread):
 
         #self.widget.setWindowFlags(Qt.FramelessWindowHint)
 
-        self.SettingsScreen = SettingsScreen(self.widget)
+        #self.SettingsScreen = SettingsScreen(self.widget)
 
-        gpio_control = GpioControl(self.SettingsScreen)
-        charger_control = GhargerControl(self.SettingsScreen)
-        service_cmd = ServiceCmd(self.SettingsScreen)
-        self.GpioState = GpioState(self.SettingsScreen)
-        self.ChargerState = ChargerState(self.SettingsScreen)
-        self.ServiceData = ServiceData(self.SettingsScreen)
+       # gpio_control = GpioControl(self.SettingsScreen)
+       # charger_control = GhargerControl(self.SettingsScreen)
+       # service_cmd = ServiceCmd(self.SettingsScreen)
+       # self.GpioState = GpioState(self.SettingsScreen)
+       # self.ChargerState = ChargerState(self.SettingsScreen)
+       # self.ServiceData = ServiceData(self.SettingsScreen)
 
-        self.ManualScreen = ManualScreen(self.widget, gpio_control, charger_control, service_cmd)
-        self.AutomaticScreen = AutomaticScreen(self.widget, charger_control, service_cmd)
+        #self.ManualScreen = ManualScreen(self.widget, gpio_control, charger_control, service_cmd)
+        #self.AutomaticScreen = AutomaticScreen(self.widget, charger_control, service_cmd)
 
 
-        self.widget.addWidget(self.SettingsScreen)
+        self.ManualScreen = ManualScreen(self)
+        self.AutomaticScreen = AutomaticScreen(self)
+
+
+        #self.widget.addWidget(self.SettingsScreen)
         self.widget.addWidget(self.AutomaticScreen)
         self.widget.addWidget(self.ManualScreen)
 
@@ -60,8 +59,8 @@ class TaskGui(threading.Thread):
         self.widget.adjustSize()
 
         if platform.system() == 'Windows':
-            self.widget.setFixedHeight(600)
-            self.widget.setFixedWidth(1024)
+            self.widget.setFixedHeight(720)
+            self.widget.setFixedWidth(1280)
             self.widget.show()
         else:
             self.widget.showFullScreen()
