@@ -56,7 +56,7 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.widget.setCurrentIndex(AUTOMATIC_SCREEN_INDEX)
 
     def connect_sett(self):
-        result = self.InterfaceVIP.open('COM8', 115200)
+        result = self.InterfaceVIP.open('COM3', 115200)
         if result == 0:
             pixmap = QPixmap("connect.png")
         else:
