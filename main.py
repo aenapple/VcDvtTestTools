@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QApplication
 from ScreensClasses.ScreenIndex import *
 from PyQt5 import QtWidgets
 import Tasks.TaskGui
+from Interfaces import InterfaceVIP
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
 from ScreensClasses.SettingsScreen import SettingsScreen
@@ -43,13 +44,15 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setStyle('Windows')
 
+    interfaceVIP = InterfaceVIP.InterfaceVIP()
+
     # taskSystem = TaskSystem()
     # taskSystem.start()
 
     # taskEvseController = TaskEvseController()
     # taskEvseController.start()
 
-    taskGui = Tasks.TaskGui.TaskGui()
+    taskGui = Tasks.TaskGui.TaskGui(interfaceVIP)
     taskGui.start()
 
     """ w1 = ManualScreen(self)

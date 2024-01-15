@@ -13,10 +13,11 @@ import sys
 
 
 class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
-    def __init__(self, w, parent=None):
+    def __init__(self, w, interface_vip, parent=None):
         super(SettingsScreen, self).__init__(parent)
         self.setupUi(self)
         self.widget = w
+        self.InterfaceVIP = interface_vip
 
         self.init()
         self.btn_CleanSettings.clicked.connect(self.CleanSettings)
@@ -55,13 +56,18 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.widget.setCurrentIndex(AUTOMATIC_SCREEN_INDEX)
 
     def connect_sett(self):
-        pixmap = QPixmap("connect.png")
+        result = self.InterfaceVIP.open('COM8', 115200)
+        if result == 0:
+            pixmap = QPixmap("connect.png")
+        else:
+            pixmap = QPixmap("connect_red.png")
+
         self.connectLabel.setPixmap(pixmap)
         self.connectLabel.setEnabled(1)
-
         self.save_Comport_settings()
 
     def disconnect_sett(self):
+        self.InterfaceVIP.close()
         pixmap = QPixmap("connect_red.png")
         self.connectLabel.setPixmap(pixmap)
         self.connectLabel.setEnabled(1)

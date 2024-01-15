@@ -18,10 +18,11 @@ TS_COLOR_INIT = 'background-color: self.color'
 
 
 class AutomaticScreen(QtWidgets.QMainWindow, Ui_Automatic):
-    def __init__(self, w, parent=None):
+    def __init__(self, w, interface_vip, parent=None):
         super(AutomaticScreen, self).__init__(parent)
         self.setupUi(self)
         self.widget = w
+        self.InterfaceVIP = interface_vip
         #self.widget.setWindowTitle("VcDvtTestTools | Automatic Mode")
 
         self.btn_ManualAutomatic.clicked.connect(self.setManualScreen)

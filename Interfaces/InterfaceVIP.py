@@ -1,10 +1,14 @@
 import serial
 import sys
 import array as buf_array
+import time
 
 INTERFACE_VIP_SIZE_PACKET = 16
 INTERFACE_VIP_INDEX_STATE = 0  # and command
 INTERFACE_VIP_INDEX_DATA = 1
+
+INTERFACE_VIP_INDEX_COMPONENT = INTERFACE_VIP_INDEX_DATA
+INTERFACE_VIP_INDEX_TEST_RESULT = INTERFACE_VIP_INDEX_COMPONENT
 
 IFC_VIP_COMMAND_GET_STATE = 0x00
 IFC_VIP_COMMAND_GET_BME688_1 = 0x01
@@ -21,7 +25,7 @@ IFC_VIP_COMMAND_GET_GAS_SENSOR = 0x0B
 IFC_VIP_COMMAND_GET_MOTOR_PARAMETERS = 0x0C
 IFC_VIP_COMMAND_GET_LAMP_PARAMETERS = 0x0D
 IFC_VIP_COMMAND_GET_HEATER_PARAMETERS = 0x0E
-IFC_VIP_COMMAND_TEST = 0x0F
+IFC_VIP_COMMAND_START_TEST = 0x0F
 IFC_VIP_COMMAND_CONTINUE_PROCESS = 0x10
 IFC_VIP_COMMAND_STOP_PROCESS = 0x11
 IFC_VIP_COMMAND_START_PROCESS = 0x12
@@ -39,6 +43,7 @@ IFC_VIP_COMMAND_CONTROL_HEATER = 0x1D
 IFC_VIP_COMMAND_GET_STATE_HEATER = 0x1E
 IFC_VIP_COMMAND_SET_POSITION = 0x1F
 IFC_VIP_COMMAND_GET_LEVEL_SENSOR = 0x20
+IFC_VIP_COMMAND_GET_RESULT_TEST = 0x21
 IFC_VIP_COMMAND_NACK = 0xFF
 
 IFC_VIP_STATE_NO_STATE = 0x00
@@ -97,6 +102,10 @@ IFC_VIP_COMPONENT_PTC_HEATER_2 = 0x09
 IFC_VIP_COMPONENT_MAIN_FAN = 0x0A
 IFC_VIP_COMPONENT_DAM_MOTOR = 0x0B
 
+IFC_VIP_TEST_RESULT_OK = 0x00
+IFC_VIP_TEST_RESULT_PROCESS = 0x01
+IFC_VIP_TEST_RESULT_ERROR = 0xFF
+
 
 class InterfaceVIP:
     def __init__(self):
@@ -106,14 +115,32 @@ class InterfaceVIP:
     def read_state(self):
         pass
 
-    def test(self, component):
-        data = buf_array.array('B', [component])
+    def cmd_test(self, component):
+        write_data = buf_array.array('B', [component])
         for i in range(1, INTERFACE_VIP_SIZE_PACKET - 2):
-            data.append(0)
-        self.read_module(IFC_VIP_COMMAND_TEST, data)
+            write_data.append(0)
+
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_START_TEST, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        """ while True:
+            read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_RESULT_TEST, write_data)
+            if read_result != 0:
+                return read_result, read_data
+
+            if read_data[INTERFACE_VIP_INDEX_TEST_RESULT] == IFC_VIP_TEST_RESULT_PROCESS:
+                time.sleep(0.1)
+                continue """
+
+        return read_result, read_data
 
     def get_state(self):
         return self.state
+
+    def close(self):
+        self.ComPort.close()
+        self.ComPort = None
 
     def open(self, com_port, baud_rate):
         try:
@@ -126,6 +153,10 @@ class InterfaceVIP:
         return 0
 
     def read_module(self, command, data):
+        if self.ComPort == None:
+            print("COM Port is not open!")
+            return 1, None
+
         self.send_data(command, data)  # send command and data to module
         # time.sleep(0.1)
         read_data = self.ComPort.read(INTERFACE_VIP_SIZE_PACKET)
@@ -152,4 +183,18 @@ class InterfaceVIP:
             crc += buffer[i]
         crc += 1
         return crc
+
+
+""" if __name__ == '__main__':
+    interfaceVIP = InterfaceVIP()
+
+    result = interfaceVIP.open("COM8", 115200)
+    if result != 0:
+        SystemExit(1)
+
+    while True:
+        result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
+
+        time.sleep(0.1) """
+
 

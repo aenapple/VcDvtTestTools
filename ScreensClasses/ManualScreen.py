@@ -3,17 +3,15 @@ from PyQt5 import QtWidgets
 from ScreensClasses.ScreenIndex import AUTOMATIC_SCREEN_INDEX
 from Screens_py.VcDvtTestTools_screen_manual_mode import Ui_Manual
 from ScreensClasses.SettingsScreen import *
-from PyQt5.QtGui import QIcon
-
-
-
+from Interfaces.InterfaceVIP import *
 
 class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
-    def __init__(self, w, parent=None):
+    def __init__(self, w, interface_vip, parent=None):
         super(ManualScreen, self).__init__(parent)
         self.setupUi(self)
-
         self.widget = w
+        self.InterfaceVIP = interface_vip
+
         #self.widget.setWindowTitle("VcDvtTestTools | Manual Mode")
         self.btn_AutomaticManual.clicked.connect(self.AutomaticManual)
         self.btn_SettingsManual.clicked.connect(self.SettingsManual)
@@ -107,7 +105,11 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_UnlockTopRight.setChecked(0)
 
     def TestMainMotor(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_MOTOR)
+        if result == 0:
+            self.checkBox_TestMainMotor_Passed.setChecked(1)
+        else:
+            self.checkBox_TestMainMotor_Passed.setChecked(0)
 
     def TestDamMechanism(self):
         self.checkBox_UnlockTopRight.setChecked(0)

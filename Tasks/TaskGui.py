@@ -4,13 +4,12 @@ import threading
 
 import roboto as Roboto
 from PyQt5 import QtWidgets, QtCore
-from PyQt5 import Qt
 from PyQt5 import QtGui
 from ScreensClasses.ManualScreen import ManualScreen
 from ScreensClasses.AutomaticScreen import AutomaticScreen
 from ScreensClasses.SettingsScreen import SettingsScreen
 from PyQt5.QtCore import QMutex
-from PyQt5.QtGui import QFont
+from Interfaces import InterfaceVIP
 import platform
 
 # QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) # enable highdpi scaling
@@ -23,17 +22,18 @@ TASK_GUI_EXIT_FROM_APPLICATION = 2
 
 
 class TaskGui(threading.Thread):
-    def __init__(self):
+    def __init__(self, interface_vip):
         self.exitFlag = True
         threading.Thread.__init__(self)
         self.queueLock = threading.Lock()
         self.widget = QtWidgets.QStackedWidget()
         self.mutex = QMutex()
         self.result = TASK_GUI_RESULT_OK
+        self.InterfaceVIP = interface_vip
 
-        self.SettingsScreen = SettingsScreen(self.widget)
-        self.ManualScreen = ManualScreen(self.widget)
-        self.AutomaticScreen = AutomaticScreen(self.widget)
+        self.SettingsScreen = SettingsScreen(self.widget, interface_vip)
+        self.ManualScreen = ManualScreen(self.widget, interface_vip)
+        self.AutomaticScreen = AutomaticScreen(self.widget, interface_vip)
 
         self.widget.addWidget(self.SettingsScreen)
         self.widget.addWidget(self.AutomaticScreen)
@@ -93,6 +93,7 @@ class TaskGui(threading.Thread):
                 return TASK_GUI_RESULT_OK """
 
     def run(self):
+
         while True:
 
             """ if self.WaitingHardwareServer() == TASK_GUI_EXIT_FROM_APPLICATION:
