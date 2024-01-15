@@ -34,16 +34,17 @@ class AutomaticScreen(QtWidgets.QMainWindow, Ui_Automatic):
 
     def setManualScreen(self):
         # self.progressBar_start.setValue(0)
-        # self.btn_CleanClicked()
+        self.btn_CleanClicked()
         self.widget.setCurrentIndex(MANUAL_SCREEN_INDEX)
 
 
     def setSettingsScreen(self):
         # self.progressBar_start.setValue(0)
-        # self.btn_CleanClicked()
+        self.btn_CleanClicked()
         self.widget.setCurrentIndex(SETTINGS_SCREEN_INDEX)
 
     def btnStartClicked(self):
+        self.btn_CleanClicked()
         self.checkBox_MainMotor.setStyleSheet(TS_COLOR_INIT)
 
     def btnStopClicked(self):
@@ -51,6 +52,25 @@ class AutomaticScreen(QtWidgets.QMainWindow, Ui_Automatic):
 
 
     def btn_CleanClicked(self):
+        self.checkBox_MainMotor.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_ChamberMotorLeft.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_ChamberMotorRight.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_LampFront.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_LampBack.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_DamMechanism.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PTCHeaterLeft.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PTCHeaterRight.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_MainFan.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PadHeaterLeft.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PadHeaterRight.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchUnlockTopLeft.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchUnlockTopRight.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchPresentChamberLeft.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchPresentChamberRight.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchPresentTank.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchOpenLid.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_SwitchRemovedTop.setStyleSheet(TS_COLOR_INIT)
+
         self.checkBox_MainMotor.setChecked(0)
         self.checkBox_ChamberMotorLeft.setChecked(0)
         self.checkBox_ChamberMotorRight.setChecked(0)
@@ -69,6 +89,7 @@ class AutomaticScreen(QtWidgets.QMainWindow, Ui_Automatic):
         self.checkBox_SwitchPresentTank.setChecked(0)
         self.checkBox_SwitchOpenLid.setChecked(0)
         self.checkBox_SwitchRemovedTop.setChecked(0)
+
 
 
 
