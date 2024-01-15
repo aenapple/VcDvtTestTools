@@ -38,7 +38,7 @@
     <bool>true</bool>
    </property>
    <property name="title">
-    <string>    Settings Mode</string>
+    <string>    Settings</string>
    </property>
    <property name="flat">
     <bool>true</bool>
