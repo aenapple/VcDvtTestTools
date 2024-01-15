@@ -44,7 +44,7 @@ class TaskGui(threading.Thread):
         self.widget.setFixedHeight(720)
         self.widget.setFixedWidth(1280)
         self.widget.setWindowIcon(QtGui.QIcon('Vc_icon4.png'))
-        self.widget.setWindowTitle("VcDVT TEST TOOL")
+        self.widget.setWindowTitle("VCycene DVT Test Tool")
 
         self.widget.show()
 
