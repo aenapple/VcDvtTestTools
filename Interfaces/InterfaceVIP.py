@@ -8,7 +8,7 @@ INTERFACE_VIP_INDEX_STATE = 0  # and command
 INTERFACE_VIP_INDEX_DATA = 1
 
 INTERFACE_VIP_INDEX_COMPONENT = INTERFACE_VIP_INDEX_DATA
-INTERFACE_VIP_INDEX_TEST_RESULT = INTERFACE_VIP_INDEX_COMPONENT
+INTERFACE_VIP_INDEX_TEST_RESULT = (INTERFACE_VIP_INDEX_COMPONENT + 1)
 
 IFC_VIP_COMMAND_GET_STATE = 0x00
 IFC_VIP_COMMAND_GET_BME688_1 = 0x01
@@ -92,9 +92,9 @@ IFC_VIP_ERROR_DAM_MOTOR = 0x16
 IFC_VIP_COMPONENT_ALL = 0x00
 IFC_VIP_COMPONENT_LAMP_1 = 0x01
 IFC_VIP_COMPONENT_LAMP_2 = 0x02
-IFC_VIP_COMPONENT_MAIN_MOTOR = 0x03
-IFC_VIP_COMPONENT_MOTOR_CHAMBER_1 = 0x04
-IFC_VIP_COMPONENT_MOTOR_CHAMBER_2 = 0x05
+IFC_VIP_COMPONENT_MOTOR_CHAMBER_1 = 0x03
+IFC_VIP_COMPONENT_MOTOR_CHAMBER_2 = 0x04
+IFC_VIP_COMPONENT_MAIN_MOTOR = 0x05
 IFC_VIP_COMPONENT_PAD_HEATER_1 = 0x06
 IFC_VIP_COMPONENT_PAD_HEATER_2 = 0x07
 IFC_VIP_COMPONENT_PTC_HEATER_1 = 0x08
@@ -124,16 +124,24 @@ class InterfaceVIP:
         if read_result != 0:
             return read_result, read_data
 
-        """ while True:
+        timeout = 10.0  # 10 Sec
+        while True:
             read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_RESULT_TEST, write_data)
             if read_result != 0:
                 return read_result, read_data
 
-            if read_data[INTERFACE_VIP_INDEX_TEST_RESULT] == IFC_VIP_TEST_RESULT_PROCESS:
-                time.sleep(0.1)
-                continue """
+            # print(read_data)
 
-        return read_result, read_data
+            if read_data[INTERFACE_VIP_INDEX_TEST_RESULT] != IFC_VIP_TEST_RESULT_PROCESS:
+                break
+
+            time.sleep(0.1)
+            timeout -= 0.1
+            if timeout == 0:
+                return 2, read_data  # timeout
+
+        # return - IFC_VIP_TEST_RESULT_OK or IFC_VIP_TEST_RESULT_ERROR
+        return read_data[INTERFACE_VIP_INDEX_TEST_RESULT], read_data
 
     def get_state(self):
         return self.state
@@ -146,8 +154,8 @@ class InterfaceVIP:
         try:
             self.ComPort = serial.Serial(com_port, baud_rate, timeout=0.5)
         except serial.SerialException:
-            # print("Serial Exception:")
-            # print(sys.exc_info())
+            print("Serial Exception:")
+            print(sys.exc_info())
             return 1
 
         return 0
@@ -165,6 +173,14 @@ class InterfaceVIP:
             return 1, read_data  # 'No answer'
 
         self.state = read_data[INTERFACE_VIP_INDEX_STATE]
+
+        # DEBUG
+        # print(read_data)
+        # return 0, read_data
+        # DEBUG
+
+        if self.state == IFC_VIP_COMMAND_NACK:
+            return IFC_VIP_COMMAND_NACK, read_data
 
         return 0, read_data  # 'OK'
 
@@ -185,7 +201,7 @@ class InterfaceVIP:
         return crc
 
 
-""" if __name__ == '__main__':
+if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
     result = interfaceVIP.open("COM8", 115200)
@@ -194,7 +210,31 @@ class InterfaceVIP:
 
     while True:
         result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
+        print("Lamp1")
+        print(result)
 
-        time.sleep(0.1) """
+        time.sleep(1.0)
+
+        result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_1)
+        print("MotorCH1")
+        print(result)
+
+        time.sleep(1.0)
+
+        result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_2)
+        print("Lamp2")
+        print(result)
+
+        time.sleep(1.0)
+
+        result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_2)
+        print("MotorCH2")
+        print(result)
+
+        result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_FAN)
+        print("MotorM")
+        print(result)
+
+        time.sleep(1.0)
 
 

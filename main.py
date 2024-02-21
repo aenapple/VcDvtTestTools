@@ -49,21 +49,8 @@ if __name__ == '__main__':
     # taskSystem = TaskSystem()
     # taskSystem.start()
 
-    # taskEvseController = TaskEvseController()
-    # taskEvseController.start()
-
     taskGui = Tasks.TaskGui.TaskGui(interfaceVIP)
     taskGui.start()
-
-    """ w1 = ManualScreen(self)
-    w1.setWindowTitle("VcDvtTestTools")
-    w1.show()
-    w2 = AutomaticScreen(self)
-    w2.setWindowTitle("VcDvtTestTools")
-    w2.show()
-    w3 = SettingsScreen(self)
-    w3.setWindowTitle("VcDvtTestTools")
-    w3.show() """
 
     app.exec_()
 
