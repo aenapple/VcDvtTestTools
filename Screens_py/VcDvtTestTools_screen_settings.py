@@ -146,7 +146,7 @@ class Ui_Settings(object):
     def retranslateUi(self, Settings):
         _translate = QtCore.QCoreApplication.translate
         Settings.setWindowTitle(_translate("Settings", "Form"))
-        self.grBox_SettingsMode.setTitle(_translate("Settings", "    Settings Mode"))
+        self.grBox_SettingsMode.setTitle(_translate("Settings", "    Settings"))
         self.btn_CleanSettings.setText(_translate("Settings", "Clean"))
         self.btn_ManualSettings.setText(_translate("Settings", "Manual mode"))
         self.btn_AutomaticSettings.setText(_translate("Settings", "Automatic"))
