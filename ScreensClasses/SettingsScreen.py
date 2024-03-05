@@ -28,13 +28,13 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.btn_GetStateSettings.clicked.connect(self.getstate_sett)
         pixmap = QPixmap("connect_red.png")
         self.connectLabel.setPixmap(pixmap)
-        self.connectLabel.setEnabled(0)
+        self.connectLabel.setEnabled(1)
 
     def init(self):
         f = IniFile()
-        state = f.get_ComPort()
+        port = f.get_ComPort()
         del f
-        self.lineEdit_ComPort.setText(state)
+        self.lineEdit_ComPort.setText(port)
 
     def save_Comport_settings(self):
         port = self.lineEdit_ComPort.text()
@@ -56,7 +56,8 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         self.widget.setCurrentIndex(AUTOMATIC_SCREEN_INDEX)
 
     def connect_sett(self):
-        result = self.InterfaceVIP.open('COM3', 115200)
+        comPort = self.lineEdit_ComPort.text()
+        result = self.InterfaceVIP.open(comPort, 115200)
         if result == 0:
             pixmap = QPixmap("connect.png")
         else:
