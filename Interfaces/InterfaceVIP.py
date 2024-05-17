@@ -25,8 +25,8 @@ INTERFACE_VIP_INDEX_TEST_RESULT = (INTERFACE_VIP_INDEX_COMPONENT + 1)
 IFC_VIP_COMMAND_GET_STATE = 0x00
 IFC_VIP_COMMAND_GET_BME688_1 = 0x01
 IFC_VIP_COMMAND_GET_BME688_2 = 0x02
-IFC_VIP_COMMAND_SET_FAN_SPEED = 0x03
-IFC_VIP_COMMAND_GET_FAN_SPEED = 0x04
+IFC_VIP_COMMAND_CONTROL_FAN = 0x03
+IFC_VIP_COMMAND_GET_STATE_FAN = 0x04
 IFC_VIP_COMMAND_GET_ADC_CHANNEL = 0x05
 IFC_VIP_COMMAND_GET_AC_PARAMETERS = 0x06
 IFC_VIP_COMMAND_GET_TEMPERATURE = 0x07
@@ -128,6 +128,21 @@ IFC_VIP_T_CPU_NETWORK = 0x03
 IFC_VIP_T_CPU_MAIN = 0x04
 IFC_VIP_T_CPU_TOP = 0x0B
 
+IFC_VIP_MOTOR_MAIN = 0x01
+IFC_VIP_MOTOR_CHAMBER_LEFT = 0x02
+IFC_VIP_MOTOR_CHAMBER_RIGHT = 0x03
+
+IFC_VIP_HEATER_PAD_LEFT = 0x01
+IFC_VIP_HEATER_PAD_RIGHT = 0x02
+IFC_VIP_HEATER_PTC_LEFT = 0x03
+IFC_VIP_HEATER_PTC_RIGHT = 0x04
+
+IFC_VIP_FAN_MAIN = 0x01
+IFC_VIP_FAN_PTC_LEFT = 0x02
+IFC_VIP_FAN_PTC_RIGHT = 0x03
+IFC_VIP_FAN_AIR_LEFT = 0x04
+IFC_VIP_FAN_AIR_RIGHT = 0x05
+
 IFC_VIP_TEST_RESULT_OK = 0x00
 IFC_VIP_TEST_RESULT_PROCESS = 0x01
 IFC_VIP_TEST_RESULT_ERROR = 0xFF
@@ -200,11 +215,16 @@ class InterfaceVIP:
         return 0, read_data
 
     def cmd_read_packet(self, type_memory, address):
-        write_data = buf_array.array('B', [type_memory])
+        """ write_data = buf_array.array('B', [type_memory])
         write_data.append(address & 0xFF)
         write_data.append((address >> 8) & 0xFF)
         write_data.append((address >> 16) & 0xFF)
-        write_data.append((address >> 24) & 0xFF)
+        write_data.append((address >> 24) & 0xFF) """
+        write_data = self.get_component_packet(type_memory)
+        write_data[1] = (address & 0xFF)
+        write_data[2] = ((address >> 8) & 0xFF)
+        write_data[3] = ((address >> 16) & 0xFF)
+        write_data[4] = ((address >> 24) & 0xFF)
 
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_READ_PACKET, write_data)
         if read_result != 0:
@@ -277,11 +297,49 @@ class InterfaceVIP:
         # return - IFC_VIP_TEST_RESULT_OK or IFC_VIP_TEST_RESULT_ERROR
         return read_data[INTERFACE_VIP_INDEX_TEST_RESULT], read_data
 
+    def cmd_control_fan(self, num_fan, pwm):
+        write_data = self.get_component_packet(num_fan)
+        write_data[1] = pwm  # 0-100%, 0% - stop
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_CONTROL_FAN, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
+
+    def cmd_control_motor(self, num_motor, pwm, direction):
+        write_data = self.get_component_packet(num_motor)
+        write_data[1] = pwm        # 0-100%, 0% - stop
+        write_data[2] = direction  # '0' - CW, '0' - CCW
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_CONTROL_MOTOR, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
+
+    def cmd_control_heater(self, num_heater, pwm):
+        write_data = self.get_component_packet(num_heater)
+        write_data[1] = pwm  # 0-100%, 0% - stop
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_CONTROL_HEATER, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
+
     def get_temperature(self, num_sensor):
-        pass
+        write_data = self.get_component_packet(num_sensor)
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_TEMPERATURE, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
 
     def get_bme688(self, num_sensor, part):
-        pass
+        write_data = self.get_component_packet(1)
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_BME688_1, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
 
     def get_state(self):
         return self.state
@@ -340,7 +398,7 @@ class InterfaceVIP:
         for i in range(num_bytes):
             crc += buffer[i]
         crc += 1
-        return crc
+        return crc & 0xFF
 
     def bcd_to_int(self, n):
         return int(('%x' % n), base=10)
@@ -352,13 +410,13 @@ class InterfaceVIP:
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM8", 115200)
+    result = interfaceVIP.open("COM11", 115200)
     if result != 0:
         SystemExit(1)
 
-    result, read_data = interfaceVIP.cmd_set_rtc()
+    """ result, read_data = interfaceVIP.cmd_set_rtc()
     print(read_data)
-    print(result)
+    print(result) """
 
     while True:
         # result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
@@ -368,7 +426,76 @@ if __name__ == '__main__':
         time.sleep(1.0)
 
         result, read_data = interfaceVIP.read_state()
-        print(read_data)
+        # for i in range(len(read_data)):
+        #    print(read_data[i])
         print(result)
 
-        time.sleep(1.0)
+        """ interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 10)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 100)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 0)
+        time.sleep(5.0) """
+
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
+        time.sleep(2.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 1)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
+
+        time.sleep(2.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 0)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
+        time.sleep(2.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 1)
+        time.sleep(5.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
+
+        """ interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 0)
+        # time.sleep(5)
+        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_RIGHT, 0)
+        # time.sleep(5)
+
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_RIGHT, 50)
+        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_RIGHT, 0)
+
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 50)
+        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_LEFT, 0) """
+
+        """ while True:
+            time.sleep(2)
+            result, read_data = interfaceVIP.get_temperature(IFC_VIP_T_PTC_HEATER_LEFT)
+            if result == 0:
+                print("PTC Left - " + str(read_data[2]))
+            else:
+                print(result)
+
+            result, read_data = interfaceVIP.get_temperature(IFC_VIP_T_PTC_HEATER_RIGHT)
+            if result == 0:
+                print("PTC Right - " + str(read_data[2]))
+            else:
+                print(result)
+
+            result, read_data = interfaceVIP.get_temperature(IFC_VIP_T_PAD_HEATER_LEFT)
+            if result == 0:
+                print("Pad Left - " + str(read_data[2]))
+            else:
+                print(result)
+
+            result, read_data = interfaceVIP.get_temperature(IFC_VIP_T_PAD_HEATER_RIGHT)
+            if result == 0:
+                print("Pad Right - " + str(read_data[2]))
+            else:
+                print(result) """
+
+        """ result, read_data = interfaceVIP.get_bme688(1, 0)
+
+        string_data = hex(read_data[0])
+        for i in range(1, len(read_data)):
+            string_data = string_data + ", "
+            string_data = string_data + hex(read_data[i])
+        print(string_data)
+        print(result) """

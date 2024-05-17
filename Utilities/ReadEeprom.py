@@ -9,7 +9,7 @@ import array as buf_array
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM8", 115200)
+    result = interfaceVIP.open("COM23", 115200)
     if result != 0:
         sys.exit(1)
 
@@ -27,10 +27,11 @@ if __name__ == '__main__':
 
     address = 0
     while True:
-        time.sleep(0.1)
+        # time.sleep(0.1)
 
         result, read_data = interfaceVIP.cmd_read_packet(IFC_VIP_TYPE_MEMORY_EEPROM, address)
         if result != 0:
+            file_output.close()
             interfaceVIP.close()
             sys.exit(3)
         # print(read_data)
@@ -42,7 +43,8 @@ if __name__ == '__main__':
         file_output.write(packet)
 
         address += 8
-        if address >= (0x20000 - 8):
+        print(address)
+        if address >= 0x20000:
             file_output.close()
             interfaceVIP.close()
             sys.exit(0)
