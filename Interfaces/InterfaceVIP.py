@@ -120,6 +120,10 @@ IFC_VIP_COMPONENT_PTC_HEATER_2 = 0x09
 IFC_VIP_COMPONENT_MAIN_FAN = 0x0A
 IFC_VIP_COMPONENT_DAM_MECHANISM = 0x0B
 
+IFC_VIP_BME688_FAN = 0x00
+IFC_VIP_BME688_LEFT = 0x01
+IFC_VIP_BME688_RIGHT = 0x02
+
 IFC_VIP_T_PAD_HEATER_LEFT = 0x01
 IFC_VIP_T_PAD_HEATER_RIGHT = 0x02
 IFC_VIP_T_PTC_HEATER_LEFT = 0x05
@@ -167,6 +171,11 @@ class InterfaceVIP:
         self.chamberLeftLevel = 0
         self.chamberRightLevel = 0
         self.heaterStates = 0
+        self.bmeTemperature = 0
+        self.bmeHumidity = 0
+        self.bmePressure = 0
+        self.bmeGasResistance = 0
+        self.bmeNumSensor = 0;
 
     def get_null_packet(self):
         return self.get_component_packet(0)
@@ -198,6 +207,12 @@ class InterfaceVIP:
             struct.unpack('<xbbbbHHbbbbbxx', read_data)
 
         return 0, read_data
+
+    def get_level_left_chamber(self):
+        return self.chamberLeftLevel
+
+    def get_level_right_chamber(self):
+        return self.chamberRightLevel
 
     def cmd_write_packet(self, type_memory, address, packet):
         write_data = buf_array.array('B', [type_memory])
@@ -334,12 +349,38 @@ class InterfaceVIP:
         return 0, read_data
 
     def get_bme688(self, num_sensor, part):
-        write_data = self.get_component_packet(1)
+        write_data = self.get_component_packet(num_sensor)
+        write_data[1] = part
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_BME688_1, write_data)
         if read_result != 0:
             return read_result, read_data
 
+        # Unpack the packet
+        # < indicates little-endian
+        # b = signed char (1 byte)
+        # h - short (2 bytes)
+        # H = unsigned short (2 bytes)
+        # I = unsigned int (4 bytes)
+        # x = pad byte (skips the unused byte)
+        self.bmeNumSensor, self.bmeTemperature, self.bmeHumidity, self.bmePressure, self.bmeGasResistance = \
+        struct.unpack('<xbhHIIxx', read_data)
+
         return 0, read_data
+
+    def get_bme_num_sensor(self):
+        return self.bmeNumSensor
+
+    def get_bme_temperature(self):
+        return self.bmeTemperature
+
+    def get_bme_humidity(self):
+        return self.bmeHumidity
+
+    def get_bme_pressure(self):
+        return self.bmePressure
+
+    def get_bme_gas_resistance(self):
+        return self.bmeGasResistance
 
     def get_state(self):
         return self.state
@@ -426,9 +467,12 @@ if __name__ == '__main__':
         time.sleep(1.0)
 
         result, read_data = interfaceVIP.read_state()
-        # for i in range(len(read_data)):
-        #    print(read_data[i])
-        print(result)
+        if result == 0:
+            print("Left level = " + str(interfaceVIP.get_level_left_chamber()))
+            print("Right level = " + str(interfaceVIP.get_level_right_chamber()))
+        else:
+            print(result)
+        # print(result)
 
         """ interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 10)
         time.sleep(5.0)
@@ -437,22 +481,22 @@ if __name__ == '__main__':
         interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 0)
         time.sleep(5.0) """
 
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
+        """ interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
         time.sleep(5.0)
         interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
         time.sleep(2.0)
         interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 1)
         time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0) """
 
-        time.sleep(2.0)
+        """ time.sleep(2.0)
         interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 0)
         time.sleep(5.0)
         interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
         time.sleep(2.0)
         interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 1)
         time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0) """
 
         """ interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 0)
         # time.sleep(5)
@@ -491,11 +535,33 @@ if __name__ == '__main__':
             else:
                 print(result) """
 
-        """ result, read_data = interfaceVIP.get_bme688(1, 0)
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_MAIN, 50)
+        for i in range(3):
+            result, read_data = interfaceVIP.get_bme688(i, 0)
+            if result == 0:
+                string_data = "numSensor = " + str(interfaceVIP.get_bme_num_sensor())
+                string_data += ", Temperature = " + str(interfaceVIP.get_bme_temperature())
+                string_data += ", Humidity = " + str(interfaceVIP.get_bme_humidity())
+                string_data += ", Pressure = " + str(interfaceVIP.get_bme_pressure())
+                string_data += ", Gas Resistance = " + str(interfaceVIP.get_bme_gas_resistance())
+                print(string_data)
+            else:
+                print(result)
 
-        string_data = hex(read_data[0])
-        for i in range(1, len(read_data)):
-            string_data = string_data + ", "
-            string_data = string_data + hex(read_data[i])
-        print(string_data)
-        print(result) """
+        time.sleep(6.0)
+        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_MAIN, 0)
+        time.sleep(3.0)
+
+        """ result, read_data = interfaceVIP.get_bme688(IFC_VIP_BME688_LEFT, 0)
+        if result == 0:
+            string_data = "numSensor = " + str(interfaceVIP.get_bme_num_sensor())
+            print(string_data)
+        else:
+            print(result)
+
+        result, read_data = interfaceVIP.get_bme688(IFC_VIP_BME688_RIGHT, 0)
+        if result == 0:
+            string_data = "numSensor = " + str(interfaceVIP.get_bme_num_sensor())
+            print(string_data)
+        else:
+            print(result) """
