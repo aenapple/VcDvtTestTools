@@ -249,9 +249,13 @@ class InterfaceVIP:
         write_data.append((address >> 8) & 0xFF)
         write_data.append((address >> 16) & 0xFF)
         write_data.append((address >> 24) & 0xFF)
+        
         for i in range(8):
             write_data.append(packet[i])
-
+            
+        # Last empty byte
+        write_data.append(0x00)
+        print(write_data)
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_WRITE_PACKET, write_data)
         if read_result != 0:
             return read_result, read_data
