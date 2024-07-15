@@ -4,9 +4,6 @@ from array import array
 import struct
 
 
-
-
-
 if __name__ == '__main__':
 
     COMPORT = 'COM12'    
@@ -23,13 +20,14 @@ if __name__ == '__main__':
     # data = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     key  = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     
-    file_name = "K2_main_v1.bin"
+    file_name = "CRC\\LL01-ABE-01_flash.bin"
     
     with open(file_name, mode='rb') as file: # b is important -> binary
         binFileContent = file.read()
 
         lenFile = len(binFileContent)
-        for data in range(0, int(lenFile/ 8), 8):
+        for data in range(0, lenFile, 8):
+          # break 
           
           dataWriteToFLASH = binFileContent[data: data + 8] 
     
@@ -46,23 +44,19 @@ if __name__ == '__main__':
           result, read_data =  bootInterfaceVIP.cmd_write_packet(TYPE_MEMORY, data, packetToFlash)
           if not (data >= 768):
             continue
-          print(readHex)
-          print(packetToFlash)
-          print(data, len(read_data), read_data)
-          print('\n')
-          input()
+          
+          # print(data, len(read_data), readHex)
+          print(data)
+          
+          # if data >= 78700:
+          #   input()
           
 
-    exit()
+    # exit()
     
-    for i in range(0, 768, 8):
-        # address = struct.pack('>LL', i+1 )         
-        result, read_data =  bootInterfaceVIP.cmd_write_packet(TYPE_MEMORY, i+KEY_OFFSET, key)
-        
-        # string_data = hex(read_data[0])
-        # for i in range(1, len(read_data)):
-        #     string_data = string_data + ", " + hex(read_data[i])
-        print(len(read_data), read_data)
+
+    result, read_data =  bootInterfaceVIP.cmd_jump_to_application()
+      
     
     
     FLASH_OFFSET = 0x8019000
