@@ -131,7 +131,7 @@ if __name__ == '__main__':
     
     # ------------------------- START IDENT FILE  ---------------------------------------
     file_output.write( string_version.encode())
-    file_output.write((crc     & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
+    file_output.write((crc          & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
     file_output.write((number_bytes & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_SIZE_FILE, byteorder="little"))
     file_output.write( serial_number.encode())
     # file_output.write((encryption_key     & 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF).to_bytes(BINFILE_SIZE_KEY, byteorder="little"))

@@ -14,9 +14,7 @@ if __name__ == '__main__':
         SystemExit(1)
         
     TYPE_MEMORY = 0x01
-    
-    # KEY_OFFSET = 512+256
-
+  
     # data = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     key  = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     
@@ -45,30 +43,14 @@ if __name__ == '__main__':
           if not (data >= 768):
             continue
           
-          # print(data, len(read_data), readHex)
-          print(data)
-          
-          # if data >= 78700:
-          #   input()
-          
-
-    # exit()
+  
+          print(data)        
     
 
     result, read_data =  bootInterfaceVIP.cmd_jump_to_application()
       
     
-    
+  
     FLASH_OFFSET = 0x8019000
-    # exit()
-    
-    # for i in range(int(768/8)):
-    #     # address = struct.pack('>L', i)
-    #     result, read_data =  bootInterfaceVIP.cmd_read_packet(type_memory, i + OFFSET)
-    #     # print(result, read_data)
-    #     string_data = hex(read_data[0])
-    #     for i in range(1, len(read_data)):
-    #         string_data = string_data + ", " + hex(read_data[i])
-    #     print(len(read_data), string_data)
-        
+
         
