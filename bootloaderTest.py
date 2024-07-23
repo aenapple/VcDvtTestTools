@@ -18,7 +18,8 @@ if __name__ == '__main__':
     # data = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     key  = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
     
-    file_name = "CRC\\LL01-ABE-01_flash.bin"
+    # file_name = "BootFileCRC\\RND_SRC_Bootloader_v2_Red_flash.bin"
+    file_name = "BootFileCRC\\RND_SRC_Bootloader_v2_Blue_flash.bin"
     
     with open(file_name, mode='rb') as file: # b is important -> binary
         binFileContent = file.read()
@@ -40,11 +41,14 @@ if __name__ == '__main__':
               
       
           result, read_data =  bootInterfaceVIP.cmd_write_packet(TYPE_MEMORY, data, packetToFlash)
-          if not (data >= 768):
+          if not (data >= 30000):
             continue
           
+          print(data)
+          # print(input())
+          
   
-          print(data)        
+          
     
 
     result, read_data =  bootInterfaceVIP.cmd_jump_to_application()
