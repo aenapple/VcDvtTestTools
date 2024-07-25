@@ -8,30 +8,31 @@ import os
 import binascii
 import zlib
 
-BINFILE_PAGE_SIZE       = 256
+BINFILE_PAGE_SIZE         = 256
 
-BINFILE_ADR_IDENT       = 768
-BINFILE_SIZE_IDENT      = 256 
+BINFILE_ADR_IDENT         = 768
+BINFILE_SIZE_IDENT        = 256 
 
-BINFILE_ADR_VERSION     = 0
-BINFILE_SIZE_VERSION    = 16
+BINFILE_ADR_VERSION       = 0
+BINFILE_SIZE_VERSION      = 16
 
-BINFILE_ADR_CRC         = BINFILE_ADR_VERSION + BINFILE_SIZE_VERSION
-BINFILE_SIZE_CRC        = 4
+BINFILE_ADR_CRC           = BINFILE_ADR_VERSION + BINFILE_SIZE_VERSION
+BINFILE_SIZE_CRC          = 4
 
-BINFILE_ADR_SIZE_FILE   = BINFILE_ADR_CRC + BINFILE_SIZE_CRC
-BINFILE_SIZE_SIZE_FILE  = 4
-
-
-BINFILE_ADR_SRL_NUM     = BINFILE_ADR_SIZE_FILE +  BINFILE_SIZE_SIZE_FILE
-BINFILE_SIZE_SRL_NUM    = 16
+BINFILE_ADR_SIZE_FILE     = BINFILE_ADR_CRC + BINFILE_SIZE_CRC
+BINFILE_SIZE_SIZE_FILE    = 4
 
 
-BINFILE_ADR_KEY         = BINFILE_ADR_SRL_NUM +  BINFILE_SIZE_SRL_NUM
-BINFILE_SIZE_KEY        = 16
+BINFILE_ADR_SRL_NUM       = BINFILE_ADR_SIZE_FILE +  BINFILE_SIZE_SIZE_FILE
+BINFILE_SIZE_SRL_NUM      = 16
 
 
-BINFILE_BUFFER_SIZE     = 256
+BINFILE_ADR_KEY           = BINFILE_ADR_SRL_NUM +  BINFILE_SIZE_SRL_NUM
+BINFILE_SIZE_KEY          = 16
+
+
+BINFILE_BUFFER_SIZE       = 256
+BINFILE_CRC32_POLYNOMIAL  = 0xEDB88320
 
 def crc32_byte(input_crc: int, data: int, poly: int) -> int:
         return_crc = input_crc
@@ -50,11 +51,9 @@ def crc32_byte(input_crc: int, data: int, poly: int) -> int:
 
 def calculate_crc32(inputCrc, buffer, numberBytes) -> int:
 
-        poly = 0xEDB88320  # CRC32 polynomial
-
         returnCrc = inputCrc
         for i in range(numberBytes):
-            returnCrc = crc32_byte(returnCrc, buffer[i], poly)
+            returnCrc = crc32_byte(returnCrc, buffer[i], BINFILE_CRC32_POLYNOMIAL)
             # print(returnCrc)
             # input()
             
@@ -64,9 +63,7 @@ def calculate_crc32(inputCrc, buffer, numberBytes) -> int:
 def GenerateCRCFile(str_file_input):
      # -----------------------  CALCULATE CRC  --------------------------------------   
     file_size = os.stat(str_file_input)
-    
     number_bytes = file_size.st_size                # Full file size in decimal 
-    hex_number_bytes = hex(number_bytes)            # Full file size in hex 
     if number_bytes < (BINFILE_PAGE_SIZE * 10):
         print("File - small size!")
         sys.exit(1)
@@ -95,33 +92,43 @@ def GenerateCRCFile(str_file_input):
     counterBlocks = int(number_bytes / BINFILE_BUFFER_SIZE)    
     for i in range(counterBlocks):
         buffer = file_input.read(BINFILE_BUFFER_SIZE)        
-        if i != 2:
+        if i != 3:
             crc = calculate_crc32(crc, buffer, BINFILE_BUFFER_SIZE)
-            # print(hex(crc))
+        # print(hex(crc))
+        # print(buffer)
+        # input()
+
         
         tmp_number_bytes -= BINFILE_BUFFER_SIZE
+        # print(tmp_number_bytes)
     
-    print(crc)
-    buffer = file_input.read(tmp_number_bytes)        
-    crc = calculate_crc32(crc, buffer, tmp_number_bytes)
+    
+    buffer = file_input.read(tmp_number_bytes)   
+    add_number_bytes = number_bytes % 16
+    xs = b''
+    if add_number_bytes > 0:
+        add_number_bytes = 16 - add_number_bytes
+        for i in range(add_number_bytes):
+            xs += bytes([255])
+    
+    buffer += xs
+    tmp_number_bytes += add_number_bytes
+    print(hex(crc))
+    crc = calculate_crc32(crc, buffer, tmp_number_bytes)    
     file_input.close()
     
-    print(crc)
-    hex_crc = hex(crc)
-    
-    print("CRC\t\t", crc)
-    print("CRC Hex:\t", hex_crc)
+    print("CRC\t\t",        crc)
+    print("CRC Hex:\t", hex(crc))
 
+    number_bytes += add_number_bytes  
 
-    file_size = os.stat(str_file_input)        
     print(string_version)             
-    str_file_output = string_version[:-5] + '_flash' + '.bin'
+    str_file_output = string_version[:-5] + '_flash_' + str_file_input.split('_')[-1][:-4] + '.bin'
     
     file_output = open(str_file_output, 'wb')
     
     serial_number  = "LL01-00000000001" 
     encryption_key = "SAMPLEKEY1234567" # ?????
-    
     
     # --------------------------  BIN START  --------------------------------------   
     file_output.write( before_ident)
@@ -139,19 +146,20 @@ def GenerateCRCFile(str_file_input):
         file_output.write(bytes([255]))
 
     # ------------------------- END IDENT FILE  ---------------------------------------
-    
+
     file_output.write(after_ident)
+    file_output.write(xs)
     
     number_bytes = os.stat(str_file_output).st_size
     
     print("Bin File Size: ", number_bytes)
     print("Hex File Size: ", hex(number_bytes))
     
-    add_number_bytes = number_bytes % 8
-    if add_number_bytes > 0:
-        add_number_bytes = 8 - add_number_bytes
-        for i in range(add_number_bytes):
-            file_output.write(bytes([255]))
+    # add_number_bytes = number_bytes % 16
+    # if add_number_bytes > 0:
+    #     add_number_bytes = 16 - add_number_bytes
+    #     for i in range(add_number_bytes):
+    #         file_output.write(bytes([255]))
 
     file_output.close()
     
@@ -189,9 +197,6 @@ def BootLoaderTest(file_name):
             packetToFlash.append(int(dataWriteToFLASH[i]))
             readHex.append(hex(dataWriteToFLASH[i]))
           
-          
-              
-      
           result, read_data =  bootInterfaceVIP.cmd_write_packet(TYPE_MEMORY, data, packetToFlash)
           # if not (data >= 1023):
           if result:
@@ -200,7 +205,7 @@ def BootLoaderTest(file_name):
           if not (data >= 50255):
             continue
           
-          print(data)
+          # print(data)
           # input()
           
           
@@ -209,6 +214,7 @@ def BootLoaderTest(file_name):
     
 if __name__ == '__main__':
   str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blue.bin'
+  # str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blank.bin'
   
   str_file_output = GenerateCRCFile(str_file_input)
   input()
