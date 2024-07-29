@@ -214,7 +214,7 @@ def BootLoaderTest(file_name):
     
 if __name__ == '__main__':
   str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blue.bin'
-  # str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blank.bin'
+#   str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blank.bin'
   
   str_file_output = GenerateCRCFile(str_file_input)
   input()
