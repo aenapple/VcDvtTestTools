@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>60</y>
+      <y>40</y>
       <width>250</width>
       <height>161</height>
      </rect>
@@ -81,7 +81,7 @@
        <height>121</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout_MainMotor">
       <item>
        <widget class="QPushButton" name="btn_MainMotor_Start">
         <property name="font">
@@ -120,7 +120,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestMainMotor">
+         <widget class="QPushButton" name="btn_MainMotor_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -140,7 +140,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerMM">
+         <spacer name="vSpacer_MainMotor">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -237,20 +237,7 @@
        <height>121</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QPushButton" name="btn_ChamberMotorLeft_Start">
-        <property name="font">
-         <font>
-          <family>MS Shell Dlg 2</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Start</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QVBoxLayout" name="verticalLayout_ChamberMotorLeft">
       <item>
        <widget class="QPushButton" name="btn_ChamberMotorLeft_Stop">
         <property name="font">
@@ -265,12 +252,25 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btn_ChamberMotorLeft_Start">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="hLayout_ChamberMotorLeft">
         <property name="spacing">
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestChamberMotorLeft">
+         <widget class="QPushButton" name="btn_ChamberMotorLeft_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -290,7 +290,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerChamberMotorLeft">
+         <spacer name="vSpacer_ChamberMotorLeft">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -420,7 +420,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestChamberMotorRight">
+         <widget class="QPushButton" name="btn_ChamberMotorRight_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -440,7 +440,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerChamberMotorRight">
+         <spacer name="vSpacer_ChamberMotorRight">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -502,11 +502,11 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_LampBack">
+   <widget class="QGroupBox" name="grBox_Lamp">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>520</y>
+      <x>80</x>
+      <y>320</y>
       <width>250</width>
       <height>161</height>
      </rect>
@@ -520,7 +520,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Lamp Back</string>
+     <string>Lamp</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -537,9 +537,9 @@
        <height>121</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_LampBack">
+     <layout class="QVBoxLayout" name="vLayout_Lamp">
       <item>
-       <widget class="QPushButton" name="btn_LampBack_ON">
+       <widget class="QPushButton" name="btn_Lamp_On">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -552,7 +552,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_LampBack_Off">
+       <widget class="QPushButton" name="btn_Lamp_Off">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -570,7 +570,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestLampBack">
+         <widget class="QPushButton" name="btn_Lamp_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -590,7 +590,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerLampBack">
+         <spacer name="vSpacer_Lamp">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -608,7 +608,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestLampBack_Passed">
+           <widget class="QCheckBox" name="checkBox_TestLamp_Passed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -627,7 +627,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestLampBack_NotPassed">
+           <widget class="QCheckBox" name="checkBox_TestLamp_NotPassed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -652,11 +652,11 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_LampFront">
+   <widget class="QGroupBox" name="grBox_Blower">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>520</y>
+      <x>960</x>
+      <y>540</y>
       <width>250</width>
       <height>161</height>
      </rect>
@@ -670,7 +670,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Lamp Front</string>
+     <string>Blower</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -687,9 +687,9 @@
        <height>121</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_LampFront">
+     <layout class="QVBoxLayout" name="vLayout_Blower">
       <item>
-       <widget class="QPushButton" name="btn_LampFront_ON">
+       <widget class="QPushButton" name="btn_Blower_On">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -702,7 +702,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_LampFront_Off">
+       <widget class="QPushButton" name="btn_Blower_Off">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -720,7 +720,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestLampFront">
+         <widget class="QPushButton" name="btn_Blower_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -742,7 +742,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerLampFront">
+         <spacer name="vSpacer_Blower">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -760,7 +760,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestLampFront_Passed">
+           <widget class="QCheckBox" name="checkBox_TestBlower_Passed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -779,7 +779,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestLampFront_NotPassed">
+           <widget class="QCheckBox" name="checkBox_TestBlower_NotPassed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -804,11 +804,11 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_DamMechanism">
+   <widget class="QGroupBox" name="grBox_AcMainPower">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>240</y>
+      <y>210</y>
       <width>250</width>
       <height>101</height>
      </rect>
@@ -825,7 +825,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Dam Mechanism</string>
+     <string>AC Main Power</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -842,12 +842,12 @@
        <height>59</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="hLayout_DamMechanism">
+     <layout class="QHBoxLayout" name="hLayout_AcMainPower">
       <property name="spacing">
        <number>3</number>
       </property>
       <item>
-       <widget class="QPushButton" name="btn_TestDamMechanism">
+       <widget class="QPushButton" name="btn_AcMainPower_Test">
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -873,7 +873,7 @@
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacerDamMechanism">
+       <spacer name="vSpacer_AcMainPower">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -891,7 +891,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestDamMechanism_Passed">
+         <widget class="QCheckBox" name="checkBox_TestAcMainPower_Passed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -910,7 +910,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestDamMechanism_NotPassed">
+         <widget class="QCheckBox" name="checkBox_TestAcMainPower_NotPassed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -933,13 +933,13 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_PTCHeaterLeft">
+   <widget class="QGroupBox" name="grBox_PtcHeaterIntake">
     <property name="geometry">
      <rect>
       <x>370</x>
       <y>200</y>
       <width>250</width>
-      <height>151</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -951,7 +951,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>PTC Heater Left</string>
+     <string>Intake PTC Heater</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -965,10 +965,10 @@
        <x>10</x>
        <y>30</y>
        <width>231</width>
-       <height>115</height>
+       <height>91</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_PTCHeaterLeft">
+     <layout class="QVBoxLayout" name="vLayout_PtcHeaterIntake">
       <item>
        <layout class="QHBoxLayout" name="hLayout_onoff_PTCHeaterLeft">
         <property name="spacing">
@@ -978,7 +978,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_on_PTCHeaterLeft">
+         <widget class="QPushButton" name="btn_PtcHeaterIntake_On">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -992,7 +992,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_off_PTCHeaterLeft">
+         <widget class="QPushButton" name="btn_PtcHeaterIntake_Off">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1013,7 +1013,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestPTCHeaterLeft">
+         <widget class="QPushButton" name="btn_PtcHeaterIntake_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1033,7 +1033,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPTCHeaterLeft">
+         <spacer name="vSpacer_PtcHeaterIntake">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1051,7 +1051,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestPTCHeaterLeft_Passed">
+           <widget class="QCheckBox" name="checkBox_TestPtcHeaterIntake_Passed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -1070,7 +1070,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestPTCHeaterLeft_NotPassed">
+           <widget class="QCheckBox" name="checkBox_TestPtcHeaterIntake_NotPassed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -1092,40 +1092,16 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QLabel" name="label_PTCHeaterLeft">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; 00 C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_PTCHeaterRight">
+   <widget class="QGroupBox" name="grBox_PtcHeaterInternal">
     <property name="geometry">
      <rect>
       <x>660</x>
       <y>200</y>
       <width>250</width>
-      <height>151</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -1137,7 +1113,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>PTC Heater Right</string>
+     <string>Internal PTC Heater</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -1151,10 +1127,10 @@
        <x>10</x>
        <y>30</y>
        <width>231</width>
-       <height>115</height>
+       <height>91</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_PTCHeaterRight">
+     <layout class="QVBoxLayout" name="vLayout_PtcHeaterInternal">
       <item>
        <layout class="QHBoxLayout" name="hLayout_onoff_PTCHeaterRight">
         <property name="spacing">
@@ -1164,7 +1140,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_on_PTCHeaterRight">
+         <widget class="QPushButton" name="btn_PtcHeaterInternal_On">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1178,7 +1154,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_off_PTCHeaterRight">
+         <widget class="QPushButton" name="btn_PtcHeaterInternal_Off">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1199,7 +1175,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestPTCHeaterRight">
+         <widget class="QPushButton" name="btn_PtcHeaterInternal_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1219,7 +1195,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPTCHeaterRight">
+         <spacer name="vSpacer_PtcHeaterInternal">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1237,7 +1213,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestPTCHeaterRight_Passed">
+           <widget class="QCheckBox" name="checkBox_TestPtcHeaterInternal_Passed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -1256,7 +1232,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestPTCHeaterRight_NotPassed">
+           <widget class="QCheckBox" name="checkBox_TestPtcHeaterInternal_NotPassed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -1278,30 +1254,6 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QLabel" name="label_PTCHeaterRight">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; 00 C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -1309,9 +1261,9 @@
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>360</y>
+      <y>340</y>
       <width>250</width>
-      <height>151</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -1337,10 +1289,10 @@
        <x>10</x>
        <y>30</y>
        <width>231</width>
-       <height>115</height>
+       <height>91</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_9">
+     <layout class="QVBoxLayout" name="vLayout_PadHeaterLeft">
       <item>
        <layout class="QHBoxLayout" name="hLayout_onoff_PadHeaterLeft">
         <property name="spacing">
@@ -1350,7 +1302,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_on_PadHeaterLeft">
+         <widget class="QPushButton" name="btn_PadHeaterLeft_On">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1364,7 +1316,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_off_PadHeaterLeft">
+         <widget class="QPushButton" name="btn_PadHeaterLeft_Off">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1385,7 +1337,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestPadHeaterLeft">
+         <widget class="QPushButton" name="btn_PadHeaterLeft_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1405,7 +1357,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPadHeaterLeft">
+         <spacer name="vSpacer_PadHeaterLeft">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1464,30 +1416,6 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QLabel" name="label_PadHeaterLeft">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; 00 C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -1495,9 +1423,9 @@
     <property name="geometry">
      <rect>
       <x>660</x>
-      <y>360</y>
+      <y>340</y>
       <width>250</width>
-      <height>151</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -1523,10 +1451,10 @@
        <x>10</x>
        <y>30</y>
        <width>231</width>
-       <height>115</height>
+       <height>91</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_10">
+     <layout class="QVBoxLayout" name="vLayout_PadHeaterRight">
       <item>
        <layout class="QHBoxLayout" name="hLayout_onoff_PadHeaterRight">
         <property name="spacing">
@@ -1536,7 +1464,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_on_PadHeaterRight">
+         <widget class="QPushButton" name="btn_PadHeaterRight_On">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1550,7 +1478,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_off_PadHeaterRight">
+         <widget class="QPushButton" name="btn_PadHeaterRight_Off">
           <property name="font">
            <font>
             <family>Roboto</family>
@@ -1571,7 +1499,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestPadHeaterRight">
+         <widget class="QPushButton" name="btn_PadHeaterRight_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1591,7 +1519,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPadHeaterRight">
+         <spacer name="vSpacer_PadHeaterRight">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1650,30 +1578,6 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QLabel" name="label_PadHeaterRight">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; 00 C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -1683,7 +1587,7 @@
       <x>950</x>
       <y>40</y>
       <width>271</width>
-      <height>471</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="font">
@@ -1708,11 +1612,11 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>251</width>
-       <height>411</height>
+       <width>255</width>
+       <height>261</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_switches">
+     <layout class="QVBoxLayout" name="verticalLayout_GetState">
       <item>
        <widget class="QPushButton" name="btn_GetState">
         <property name="font">
@@ -1741,12 +1645,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Present Chamber Left</string>
+           <string>   Chamber Left Present </string>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPresentChamberLeft">
+         <spacer name="vSpacer_PresentChamberLeft">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1759,7 +1663,29 @@
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_PresentChamberLeft">
+         <widget class="QCheckBox" name="checkBox_PresentChamberLeft_No">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_PresentChamberLeft_Yes">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -1797,12 +1723,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Present Chamber Right</string>
+           <string>   Chamber Right Present</string>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerPresentChamberRight">
+         <spacer name="vSpacer_PresentChamberRight">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1815,7 +1741,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_PresentChamberRight">
+         <widget class="QCheckBox" name="checkBox_PresentChamberRight_No">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -1836,42 +1762,8 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayout_PresentTank">
-        <property name="spacing">
-         <number>3</number>
-        </property>
         <item>
-         <widget class="QLabel" name="label_PresentTank">
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Present Tank</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalPresentTank">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>10</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="checkBox_PresentTank">
+         <widget class="QCheckBox" name="checkBox_PresentChamberRight_Yes">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -1900,7 +1792,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_OpenLid">
+         <widget class="QLabel" name="label_BackOpenLid">
           <property name="font">
            <font>
             <pointsize>11</pointsize>
@@ -1909,12 +1801,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Open Lid</string>
+           <string>   Back Lid Open               </string>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="verticalOpenLid">
+         <spacer name="vSpacer_BackLidOpen">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1927,7 +1819,29 @@
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_OpenLid">
+         <widget class="QCheckBox" name="checkBox_BackLidOpen_No">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_BackLidOpen_Yes">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -1956,7 +1870,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_RemovedTop">
+         <widget class="QLabel" name="label_FrontLidOpen">
           <property name="font">
            <font>
             <pointsize>11</pointsize>
@@ -1965,12 +1879,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Removed Top</string>
+           <string>   Front Lid Open              </string>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="verticalRemovedTop">
+         <spacer name="vSpacer_FrontLidOpen">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1983,7 +1897,29 @@
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_RemovedTop">
+         <widget class="QCheckBox" name="checkBox_FrontLidOpen_No">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_FrontLidOpen_Yes">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2012,7 +1948,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_UnlockTopLeft">
+         <widget class="QLabel" name="label_TopLocked">
           <property name="font">
            <font>
             <pointsize>11</pointsize>
@@ -2021,12 +1957,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Unlock Top Left</string>
+           <string>    Top Locked                  </string>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="verticalUnlockTopLeft">
+         <spacer name="vSpacer_TopLocked">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -2039,7 +1975,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_UnlockTopLeft">
+         <widget class="QCheckBox" name="checkBox_TopLocked_No">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2060,42 +1996,8 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="hLayout_UnlockTopRight">
-        <property name="spacing">
-         <number>3</number>
-        </property>
         <item>
-         <widget class="QLabel" name="label_UnlockTopRight">
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Unlock Top Right</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalUnlockTopRight">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>10</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="checkBox_UnlockTopRight">
+         <widget class="QCheckBox" name="checkBox_TopLocked_Yes">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2124,13 +2026,13 @@
    <widget class="QWidget" name="verticalLayoutWidget_11">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>610</y>
-      <width>171</width>
+      <x>40</x>
+      <y>550</y>
+      <width>141</width>
       <height>95</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <layout class="QVBoxLayout" name="verticalLayout_Buttons">
      <item>
       <widget class="QPushButton" name="btn_CleanManual">
        <property name="font">
@@ -2191,11 +2093,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QGroupBox" name="grBox_MainFan">
+   <widget class="QGroupBox" name="grBox_IntakeFan">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>520</y>
+      <x>960</x>
+      <y>370</y>
       <width>250</width>
       <height>161</height>
      </rect>
@@ -2209,7 +2111,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Main Fan</string>
+     <string>Intake Fan</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -2226,9 +2128,9 @@
        <height>121</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_MainFan">
+     <layout class="QVBoxLayout" name="vLayout_IntakeFan">
       <item>
-       <widget class="QPushButton" name="btn_MainFan_ON">
+       <widget class="QPushButton" name="btn_IntakeFan_On">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -2241,7 +2143,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_MainFanOff">
+       <widget class="QPushButton" name="btn_IntakeFan_Off">
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
@@ -2259,7 +2161,7 @@
          <number>3</number>
         </property>
         <item>
-         <widget class="QPushButton" name="btn_TestMainFan">
+         <widget class="QPushButton" name="btn_IntakeFan_Test">
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -2279,7 +2181,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacerMainFan">
+         <spacer name="vSpacer_IntakeFan">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -2297,7 +2199,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestMainFan_Passed">
+           <widget class="QCheckBox" name="checkBox_TestIntakeFan_Passed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -2316,7 +2218,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_TestMainFan_NotPassed">
+           <widget class="QCheckBox" name="checkBox_TestIntakeFan_NotPassed">
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -2335,6 +2237,780 @@
            </widget>
           </item>
          </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_Bme688_Left">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>490</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>BME688 Left</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_Bme688_Left">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Bme688_Left_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_Bme688_Left">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Left_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Left_NotPassed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_Bme688_Right">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>600</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>BME688 Right</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_Bme688_Right">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Bme688_Right_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_Bme688_Right">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_5">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Right_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Right_NotPassed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_Bme688_Intake">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>490</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>BME688 Intake</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_Bme688_Intake">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Bme688_Intake_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_Bme688_Intake">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_7">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Intake_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Left_NotPassed_3">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_Bme688_Exhaust">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>600</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>BME688 Exhaust</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_Bme688_Exhaust">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Bme688_Exhaust_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_Bme688_Exhaust">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_8">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Exhaust_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestBme688_Exhaust_NotPassed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_WeightLeft">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>490</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Weight Sensors Left</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_WeightLeft">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_WeightLeft_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_WeightLeft">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestWeightLeft_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestWeightLeft_NotPassed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grBox_WeightRight">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>600</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Weight Sensors Right</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>59</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="hLayout_WeightRight">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_WeightRight_Test">
+        <property name="baseSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>12</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="vSpacer_WeightRight">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutDamMechanism_10">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestWeightRight_Passed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Passed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_TestWeightRight_NotPassed">
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Not Passed</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

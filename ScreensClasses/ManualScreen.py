@@ -23,45 +23,41 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
         self.btn_MainMotor_Start.clicked.connect(self.MainMotor_Start)
         self.btn_MainMotor_Stop.clicked.connect(self.MainMotor_Stop)
-        self.btn_TestMainMotor.clicked.connect(self.TestMainMotor)
+        self.btn_MainMotor_Test.clicked.connect(self.MainMotor_Test)
 
-        self.btn_TestDamMechanism.clicked.connect(self.TestDamMechanism)
+        self.btn_AcMainPower_Test.clicked.connect(self.AcMainPower_Test)
 
         self.btn_ChamberMotorLeft_Start.clicked.connect(self.ChamberMotorLeft_Start)
         self.btn_ChamberMotorLeft_Stop.clicked.connect(self.ChamberMotorLeft_Stop)
-        self.btn_TestChamberMotorLeft.clicked.connect(self.TestChamberMotorLeft)
+        self.btn_ChamberMotorLeft_Test.clicked.connect(self.ChamberMotorLeft_Test)
 
         self.btn_ChamberMotorRight_Start.clicked.connect(self.ChamberMotorRight_Start)
         self.btn_ChamberMotorRight_Stop.clicked.connect(self.ChamberMotorRight_Stop)
-        self.btn_TestChamberMotorRight.clicked.connect(self.TestChamberMotorRight)
+        self.btn_ChamberMotorRight_Test.clicked.connect(self.ChamberMotorRight_Test)
 
-        self.pushButton_on_PTCHeaterLeft.clicked.connect(self.On_PTCHeaterLeft)
-        self.pushButton_off_PTCHeaterLeft.clicked.connect(self.Off_PTCHeaterLeft)
-        self.btn_TestPTCHeaterLeft.clicked.connect(self.TestPTCHeaterLeft)
+        self.btn_PtcHeaterIntake_On.clicked.connect(self.PtcHeaterIntake_On)
+        self.btn_PtcHeaterIntake_Off.clicked.connect(self.PtcHeaterIntake_Off)
+        self.btn_PtcHeaterIntake_Test.clicked.connect(self.PtcHeaterIntake_Test)
 
-        self.pushButton_on_PTCHeaterRight.clicked.connect(self.On_PTCHeaterRight)
-        self.pushButton_off_PTCHeaterRight.clicked.connect(self.Off_PTCHeaterRight)
-        self.btn_TestPTCHeaterRight.clicked.connect(self.TestPTCHeaterRight)
+        self.btn_PtcHeaterInternal_On.clicked.connect(self.PtcHeaterInternal_On)
+        self.btn_PtcHeaterInternal_Off.clicked.connect(self.PtcHeaterInternal_Off)
+        self.btn_PtcHeaterInternal_Test.clicked.connect(self.PtcHeaterInternal_Test)
 
-        self.pushButton_on_PadHeaterLeft.clicked.connect(self.On_PadHeaterLeft)
-        self.pushButton_off_PadHeaterLeft.clicked.connect(self.Off_PadHeaterLeft)
-        self.btn_TestPadHeaterLeft.clicked.connect(self.TestPadHeaterLeft)
+        self.btn_PadHeaterLeft_On.clicked.connect(self.PadHeaterLeft_On)
+        self.btn_PadHeaterLeft_Off.clicked.connect(self.PadHeaterLeft_Off)
+        self.btn_PadHeaterLeft_Test.clicked.connect(self.PadHeaterLeft_Test)
 
-        self.pushButton_on_PadHeaterRight.clicked.connect(self.On_PadHeaterRight)
-        self.pushButton_off_PadHeaterRight.clicked.connect(self.Off_PadHeaterRight)
-        self.btn_TestPadHeaterRight.clicked.connect(self.TestPadHeaterRight)
+        self.btn_PadHeaterRight_On.clicked.connect(self.PadHeaterRight_On)
+        self.btn_PadHeaterRight_Off.clicked.connect(self.PadHeaterRight_Off)
+        self.btn_PadHeaterRight_Test.clicked.connect(self.PadHeaterRight_Test)
 
-        self.btn_LampBack_ON.clicked.connect(self.LampBack_ON)
-        self.btn_LampBack_Off.clicked.connect(self.LampBack_Off)
-        self.btn_TestLampBack.clicked.connect(self.TestLampBack)
+        self.btn_Lamp_On.clicked.connect(self.Lamp_On)
+        self.btn_Lamp_Off.clicked.connect(self.Lamp_Off)
+        self.btn_Lamp_Test.clicked.connect(self.Lamp_Test)
 
-        self.btn_LampFront_ON.clicked.connect(self.LampFront_ON)
-        self.btn_LampFront_Off.clicked.connect(self.LampFront_Off)
-        self.btn_TestLampFront.clicked.connect(self.TestLampFront)
-
-        self.btn_MainFan_ON.clicked.connect(self.MainFan_ON)
-        self.btn_MainFanOff.clicked.connect(self.MainFan_Off)
-        self.btn_TestMainFan.clicked.connect(self.TestMainFan)
+        self.btn_IntakeFan_On.clicked.connect(self.IntakeFan_On)
+        self.btn_IntakeFan_Off.clicked.connect(self.IntakeFan_Off)
+        self.btn_IntakeFan_Test.clicked.connect(self.IntakeFan_Test)
 
         self.btn_GetState.clicked.connect(self.GetState)
 
@@ -75,118 +71,101 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
     def CleanManual(self):
         self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestDamMechanism_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestDamMechanism_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestAcMainPower_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestChamberMotorLeft_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestChamberMotorLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestChamberMotorRight_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestChamberMotorRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterLeft_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterRight_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestPtcHeaterIntake_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestPtcHeaterIntake_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestPtcHeaterInternal_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestPtcHeaterInternal_NotPassed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestPadHeaterLeft_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestPadHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestPadHeaterRight_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampBack_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampBack_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampFront_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampFront_NotPassed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_PresentChamberLeft.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_PresentChamberRight.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_PresentTank.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_OpenLid.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_RemovedTop.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_UnlockTopLeft.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_UnlockTopRight.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestMainFan_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestMainFan_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestLamp_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestLamp_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PresentChamberLeft_Yes.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PresentChamberLeft_No.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PresentChamberRight_Yes.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_PresentChamberRight_No.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_BackLidOpen_Yes.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_BackLidOpen_No.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_FrontLidOpen_Yes.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_FrontLidOpen_No.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TopLocked_Yes.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TopLocked_No.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestIntakeFan_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestIntakeFan_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBlower_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBlower_NotPassed.setStyleSheet(TS_COLOR_INIT)
 
         self.checkBox_TestMainMotor_Passed.setChecked(0)
         self.checkBox_TestMainMotor_NotPassed.setChecked(0)
-        self.checkBox_TestDamMechanism_Passed.setChecked(0)
-        self.checkBox_TestDamMechanism_NotPassed.setChecked(0)
+        self.checkBox_TestAcMainPower_Passed.setChecked(0)
+        self.checkBox_TestAcMainPower_NotPassed.setChecked(0)
         self.checkBox_TestChamberMotorLeft_Passed.setChecked(0)
         self.checkBox_TestChamberMotorLeft_NotPassed.setChecked(0)
         self.checkBox_TestChamberMotorRight_Passed.setChecked(0)
         self.checkBox_TestChamberMotorRight_NotPassed.setChecked(0)
-        self.checkBox_TestPTCHeaterLeft_Passed.setChecked(0)
-        self.checkBox_TestPTCHeaterLeft_NotPassed.setChecked(0)
-        self.checkBox_TestPTCHeaterRight_Passed.setChecked(0)
-        self.checkBox_TestPTCHeaterRight_NotPassed.setChecked(0)
+        self.checkBox_TestPtcHeaterIntake_Passed.setChecked(0)
+        self.checkBox_TestPtcHeaterIntake_NotPassed.setChecked(0)
+        self.checkBox_TestPtcHeaterIntake_Passed.setChecked(0)
+        self.checkBox_TestPtcHeaterInternal_NotPassed.setChecked(0)
         self.checkBox_TestPadHeaterLeft_Passed.setChecked(0)
         self.checkBox_TestPadHeaterLeft_NotPassed.setChecked(0)
         self.checkBox_TestPadHeaterRight_Passed.setChecked(0)
         self.checkBox_TestPadHeaterRight_NotPassed.setChecked(0)
-        self.checkBox_TestLampBack_Passed.setChecked(0)
-        self.checkBox_TestLampBack_NotPassed.setChecked(0)
-        self.checkBox_TestLampFront_Passed.setChecked(0)
-        self.checkBox_TestLampFront_NotPassed.setChecked(0)
-        self.checkBox_PresentChamberLeft.setChecked(0)
-        self.checkBox_PresentChamberRight.setChecked(0)
-        self.checkBox_PresentTank.setChecked(0)
-        self.checkBox_OpenLid.setChecked(0)
-        self.checkBox_RemovedTop.setChecked(0)
-        self.checkBox_UnlockTopLeft.setChecked(0)
-        self.checkBox_UnlockTopRight.setChecked(0)
-        self.checkBox_TestMainFan_Passed.setChecked(0)
-        self.checkBox_TestMainFan_NotPassed.setChecked(0)
+        self.checkBox_TestLamp_Passed.setChecked(0)
+        self.checkBox_TestLamp_NotPassed.setChecked(0)
+        self.checkBox_PresentChamberLeft_Yes.setChecked(0)
+        self.checkBox_PresentChamberLeft_No.setChecked(0)
+        self.checkBox_PresentChamberRight_Yes.setChecked(0)
+        self.checkBox_PresentChamberRight_No.setChecked(0)
+        self.checkBox_BackLidOpen_Yes.setChecked(0)
+        self.checkBox_BackLidOpen_No.setChecked(0)
+        self.checkBox_FrontLidOpen_Yes.setChecked(0)
+        self.checkBox_FrontLidOpen_No.setChecked(0)
+        self.checkBox_TopLocked_Yes.setChecked(0)
+        self.checkBox_TopLocked_No.setChecked(0)
+        self.checkBox_TestIntakeFan_Passed.setChecked(0)
+        self.checkBox_TestIntakeFan_NotPassed.setChecked(0)
+        self.checkBox_TestBlower_Passed.setChecked(0)
+        self.checkBox_TestBlower_NotPassed.setChecked(0)
 
     def MainMotor_Start(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        pass
 
     def MainMotor_Stop(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        pass
 
-    def TestMainMotor(self):
+    def MainMotor_Test(self):
         test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_MOTOR)
         if test_result == IFC_VIP_TEST_RESULT_OK:
             self.checkBox_TestMainMotor_Passed.setChecked(1)
             self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_PASSED)
-            self.checkBox_TestMainMotor_NotPassed.setChecked(0)
-            self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_INIT)
+            # self.checkBox_TestMainMotor_NotPassed.setChecked(0)
+            # self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_INIT)
         else:
-            self.checkBox_TestMainMotor_Passed.setChecked(0)
-            self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_INIT)
+            # self.checkBox_TestMainMotor_Passed.setChecked(0)
+            # self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_INIT)
             self.checkBox_TestMainMotor_NotPassed.setChecked(1)
             self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-
-        """ result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_DAM_MOTOR)
-        if result == 0:
-            self.checkBox_TestMainMotor_Passed.setChecked(1)
-            self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_PASSED)
-        else:
-            self.checkBox_TestMainMotor_NotPassed.setChecked(1)
-            self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED) """
-
-
-    def TestDamMechanism(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_DAM_MOTOR)
+    def AcMainPower_Test(self):
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_AC_POWER)
         if test_result == IFC_VIP_TEST_RESULT_OK:
-            self.checkBox_TestDamMechanism_Passed.setChecked(1)
-            self.checkBox_TestDamMechanism_Passed.setStyleSheet(TS_COLOR_PASSED)
-            self.checkBox_TestDamMechanism_NotPassed.setChecked(0)
-            self.checkBox_TestDamMechanism_NotPassed.setStyleSheet(TS_COLOR_INIT)
+            self.checkBox_TestAcMainPower_Passed.setChecked(1)
+            self.checkBox_TestAcMainPower_Passed.setStyleSheet(TS_COLOR_PASSED)
+            # self.checkBox_TestAcMainPower_NotPassed.setChecked(0)
+            # self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_INIT)
         else:
-            self.checkBox_TestDamMechanism_Passed.setChecked(0)
-            self.checkBox_TestDamMechanism_Passed.setStyleSheet(TS_COLOR_INIT)
-            self.checkBox_TestDamMechanism_NotPassed.setChecked(1)
-            self.checkBox_TestDamMechanism_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
-
-        self.checkBox_TestDamMechanism_Passed.setChecked(0)
-        self.checkBox_TestDamMechanism_NotPassed.setChecked(0)
-        self.checkBox_TestDamMechanism_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestDamMechanism_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_DAM_MOTOR)
-        if result == 0:
-            self.checkBox_TestDamMechanism_Passed.setChecked(1)
-            self.checkBox_TestDamMechanism_Passed.setStyleSheet(TS_COLOR_PASSED)
-        else:
-            self.checkBox_TestDamMechanism_NotPassed.setChecked(1)
-            self.checkBox_TestDamMechanism_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            # self.checkBox_TestAcMainPower_Passed.setChecked(0)
+            # self.checkBox_TestAcMainPower_Passed.setStyleSheet(TS_COLOR_INIT)
+            self.checkBox_TestAcMainPower_NotPassed.setChecked(1)
+            self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def ChamberMotorLeft_Start(self):
         self.checkBox_UnlockTopRight.setChecked(0)
@@ -194,12 +173,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
     def ChamberMotorLeft_Stop(self):
         self.checkBox_UnlockTopRight.setChecked(0)
 
-    def TestChamberMotorLeft(self):
-        self.checkBox_TestChamberMotorLeft_Passed.setChecked(0)
-        self.checkBox_TestChamberMotorLeft_NotPassed.setChecked(0)
-        self.checkBox_TestChamberMotorLeft_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestChamberMotorLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
+    def ChamberMotorLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_1)
         if result == 0:
             self.checkBox_TestChamberMotorLeft_Passed.setChecked(1)
@@ -214,12 +188,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
     def ChamberMotorRight_Stop(self):
         self.checkBox_UnlockTopRight.setChecked(0)
 
-    def TestChamberMotorRight(self):
-        self.checkBox_TestChamberMotorRight_Passed.setChecked(0)
-        self.checkBox_TestChamberMotorRight_NotPassed.setChecked(0)
-        self.checkBox_TestChamberMotorRight_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestChamberMotorRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
+    def ChamberMotorRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_2)
         if result == 0:
             self.checkBox_TestChamberMotorRight_Passed.setChecked(1)
@@ -228,58 +197,43 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestChamberMotorRight_NotPassed.setChecked(1)
             self.checkBox_TestChamberMotorRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def On_PTCHeaterLeft(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PtcHeaterIntake_On(self):
+        pass
 
-    def Off_PTCHeaterLeft(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PtcHeaterIntake_Off(self):
+        pass
 
-    def TestPTCHeaterLeft(self):
-        self.checkBox_TestPTCHeaterLeft_Passed.setChecked(0)
-        self.checkBox_TestPTCHeaterLeft_NotPassed.setChecked(0)
-        self.checkBox_TestPTCHeaterLeft_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_1)
+    def PtcHeaterIntake_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_INTAKE)
         if result == 0:
-            self.checkBox_TestPTCHeaterLeft_Passed.setChecked(1)
-            self.checkBox_TestPTCHeaterLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
+            self.checkBox_TestPtcHeaterIntake_Passed.setChecked(1)
+            self.checkBox_TestPtcHeaterIntake_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestPTCHeaterLeft_NotPassed.setChecked(1)
-            self.checkBox_TestPTCHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestPtcHeaterIntake_NotPassed.setChecked(1)
+            self.checkBox_TestPtcHeaterIntake_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def On_PTCHeaterRight(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PtcHeaterInternal_On(self):
+        pass
 
-    def Off_PTCHeaterRight(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PtcHeaterInternal_Off(self):
+        pass
 
-    def TestPTCHeaterRight(self):
-        self.checkBox_TestPTCHeaterRight_Passed.setChecked(0)
-        self.checkBox_TestPTCHeaterRight_NotPassed.setChecked(0)
-        self.checkBox_TestPTCHeaterRight_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPTCHeaterRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_2)
+    def PtcHeaterInternal_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_INTERNAL)
         if result == 0:
-            self.checkBox_TestPTCHeaterRight_Passed.setChecked(1)
-            self.checkBox_TestPTCHeaterRight_Passed.setStyleSheet(TS_COLOR_PASSED)
+            self.checkBox_TestPtcHeaterInternal_Passed.setChecked(1)
+            self.checkBox_TestPtcHeaterInternal_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestPTCHeaterRight_NotPassed.setChecked(1)
-            self.checkBox_TestPTCHeaterRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestPtcHeaterInternal_NotPassed.setChecked(1)
+            self.checkBox_TestPtcHeaterInternal_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def On_PadHeaterLeft(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PadHeaterLeft_On(self):
+        pass
 
-    def Off_PadHeaterLeft(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PadHeaterLeft_Off(self):
+        pass
 
-    def TestPadHeaterLeft(self):
-        self.checkBox_TestPadHeaterLeft_Passed.setChecked(0)
-        self.checkBox_TestPadHeaterLeft_NotPassed.setChecked(0)
-        self.checkBox_TestPadHeaterLeft_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPadHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
+    def PadHeaterLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_1)
         if result == 0:
             self.checkBox_TestPadHeaterLeft_Passed.setChecked(1)
@@ -288,18 +242,13 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPadHeaterLeft_NotPassed.setChecked(1)
             self.checkBox_TestPadHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def On_PadHeaterRight(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PadHeaterRight_On(self):
+        pass
 
-    def Off_PadHeaterRight(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def PadHeaterRight_Off(self):
+        pass
 
-    def TestPadHeaterRight(self):
-        self.checkBox_TestPadHeaterRight_Passed.setChecked(0)
-        self.checkBox_TestPadHeaterRight_NotPassed.setChecked(0)
-        self.checkBox_TestPadHeaterRight_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
+    def PadHeaterRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_2)
         if result == 0:
             self.checkBox_TestPadHeaterRight_Passed.setChecked(1)
@@ -308,67 +257,67 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPadHeaterRight_NotPassed.setChecked(1)
             self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def LampBack_ON(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def Lamp_On(self):
+        pass
 
-    def LampBack_Off(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+    def Lamp_Off(self):
+        pass
 
-    def TestLampBack(self):
-        self.checkBox_TestLampBack_Passed.setChecked(0)
-        self.checkBox_TestLampBack_NotPassed.setChecked(0)
-        self.checkBox_TestLampBack_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampBack_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
+    def Lamp_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_OZONE)
         if result == 0:
-            self.checkBox_TestLampBack_Passed.setChecked(1)
-            self.checkBox_TestLampBack_Passed.setStyleSheet(TS_COLOR_PASSED)
+            self.checkBox_TestLamp_Passed.setChecked(1)
+            self.checkBox_TestLamp_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestLampBack_NotPassed.setChecked(1)
-            self.checkBox_TestLampBack_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
-
-    def LampFront_ON(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
-
-    def LampFront_Off(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
-
-    def TestLampFront(self):
-        self.checkBox_TestLampFront_Passed.setChecked(0)
-        self.checkBox_TestLampFront_NotPassed.setChecked(0)
-        self.checkBox_TestLampFront_Passed.setStyleSheet(TS_COLOR_INIT)
-        self.checkBox_TestLampFront_NotPassed.setStyleSheet(TS_COLOR_INIT)
-
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_2)
-        if result == 0:
-            self.checkBox_TestLampFront_Passed.setChecked(1)
-            self.checkBox_TestLampFront_Passed.setStyleSheet(TS_COLOR_PASSED)
-        else:
-            self.checkBox_TestLampFront_NotPassed.setChecked(1)
-            self.checkBox_TestLampFront_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestLamp_NotPassed.setChecked(1)
+            self.checkBox_TestLamp_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def GetState(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        result, read_data = self.InterfaceVIP.read_state()
+        if result == 0:
+            state_sensors = self.InterfaceVIP.get_sensor_state()
 
-    def MainFan_ON(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+            if (state_sensors & IFC_VIP_STATE_SWITCHES_LOCK) > 0:
+                self.checkBox_TopLocked_No.setChecked(1)
+            else:
+                self.checkBox_TopLocked_Yes.setChecked(1)
 
-    def MainFan_Off(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+            if (state_sensors & IFC_VIP_STATE_SWITCH_FRONT_LID_OPEN) > 0:
+                self.checkBox_FrontLidOpen_No.setChecked(1)
+            else:
+                self.checkBox_FrontLidOpen_Yes.setChecked(1)
 
-    def TestMainFan(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_FAN)
+            if (state_sensors & IFC_VIP_STATE_SWITCH_BACK_LID_OPEN) > 0:
+                self.checkBox_BackLidOpen_No.setChecked(1)
+            else:
+                self.checkBox_BackLidOpen_Yes.setChecked(1)
+
+            if (state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_LEFT) > 0:
+                self.checkBox_PresentChamberLeft_No.setChecked(1)
+            else:
+                self.checkBox_PresentChamberLeft_Yes.setChecked(1)
+
+            if (state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_RIGHT) > 0:
+                self.checkBox_PresentChamberRight_No.setChecked(1)
+            else:
+                self.checkBox_PresentChamberRight_Yes.setChecked(1)
+
+
+
+    def IntakeFan_On(self):
+        pass
+
+    def IntakeFan_Off(self):
+        pass
+
+    def IntakeFan_Test(self):
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_INTAKE)
         if test_result == IFC_VIP_TEST_RESULT_OK:
-            self.checkBox_TestMainFan_Passed.setChecked(1)
-            self.checkBox_TestMainFan_Passed.setStyleSheet(TS_COLOR_PASSED)
-            self.checkBox_TestMainFan_NotPassed.setChecked(0)
-            self.checkBox_TestMainFan_NotPassed.setStyleSheet(TS_COLOR_INIT)
+            self.checkBox_TestIntakeFan_Passed.setChecked(1)
+            self.checkBox_TestIntakeFan_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestMainFan_Passed.setChecked(0)
-            self.checkBox_TestMainFan_Passed.setStyleSheet(TS_COLOR_INIT)
-            self.checkBox_TestMainFan_NotPassed.setChecked(1)
-            self.checkBox_TestMainFan_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestIntakeFan_NotPassed.setChecked(1)
+            self.checkBox_TestIntakeFan_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
 
