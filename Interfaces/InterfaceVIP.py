@@ -265,9 +265,12 @@ class InterfaceVIP:
         write_data.append((address >> 8) & 0xFF)
         write_data.append((address >> 16) & 0xFF)
         write_data.append((address >> 24) & 0xFF)
+        
         for i in range(8):
             write_data.append(packet[i])
-
+            
+        # Last empty byte
+        write_data.append(0x00)
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_WRITE_PACKET, write_data)
         if read_result != 0:
             return read_result, read_data
@@ -292,7 +295,14 @@ class InterfaceVIP:
 
         return 0, read_data
 
-
+    def cmd_jump_to_application(self):
+        write_data = self.get_null_packet()
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_JUMP_APPLICATION, write_data)
+        if read_result != 0:
+            return read_result, read_data
+        return 0, read_data
+        
+    
     def cmd_set_rtc(self):
         date_now = datetime.now()
         temp_bcd = self.int_to_bcd(date_now.second)
@@ -479,6 +489,16 @@ class InterfaceVIP:
 
     def get_bme_gas_resistance(self):
         return self.bmeGasResistance
+    
+    def get_gas_sensor(self, num_sensor):
+        write_data = self.get_component_packet(1)
+        write_data[1] = num_sensor
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_GAS_SENSOR, write_data)
+        if read_result != 0:
+            return read_result, read_data
+        
+        return 0, read_data
+
 
     def close(self):
         if self.ComPort is None:
