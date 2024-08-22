@@ -174,7 +174,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_TestCatalyticBoard_NotPassed.setChecked(0)
 
     def MainMotor_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_MOTOR)
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_1)
         if test_result == IFC_VIP_TEST_RESULT_OK:
             self.checkBox_TestMainMotor_Passed.setChecked(1)
             self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -206,7 +206,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_UnlockTopRight.setChecked(0)
 
     def ChamberMotorLeft_Test(self):
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_1)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_2)
         if result == 0:
             self.checkBox_TestChamberMotorLeft_Passed.setChecked(1)
             self.checkBox_TestChamberMotorLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -221,7 +221,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_UnlockTopRight.setChecked(0)
 
     def ChamberMotorRight_Test(self):
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_CHAMBER_2)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_3)
         if result == 0:
             self.checkBox_TestChamberMotorRight_Passed.setChecked(1)
             self.checkBox_TestChamberMotorRight_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -236,7 +236,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def PtcHeaterIntake_Test(self):
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_INTAKE)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_1)
         if result == 0:
             self.checkBox_TestPtcHeaterIntake_Passed.setChecked(1)
             self.checkBox_TestPtcHeaterIntake_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -251,7 +251,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def PtcHeaterInternal_Test(self):
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_INTERNAL)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_2)
         if result == 0:
             self.checkBox_TestPtcHeaterInternal_Passed.setChecked(1)
             self.checkBox_TestPtcHeaterInternal_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -290,7 +290,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def Lamp_Test(self):
-        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_OZONE)
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
         if result == 0:
             self.checkBox_TestLamp_Passed.setChecked(1)
             self.checkBox_TestLamp_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -336,7 +336,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def IntakeFan_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_INTAKE)
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_1)
         if test_result == IFC_VIP_TEST_RESULT_OK:
             self.checkBox_TestIntakeFan_Passed.setChecked(1)
             self.checkBox_TestIntakeFan_Passed.setStyleSheet(TS_COLOR_PASSED)
@@ -352,7 +352,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def Blower_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BLOWER)
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_2)
         if test_result == IFC_VIP_TEST_RESULT_OK:
             self.checkBox_TestBlower_Passed.setChecked(1)
             self.checkBox_TestBlower_Passed.setStyleSheet(TS_COLOR_PASSED)
