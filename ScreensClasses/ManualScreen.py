@@ -1,5 +1,5 @@
-from PyQt5 import QtWidgets
-
+import easygui
+import time
 from ScreensClasses.ScreenIndex import AUTOMATIC_SCREEN_INDEX
 from Screens_py.VcDvtTestTools_screen_manual_mode import Ui_Manual
 from ScreensClasses.SettingsScreen import *
@@ -21,8 +21,6 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_SettingsManual.clicked.connect(self.SettingsManual)
         self.btn_CleanManual.clicked.connect(self.CleanManual)
 
-        self.btn_MainMotor_Start.clicked.connect(self.MainMotor_Start)
-        self.btn_MainMotor_Stop.clicked.connect(self.MainMotor_Stop)
         self.btn_MainMotor_Test.clicked.connect(self.MainMotor_Test)
 
         self.btn_AcMainPower_Test.clicked.connect(self.AcMainPower_Test)
@@ -51,15 +49,27 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_PadHeaterRight_Off.clicked.connect(self.PadHeaterRight_Off)
         self.btn_PadHeaterRight_Test.clicked.connect(self.PadHeaterRight_Test)
 
-        self.btn_Lamp_On.clicked.connect(self.Lamp_On)
-        self.btn_Lamp_Off.clicked.connect(self.Lamp_Off)
         self.btn_Lamp_Test.clicked.connect(self.Lamp_Test)
 
         self.btn_IntakeFan_On.clicked.connect(self.IntakeFan_On)
         self.btn_IntakeFan_Off.clicked.connect(self.IntakeFan_Off)
         self.btn_IntakeFan_Test.clicked.connect(self.IntakeFan_Test)
 
+        self.btn_Blower_On.clicked.connect(self.Blower_On)
+        self.btn_Blower_Off.clicked.connect(self.Blower_Off)
+        self.btn_Blower_Test.clicked.connect(self.Blower_Test)
+
         self.btn_GetState.clicked.connect(self.GetState)
+
+        self.btn_Bme688_Exhaust_Test.clicked.connect(self.Bme688_Exhaust_Test)
+        self.btn_Bme688_Intake_Test.clicked.connect(self.Bme688_Intake_Test)
+        self.btn_Bme688_Left_Test.clicked.connect(self.Bme688_Left_Test)
+        self.btn_Bme688_Right_Test.clicked.connect(self.Bme688_Right_Test)
+
+        self.btn_WeightLeft_Test.clicked.connect(self.WeightLeft_Test)
+        self.btn_WeightRight_Test.clicked.connect(self.WeightRight_Test)
+
+        self.btn_CatalyticBoard_Test.clicked.connect(self.CatalyticBoard_Test)
 
 
     def AutomaticManual(self):
@@ -101,6 +111,20 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_TestIntakeFan_NotPassed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestBlower_Passed.setStyleSheet(TS_COLOR_INIT)
         self.checkBox_TestBlower_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Exhaust_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Exhaust_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Intake_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Intake_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Left_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Left_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Right_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestBme688_Right_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestWeightLeft_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestWeightLeft_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestWeightRight_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestWeightRight_NotPassed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestCatalyticBoard_Passed.setStyleSheet(TS_COLOR_INIT)
+        self.checkBox_TestCatalyticBoard_NotPassed.setStyleSheet(TS_COLOR_INIT)
 
         self.checkBox_TestMainMotor_Passed.setChecked(0)
         self.checkBox_TestMainMotor_NotPassed.setChecked(0)
@@ -134,12 +158,20 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_TestIntakeFan_NotPassed.setChecked(0)
         self.checkBox_TestBlower_Passed.setChecked(0)
         self.checkBox_TestBlower_NotPassed.setChecked(0)
-
-    def MainMotor_Start(self):
-        pass
-
-    def MainMotor_Stop(self):
-        pass
+        self.checkBox_TestBme688_Exhaust_Passed.setChecked(0)
+        self.checkBox_TestBme688_Exhaust_NotPassed.setChecked(0)
+        self.checkBox_TestBme688_Intake_Passed.setChecked(0)
+        self.checkBox_TestBme688_Intake_NotPassed.setChecked(0)
+        self.checkBox_TestBme688_Left_Passed.setChecked(0)
+        self.checkBox_TestBme688_Left_NotPassed.setChecked(0)
+        self.checkBox_TestBme688_Right_Passed.setChecked(0)
+        self.checkBox_TestBme688_Right_NotPassed.setChecked(0)
+        self.checkBox_TestWeightLeft_Passed.setChecked(0)
+        self.checkBox_TestWeightLeft_NotPassed.setChecked(0)
+        self.checkBox_TestWeightRight_Passed.setChecked(0)
+        self.checkBox_TestWeightRight_NotPassed.setChecked(0)
+        self.checkBox_TestCatalyticBoard_Passed.setChecked(0)
+        self.checkBox_TestCatalyticBoard_NotPassed.setChecked(0)
 
     def MainMotor_Test(self):
         test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MAIN_MOTOR)
@@ -257,12 +289,6 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPadHeaterRight_NotPassed.setChecked(1)
             self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def Lamp_On(self):
-        pass
-
-    def Lamp_Off(self):
-        pass
-
     def Lamp_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_OZONE)
         if result == 0:
@@ -303,7 +329,6 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
                 self.checkBox_PresentChamberRight_Yes.setChecked(1)
 
 
-
     def IntakeFan_On(self):
         pass
 
@@ -320,19 +345,86 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestIntakeFan_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
+    def Blower_On(self):
+        pass
+
+    def Blower_Off(self):
+        pass
+
+    def Blower_Test(self):
+        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BLOWER)
+        if test_result == IFC_VIP_TEST_RESULT_OK:
+            self.checkBox_TestBlower_Passed.setChecked(1)
+            self.checkBox_TestBlower_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestBlower_NotPassed.setChecked(1)
+            self.checkBox_TestBlower_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
+    def Bme688_Exhaust_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_4)
+        if result == 0:
+            self.checkBox_TestBme688_Exhaust_Passed.setChecked(1)
+            self.checkBox_TestBme688_Exhaust_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestBme688_Exhaust_NotPassed.setChecked(1)
+            self.checkBox_TestBme688_Exhaust_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def Bme688_Intake_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_3)
+        if result == 0:
+            self.checkBox_TestBme688_Intake_Passed.setChecked(1)
+            self.checkBox_TestBme688_Intake_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestBme688_Intake_NotPassed.setChecked(1)
+            self.checkBox_TestBme688_Intake_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def Bme688_Left_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_1)
+        if result == 0:
+            self.checkBox_TestBme688_Left_Passed.setChecked(1)
+            self.checkBox_TestBme688_Left_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestBme688_Left_NotPassed.setChecked(1)
+            self.checkBox_TestBme688_Left_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def Bme688_Right_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_2)
+        if result == 0:
+            self.checkBox_TestBme688_Right_Passed.setChecked(1)
+            self.checkBox_TestBme688_Right_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestBme688_Right_NotPassed.setChecked(1)
+            self.checkBox_TestBme688_Right_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
+    def WeightLeft_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_1)
+        if result == 0:
+            self.checkBox_TestWeightLeft_Passed.setChecked(1)
+            self.checkBox_TestWeightLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestWeightLeft_NotPassed.setChecked(1)
+            self.checkBox_TestWeightLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def WeightRight_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_2)
+        if result == 0:
+            self.checkBox_TestWeightRight_Passed.setChecked(1)
+            self.checkBox_TestWeightRight_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestWeightRight_NotPassed.setChecked(1)
+            self.checkBox_TestWeightRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
-
-
-
-
-
-
-
+    def CatalyticBoard_Test(self):
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_CATALYTIC_BOARD)
+        if result == 0:
+            self.checkBox_TestCatalyticBoard_Passed.setChecked(1)
+            self.checkBox_TestCatalyticBoard_Passed.setStyleSheet(TS_COLOR_PASSED)
+        else:
+            self.checkBox_TestCatalyticBoard_NotPassed.setChecked(1)
+            self.checkBox_TestCatalyticBoard_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
 
