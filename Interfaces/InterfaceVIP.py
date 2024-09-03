@@ -59,6 +59,9 @@ IFC_VIP_COMMAND_GET_RESULT_TEST = 0x21
 IFC_VIP_COMMAND_GET_POSITION = 0x22
 IFC_VIP_COMMAND_SET_RTC = 0x23
 IFC_VIP_COMMAND_GET_RTC = 0x24
+IFC_VIP_COMMAND_GET_WEIGHT_SENSOR = 0x27
+IFC_VIP_COMMAND_GET_AI_PREDICTION = 0x28
+
 IFC_VIP_COMMAND_NACK = 0xFF
 
 IFC_VIP_STATE_NO_STATE = 0x00
@@ -114,7 +117,7 @@ IFC_VIP_ERROR_BME688_SENSOR_3 = 0x1B
 IFC_VIP_ERROR_BME688_SENSOR_4 = 0x1C
 
 IFC_VIP_COMPONENT_ALL = 0x00
-IFC_VIP_COMPONENT_LAMP_1 = 0x01  # ozone
+IFC_VIP_COMPONENT_LAMP_1 = 0x01  # plasma
 IFC_VIP_COMPONENT_MOTOR_1 = 0x02  # main
 IFC_VIP_COMPONENT_MOTOR_2 = 0x03  # left
 IFC_VIP_COMPONENT_MOTOR_3 = 0x04  # right
@@ -133,9 +136,10 @@ IFC_VIP_COMPONENT_WEIGHT_SENSOR_2 = 0x10  # right
 IFC_VIP_COMPONENT_CATALYTIC_BOARD = 0x11
 IFC_VIP_COMPONENT_AC_POWER = 0x12
 
-IFC_VIP_BME688_FAN = 0x00
 IFC_VIP_BME688_LEFT = 0x01
 IFC_VIP_BME688_RIGHT = 0x02
+IFC_VIP_BME688_INTAKE = 0x03
+IFC_VIP_BME688_EXHAUST = 0x04
 
 IFC_VIP_T_PAD_HEATER_LEFT = 0x01
 IFC_VIP_T_PAD_HEATER_RIGHT = 0x02
@@ -178,6 +182,19 @@ IFC_VIP_SHIFT_SWITCH_PRESENT_CH_LEFT = 3
 IFC_VIP_STATE_SWITCH_PRESENT_CH_LEFT = (1 << IFC_VIP_SHIFT_SWITCH_PRESENT_CH_LEFT)
 IFC_VIP_SHIFT_SWITCH_PRESENT_CH_RIGHT = 4
 IFC_VIP_STATE_SWITCH_PRESENT_CH_RIGHT = (1 << IFC_VIP_SHIFT_SWITCH_PRESENT_CH_RIGHT)
+
+
+IFC_VIP_WEIGHT_LEFT = 0x01
+IFC_VIP_WEIGHT_RIGHT = 0x02
+
+
+IFC_VIP_LAMP_PLASMA = 0x01
+IFC_VIP_LAMP_CATALYTIC_LED = 0x02
+
+IFC_VIP_AI_PREDICTION_MOISTURE_LEFT = 0x01
+IFC_VIP_AI_PREDICTION_MOISTURE_RIGHT = 0x02
+IFC_VIP_AI_PREDICTION_ODOR = 0x03
+IFC_VIP_AI_PREDICTION_OXYGEN = 0x04
 
 class InterfaceVIP:
     def __init__(self):
@@ -408,6 +425,16 @@ class InterfaceVIP:
 
         return 0, read_data
 
+
+    def cmd_control_lamp(self, num_lamp, state):
+        write_data = self.get_component_packet(num_lamp)
+        write_data[1] = state # 0 = OFF, 1 = ON
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_CONTROL_LAMP, write_data)
+        if read_result != 0:
+            return read_result, read_data
+        return 0, read_data
+    
+
     def set_dam_postion(self, position):
         read_result, read_data = self.cmd_set_position(1, position)  # 1 - left open, 2 - right open
         if result == 0:
@@ -494,6 +521,15 @@ class InterfaceVIP:
     def get_bme_gas_resistance(self):
         return self.bmeGasResistance
     
+    def get_weight(self, num_sensor):
+        write_data = self.get_component_packet(num_sensor)
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_WEIGHT_SENSOR, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        return 0, read_data
+    
+
     def get_gas_sensor(self, num_sensor):
         write_data = self.get_component_packet(1)
         write_data[1] = num_sensor
@@ -503,6 +539,14 @@ class InterfaceVIP:
         
         return 0, read_data
 
+    def get_ai_prediction(self, ai_prediction):
+        write_data = self.get_component_packet(1)
+        write_data[1] = ai_prediction
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_AI_PREDICTION, write_data)
+        if read_result != 0:
+            return read_result, read_data
+        
+        return 0, read_data
 
     def close(self):
         if self.ComPort is None:
