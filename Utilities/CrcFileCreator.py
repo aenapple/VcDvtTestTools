@@ -1,12 +1,5 @@
-
-from Interfaces.InterfaceVIP import InterfaceVIP
-from array import array
-import struct
-import time
 import sys
 import os
-import binascii
-import zlib
 
 BINFILE_PAGE_SIZE = 256
 
@@ -117,13 +110,13 @@ def GenerateCRCFile(str_file_input):
     number_bytes += add_number_bytes  
 
     print(string_version)             
-    str_file_output = string_version[:-5] + '_flash_' + str_file_input.split('_')[-1][:-4] + '.bin'
+    str_file_output = string_version + '_flash' + '.bin'
     
     file_output = open(str_file_output, 'wb')
     
-    serial_number = "LL01-00000000001"
-    encryption_key = "SAMPLEKEY1234567"  # ?????
-    
+    serial_number = "0000000000000000"
+    encryption_key = "SAMPLEKEY1234567"
+
     # --------------------------  BIN START  --------------------------------------   
     file_output.write(before_ident)
     
@@ -160,61 +153,11 @@ def GenerateCRCFile(str_file_input):
     return str_file_output
 
 
-def BootLoaderTest(file_name):
-    bootInterfaceVIP = InterfaceVIP()
-    
-    COMPORT = 'COM12'   
-    result = bootInterfaceVIP.open(COMPORT, 115200)
-    if result != 0:
-        SystemExit(1)
-        
-    TYPE_MEMORY = 0x01
-  
-    # data = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
-    key = [0x0C, 0x22, 0x38, 0x4E, 0x5A, 0x0C, 0x22, 0x38]
-    
-    # file_name = "BootFileCRC\\RND_SRC_Bootloader_v2_Red_flash.bin"
-    # file_name = "LL01-BBE-01_flash.bin"
-    
-    with open(file_name, mode='rb') as file:  # b is important -> binary
-        binFileContent = file.read()
-
-        lenFile = len(binFileContent)
-        for data in range(0, lenFile, 8):
-            # break
-          
-            dataWriteToFLASH = binFileContent[data: data + 8]
-    
-            packetToFlash = []
-            readHex = []
-            for i in range(len(dataWriteToFLASH)):
-                packetToFlash.append(int(dataWriteToFLASH[i]))
-                readHex.append(hex(dataWriteToFLASH[i]))
-          
-            result, read_data = bootInterfaceVIP.cmd_write_packet(TYPE_MEMORY, data, packetToFlash)
-            # if not (data >= 1023):
-            if result:
-                print(data)
-                input()
-            if not (data >= 50255):
-                continue
-          
-          # print(data)
-          # input()
-          
-          
-    result, read_data =  bootInterfaceVIP.cmd_jump_to_application()
-    if result > 0:
-        print("Jump to Application - ERROR")
-    else:
-        print("Jump to Application - OK")
-      
-    
 if __name__ == '__main__':
-    str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blue.bin'
-#   str_file_input = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blank.bin'
-  
+
+    args = sys.argv[1:]
+    str_file_input = args[0]
+    # str_file_input = 'ApplicationTest.bin'
+
     str_file_output = GenerateCRCFile(str_file_input)
-    input()
     print(str_file_output)
-    BootLoaderTest(str_file_output)
