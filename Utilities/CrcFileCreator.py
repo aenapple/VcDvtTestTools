@@ -110,12 +110,12 @@ def GenerateCRCFile(str_file_input):
     number_bytes += add_number_bytes  
 
     print(string_version)             
-    str_file_output = string_version + '_flash' + '.bin'
+    str_file_output = string_version + '.bin'
     
     file_output = open(str_file_output, 'wb')
     
     serial_number = "0000000000000000"
-    encryption_key = "SAMPLEKEY1234567"
+    encryption_key = "0000000000000000"
 
     # --------------------------  BIN START  --------------------------------------   
     file_output.write(before_ident)
@@ -125,7 +125,6 @@ def GenerateCRCFile(str_file_input):
     file_output.write((crc & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
     file_output.write((number_bytes & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_SIZE_FILE, byteorder="little"))
     file_output.write(serial_number.encode())
-    # file_output.write((encryption_key & 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF).to_bytes(BINFILE_SIZE_KEY, byteorder="little"))
     file_output.write(encryption_key.encode())
     
     #  Fill in remaining bytes in Ident File

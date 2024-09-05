@@ -1,0 +1,1 @@
+C:\Programs\Python\Python39\python.exe c:\WorkAen\Projects\Stm32cubeIde\RND_SRC_Bootloader_v2_sfi\ApplicationTest\py\CrcFileCreator.py Debug\ApplicationTest.bin

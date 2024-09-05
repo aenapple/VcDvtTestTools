@@ -196,6 +196,7 @@ IFC_VIP_AI_PREDICTION_MOISTURE_RIGHT = 0x02
 IFC_VIP_AI_PREDICTION_ODOR = 0x03
 IFC_VIP_AI_PREDICTION_OXYGEN = 0x04
 
+
 class InterfaceVIP:
     def __init__(self):
         self.ComPort = None
