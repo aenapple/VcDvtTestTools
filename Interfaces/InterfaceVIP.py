@@ -74,13 +74,13 @@ IFC_VIP_STATE_MESOPHILIC_PHASE = 0x06
 IFC_VIP_STATE_THERMOPHILIC_PHASE = 0x07
 IFC_VIP_STATE_COOLING_PHASE = 0x08
 IFC_VIP_STATE_BUSY = 0x09
-IFC_VIP_STATE_PHASE_0 = 0x0A
+IFC_VIP_STATE_WAIT_ADD_WATER = 0x0A
 IFC_VIP_STATE_PHASE_1 = 0x0B
 IFC_VIP_STATE_TOP_UNLOCKED = 0x0C
 IFC_VIP_STATE_TOP_REMOVED = 0x0D
-IFC_VIP_STATE_LID_OPEN = 0x0E
+IFC_VIP_STATE_FRONT_LID_OPEN = 0x0E
 IFC_VIP_STATE_GRINDING = 0x0F
-IFC_VIP_STATE_TANK_FULL = 0x10
+IFC_VIP_STATE_BACK_LID_OPEN = 0x10
 IFC_VIP_STATE_ERROR = 0xFF
 
 IFC_VIP_SUB_STATE_APPLICATION = 0x00
@@ -157,6 +157,10 @@ IFC_VIP_HEATER_PAD_LEFT = 0x01
 IFC_VIP_HEATER_PAD_RIGHT = 0x02
 IFC_VIP_HEATER_PTC_LEFT = 0x03
 IFC_VIP_HEATER_PTC_RIGHT = 0x04
+
+IFC_VIP_MEMORY_FLASH_CPU1 = 0x01
+IFC_VIP_MEMORY_FLASH_CPU2 = 0x02
+IFC_VIP_MEMORY_EEPROM = 0x03
 
 IFC_VIP_FAN_MAIN = 0x01
 IFC_VIP_FAN_PTC_LEFT = 0x02
@@ -262,8 +266,10 @@ class InterfaceVIP:
             self.stateString = "Top Unlocked"
         elif self.state == IFC_VIP_STATE_TOP_REMOVED:
             self.stateString = "Top Removed"
-        elif self.state == IFC_VIP_STATE_LID_OPEN:
-            self.stateString = "Lid Open"
+        elif self.state == IFC_VIP_STATE_FRONT_LID_OPEN:
+            self.stateString = "Front Lid Open"
+        elif self.state == IFC_VIP_STATE_BACK_LID_OPEN:
+            self.stateString = "Back Lid Open"
         elif self.state == IFC_VIP_STATE_GRINDING:
             self.stateString = "Grinding"
         else:
@@ -274,6 +280,9 @@ class InterfaceVIP:
 
     def get_state(self):
         return self.state
+
+    def get_sub_state(self):
+        return self.subState
 
     def get_state_string(self):
         return self.stateString

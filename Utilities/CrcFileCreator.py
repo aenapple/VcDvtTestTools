@@ -141,18 +141,15 @@ def GenerateCRCFile(str_file_input):
     print("Bin File Size: ", number_bytes)
     print("Hex File Size: ", hex(number_bytes))
     
-    # add_number_bytes = number_bytes % 16
-    # if add_number_bytes > 0:
-    #     add_number_bytes = 16 - add_number_bytes
-    #     for i in range(add_number_bytes):
-    #         file_output.write(bytes([255]))
-
     file_output.close()
     
     return str_file_output
 
 
 if __name__ == '__main__':
+    __doc__ = """
+    ....
+    """
 
     args = sys.argv[1:]
     str_file_input = args[0]

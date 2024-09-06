@@ -1,6 +1,7 @@
 import sys
 import os
 import binascii
+import time
 import zlib
 import secrets
 import array as buf_array
@@ -25,9 +26,6 @@ BINFILE_SIZE_SRL_NUM = 16
 BINFILE_ADR_KEY = BINFILE_ADR_SRL_NUM + BINFILE_SIZE_SRL_NUM
 BINFILE_SIZE_KEY = 16
 
-BINFILE_BUFFER_SIZE = 256
-BINFILE_CRC32_POLYNOMIAL = 0xEDB88320
-
 ENCRYPTION_ADDRESS_KEY = BINFILE_ADR_IDENT + BINFILE_ADR_KEY
 
 ENCRYPTION_GC2_ROUNDS = 2
@@ -40,11 +38,13 @@ class Encryption:
         self.encryption_key = bytearray(8)
 
     def gc2_barrel_right(self, x):
+        x = x & 0xFF
         x1 = (x >> 3) & 0xFF
         x2 = (x << 5) & 0xFF
         return x1 | x2
 
     def gc2_barrel_left(self, x):
+        x = x & 0xFF
         x1 = (x << 3) & 0xFF
         x2 = (x >> 5) & 0xFF
         return x1 | x2
@@ -114,7 +114,7 @@ class Encryption:
         file_output_name = file_input.name[:-4] + '_en' + '.bin'
         file_output = open(file_output_name, 'wb')
 
-        file_size = os.stat(file_input_name).st_size
+        file_size = os.stat(file_input_name).st_size  # must be multiple of 16
         read_bytes = 0
         write_key = bytearray(8)
         while True:
@@ -171,21 +171,56 @@ class Encryption:
         file_output.close()
         # DEBUG
 
+    def debug_file_encoder(self, file_name):
+        file_input = open(file_name, 'rb')
+
+        file_size = os.stat(file_name).st_size
+        address = 0
+        temp_buffer = bytearray(1024)
+        while True:
+            input_data = file_input.read(8)
+
+            for i in range(8):
+                temp_buffer[address + i] = input_data[i]
+
+            if address == (1024 - 8):
+                key = bytearray(16)
+                for i in range(16):
+                    key[i] = temp_buffer[BINFILE_ADR_IDENT + BINFILE_ADR_KEY + i]
+                """ self.gc2_init(key)
+                read_file_data = bytearray(8)
+                for i in range(8):
+                    read_file_data[i] = temp_buffer[i]
+                output_data = self.gc2_decode(read_file_data)
+                print(bytearray(output_data)) """
+                break
+
+            address += 8
+
+        file_input.close()
+
+        time.sleep(1)
+        file_input = open(file_name, 'rb')
+        input_data = file_input.read(8)
+        self.gc2_init(key)
+        output_data = self.gc2_decode(input_data)
+        print(bytearray(output_data))
 
 if __name__ == '__main__':
+    __doc__ = """
+    ....
+    """
+
+    args = sys.argv[1:]
+    # str_file_output = args[0]
+    str_file_output = 'LL01-AMB-001.000.bin'
+    # str_file_output = 'LL01-AMB-001.000_en.bin'
+
     secrets_key = secrets.token_bytes(16)
     print(secrets_key.hex())
-    str_file_output = 'LL01-AMB-001.000.bin'
 
     encryption = Encryption()
 
     encryption.file_encoder(str_file_output, secrets_key)
     # encryption.debug_encoder()
-    exit(0)
-
-
-    args = sys.argv[1:]
-    str_file_output = args[0]
-    # str_file_output = 'BootFileCRC\\RND_SRC_Bootloader_v2_Blue.bin'
-    print(str_file_output)
-    # FileEncoder(str_file_output)
+    # encryption.debug_file_encoder(str_file_output)
