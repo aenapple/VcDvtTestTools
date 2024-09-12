@@ -212,8 +212,8 @@ if __name__ == '__main__':
     """
 
     args = sys.argv[1:]
-    # str_file_output = args[0]
-    str_file_output = 'LL01-AMB-001.000.bin'
+    str_file_output = args[0]
+    # str_file_output = 'LL01-AMB-001.00B.bin'
     # str_file_output = 'LL01-AMB-001.000_en.bin'
 
     secrets_key = secrets.token_bytes(16)

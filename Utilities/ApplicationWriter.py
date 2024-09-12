@@ -4,6 +4,8 @@ import time
 import sys
 import os
 import binascii
+from tqdm import tqdm
+from colorama import Fore
 
 BINFILE_PAGE_SIZE = 256
 
@@ -57,12 +59,15 @@ def write_application(file_output_name, open_com_port):
     file_output = open(file_output_name, 'rb')
     address = 0
     file_size = os.stat(file_output_name).st_size  # must be multiple of 16
+    progress = 0
+    step_progress = file_size / 100
+    pbar = tqdm(desc='Uploading', total=file_size, colour='green')
     while True:
         output_data = file_output.read(8)
         result, read_data = interface_vip.cmd_write_packet(IFC_VIP_MEMORY_FLASH_CPU1, address, output_data)
-        """ if result > 0:
+        if result > 0:
             print("Communication - ERROR")
-            return """
+            return
         result, read_data = interface_vip.read_state()
         if result > 0:
             print("Communication - ERROR")
@@ -73,16 +78,39 @@ def write_application(file_output_name, open_com_port):
 
         if file_size > 0:
             file_size -= 8
+
+            if file_size == 0:
+                pbar.close()
+                print("\nWrite Flash - Ok")
+                break
+                # file_output.close()
+                # return
+
+            if address > progress * step_progress:
+                progress += 1
+                pbar.update(int(step_progress))
+
             address += 8
-        else:
-            break
+
+    file_output.close()
+    time.sleep(0.1)
+    print("Jump to new Application")
+
 
     result, read_data = interface_vip.cmd_jump_to_application()
     if result > 0:
         print("Communication - ERROR")
         return
 
-    time.sleep(1.0)
+    pbar = tqdm(desc='Waiting', total=20, colour='green')
+    for i in range(50):
+        time.sleep(0.2)
+        pbar.update(1)
+
+    pbar.close();
+    """ time.sleep(2)
+    print("Waiting")
+    time.sleep(8) """
 
     result, read_data = interface_vip.read_state()
     if result > 0:
@@ -90,9 +118,9 @@ def write_application(file_output_name, open_com_port):
         return
 
     if interface_vip.get_state() == IFC_VIP_STATE_IDLE:
-        print("Jump to Application - OK")
+        print("Jump to new Application - OK")
     else:
-        print("Jump to Application - ERROR")
+        print("Jump to new Application - ERROR")
 
 
 if __name__ == '__main__':
@@ -101,10 +129,10 @@ if __name__ == '__main__':
     """
 
     args = sys.argv[1:]
-    # str_file_output = args[0]
-    str_file_output = "LL01-AMB-001.000_en.bin"
-    # com_port = args[1]
-    com_port = "COM15"
+    str_file_output = args[0]
+    # str_file_output = "LL01-AMB-001.00G_en.bin"
+    com_port = args[1]
+    # com_port = "COM15"
 
     write_application(str_file_output, com_port)
 
