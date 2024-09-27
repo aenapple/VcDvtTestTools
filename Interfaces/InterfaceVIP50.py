@@ -124,7 +124,7 @@ IFC_VIP_COMPONENT_MOTOR_3 = 0x04  # right
 IFC_VIP_COMPONENT_PAD_HEATER_1 = 0x05  # left
 IFC_VIP_COMPONENT_PAD_HEATER_2 = 0x06  # right
 IFC_VIP_COMPONENT_PTC_HEATER_1 = 0x07  # intake
-IFC_VIP_COMPONENT_PTC_HEATER_2 = 0x08  # internal
+IFC_VIP_COMPONENT_PTC_HEATER_2 = 0x08  # Blower
 IFC_VIP_COMPONENT_FAN_1 = 0x09  # blower
 IFC_VIP_COMPONENT_FAN_2 = 0x0A  # intake
 IFC_VIP_COMPONENT_BME688_1 = 0x0B  # left
@@ -144,7 +144,8 @@ IFC_VIP_BME688_EXHAUST = 0x03
 IFC_VIP_T_PAD_HEATER_LEFT = 0x01
 IFC_VIP_T_PAD_HEATER_RIGHT = 0x02
 IFC_VIP_T_PTC_HEATER_INTAKE = 0x05
-IFC_VIP_T_PTC_HEATER_MAIN = 0x06
+IFC_VIP_T_PTC_HEATER_BLOWER = 0x06
+
 IFC_VIP_T_CPU_NETWORK = 0x03
 IFC_VIP_T_CPU_MAIN = 0x04
 IFC_VIP_T_CPU_TOP = 0x0B
@@ -153,9 +154,10 @@ IFC_VIP_MOTOR_MAIN = 0x01
 IFC_VIP_MOTOR_CHAMBER_LEFT = 0x02
 IFC_VIP_MOTOR_CHAMBER_RIGHT = 0x03
 
-
-IFC_VIP_HEATER_PTC_MAIN = 0x01
-IFC_VIP_HEATER_PTC_INTAKE = 0x02
+IFC_VIP_HEATER_PAD_LEFT = 0x01
+IFC_VIP_HEATER_PAD_RIGHT = 0x02
+IFC_VIP_HEATER_PTC_INTAKE = 0x03
+IFC_VIP_HEATER_PTC_BLOWER = 0x04
 
 IFC_VIP_MEMORY_FLASH_CPU1 = 0x01
 IFC_VIP_MEMORY_FLASH_CPU2 = 0x02
@@ -601,182 +603,3 @@ class InterfaceVIP50:
 
     def int_to_bcd(self, n):
         return int(str(n), base=16)
-
-
-if __name__ == '__main__':
-    interfaceVIP = InterfaceVIP()
-
-    result = interfaceVIP.open("COM7", 115200)
-    if result != 0:
-        SystemExit(1)
-
-    """ result, read_data = interfaceVIP.cmd_set_rtc()
-    print(read_data)
-    print(result) """
-
-    first_time = True
-    while True:
-        # result, data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
-        # print("Lamp1")
-        # print(result)
-
-        time.sleep(1.0)
-
-        result, read_data = interfaceVIP.read_state()
-        if result == 0:
-            # print("Left level = " + str(interfaceVIP.get_level_left_chamber()))
-            # print("Right level = " + str(interfaceVIP.get_level_right_chamber()))
-            print(interfaceVIP.get_state_string())
-        else:
-            print(result)
-        print(result)
-        continue
-        # time.sleep(10)
-
-        """ result, read_data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_OZONE)
-        if result != 0:
-            print(result)
-            continue
-
-        while True:
-            result, read_data = interfaceVIP.read_state()
-            if result != 0:
-                print(result)
-                break
-
-            if interfaceVIP.get_state() == IFC_VIP_STATE_BUSY:
-                continue
-            else:
-                print(interfaceVIP.get_state_string())
-                break
-
-        continue
-
-        if first_time:
-            result, read_data = interfaceVIP.top_cpu_selftest()
-            first_time = False
-            if result != 0:
-                print(result)
-                SystemExit(2) """
-
-        # time.sleep(2.0)
-        # continue
-
-        """ result, read_data = interfaceVIP.set_dam_postion(1)  # left open
-        if result != 0:
-            print(result)
-            SystemExit(2)
-
-        result, read_data = interfaceVIP.set_dam_postion(2)  # right open
-        if result != 0:
-            print(result)
-            SystemExit(2)
-
-        time.sleep(2.0)
-        continue """
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 100)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_RIGHT, 100)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_LEFT, 100)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_RIGHT, 100)
-        # time.sleep(10.0)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 0)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_RIGHT, 0)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_LEFT, 0)
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_RIGHT, 0)
-        # time.sleep(5.0)
-
-        # continue
-
-        """ interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
-        time.sleep(2.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 1)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
-
-
-
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 0)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
-        time.sleep(2.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 1)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
-
-        continue """
-
-        """ interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 10, 0)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 0, 0)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 10, 1)
-        time.sleep(5.0)
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 0, 0) """
-
-        # interfaceVIP.cmd_control_set_position(1, 1)
-
-        # interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 100)
-        # interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_RIGHT, 100)
-
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_RIGHT, 0)
-        # interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_RIGHT, 0)
-
-        # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 0)
-        # interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_LEFT, 0)
-
-        """ interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_LEFT, 0)
-        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_LEFT, 0)
-        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 0)
-        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_PTC_RIGHT, 0)
-        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_RIGHT, 0)
-        interfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_RIGHT, 0)
-        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_LEFT, 0)
-        interfaceVIP.cmd_control_fan(IFC_VIP_FAN_AIR_RIGHT, 0) """
-        while True:
-            time.sleep(2)
-            result, read_data = interfaceVIP.get_temperature(0)
-            if result == 0:
-                print("PTC Left - " + str(read_data[2]))
-            else:
-                print(result)
-
-            result, read_data = interfaceVIP.get_temperature(1)
-            if result == 0:
-                print("PTC Right - " + str(read_data[2]))
-            else:
-                print(result)
-
-            result, read_data = interfaceVIP.get_temperature(2)
-            if result == 0:
-                print("Pad Left - " + str(read_data[2]))
-            else:
-                print(result)
-
-            result, read_data = interfaceVIP.get_temperature(3)
-            if result == 0:
-                print("Pad Right - " + str(read_data[2]))
-            else:
-                print(result)
-
-            # continue
-
-            # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_MAIN, 50)
-            for i in range(4):
-                result, read_data = interfaceVIP.get_bme688(i, 0)
-                if result == 0:
-                    string_data = "numSensor = " + str(interfaceVIP.get_bme_num_sensor())
-                    string_data += ", Temperature = " + str(interfaceVIP.get_bme_temperature())
-                    string_data += ", Humidity = " + str(interfaceVIP.get_bme_humidity())
-                    string_data += ", Pressure = " + str(interfaceVIP.get_bme_pressure())
-                    string_data += ", Gas Resistance = " + str(interfaceVIP.get_bme_gas_resistance())
-                    print(string_data)
-                else:
-                    print(result)
-
-                time.sleep(1.0)
-            # interfaceVIP.cmd_control_fan(IFC_VIP_FAN_MAIN, 0)
-            # time.sleep(3.0) """
-
-
