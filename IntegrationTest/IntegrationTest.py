@@ -498,8 +498,8 @@ if __name__ == '__main__':
 
         data = {
             DATETIME:   dt,
-            RIGHT_PAD_T: rightPadHeater[1], BLOWER_PTC_T: blowerPtcTemp,  
-            LEFT_PAD_T:  leftPadHeater[1],  INTAKE_PTC_T: intakePtcTemp,
+            RIGHT_PAD_T: rightPadHeater[1], LEFT_PAD_T:  leftPadHeater[1], 
+            BLOWER_PTC_T: blowerPtcTemp, INTAKE_PTC_T: intakePtcTemp,
             
             
             LEFT_BME_TEMP: leftBmeValues.temperature, LEFT_BME_HUMID: leftBmeValues.humidity, LEFT_BME_PRESS:leftBmeValues.pressure, LEFT_BME_GAS: leftBmeValues.gasResistance,
