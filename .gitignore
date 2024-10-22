@@ -4,3 +4,5 @@
 /.idea
 /Tasks/__pycache__
 /Utilities/output
+*/__pycache__
+Interfaces/__pycache__
