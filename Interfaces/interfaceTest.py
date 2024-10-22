@@ -1,8 +1,8 @@
 
 import os
 import sys
-from Interfaces.InterfaceVIP import *
-from Interfaces.InterfaceVIP50 import *
+from InterfaceVIP import *
+from InterfaceVIP50 import *
 import keyboard
 import json
 
@@ -180,11 +180,8 @@ def getMotorCurrent():
 
 if __name__ == '__main__':
 
-    with open('.\Composting\\test_config.json', 'r') as f:
-        config = json.load(f)
 
-    # PVT_COMPORT = config["PVT"]
-    PVT_COMPORT = "COM7"
+    PVT_COMPORT = "COM4"
         
     pvtIntefaceVIP = InterfaceVIP50()
     result = pvtIntefaceVIP.open(PVT_COMPORT, 115200)

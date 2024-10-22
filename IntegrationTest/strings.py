@@ -1,0 +1,166 @@
+SERIAL_NUMBER     =    "SERIAL_NUMBER"
+
+MIX_PHASE         =    "MIX_PHASE"
+DUTY_CYCLE        =    "DUTY_CYCLE"
+
+RIGHT_MOT_CURRENT =     "RIGHT_MOT_CURRENT"
+LEFT_MOT_CURRENT  =     "LEFT_MOT_CURRENT"
+
+RIGHT_MIX_PHASE   =    "RIGHT_MIX_PHASE"
+LEFT_MIX_PHASE    =    "LEFT_MIX_PHASE" 
+
+RIGHT_MIX_DUR     =    "RIGHT_MIX_DUR"
+LEFT_MIX_DUR      =    "LEFT_MIX_DUR"
+
+RIGHT_MASS        =    "RIGHT_MASS"
+LEFT_MASS         =    "LEFT_MASS"
+
+
+RIGHT_DUTY_CYCLE  =    "RIGHT_DUTY_CYCLE"
+LEFT_DUTY_CYCLE   =    "LEFT_DUTY_CYCLE"
+
+BME_TEMP_RANGE    =    "BME_TEMP_RANGE"
+
+BME_TEMP          =    "BME_TEMP"
+BME_PRESS         =    "BME_PRESS"
+BME_GAS           =    "BME_GAS"
+BME_HUMID         =    "BME_HUMID" 
+
+
+LEFT_BME_TEMP     =    "LEFT_BME_TEMP"
+LEFT_BME_PRESS    =    "LEFT_BME_PRESS"
+LEFT_BME_GAS      =    "LEFT_BME_GAS"
+LEFT_BME_HUMID    =    "LEFT_BME_HUMID" 
+
+RIGHT_BME_TEMP    =    "RIGHT_BME_TEMP"
+RIGHT_BME_PRESS   =    "RIGHT_BME_PRESS"
+RIGHT_BME_GAS     =    "RIGHT_BME_GAS"
+RIGHT_BME_HUMID   =    "RIGHT_BME_HUMID" 
+
+EXHAUST_BME_TEMP  =    "EXHAUST_BME_TEMP"
+EXHAUST_BME_HUMID =    "EXHAUST_BME_HUMID" 
+EXHAUST_BME_PRESS =    "EXHAUST_BME_PRESS"
+EXHAUST_BME_GAS   =    "EXHAUST_BME_GAS"
+
+
+INTAKE_BME_TEMP  =    "INTAKE_BME_TEMP"
+INTAKE_BME_HUMID =    "INTAKE_BME_HUMID" 
+INTAKE_BME_PRESS =    "INTAKE_BME_PRESS"
+INTAKE_BME_GAS   =    "INTAKE_BME_GAS"
+
+BME_TEMP_DOE      =    "BME_TEMP_DOE"
+BME_HUMID_DOE     =    "BME_HUMID_DOE" 
+BME_PRESS_DOE     =    "BME_PRESS_DOE"
+BME_GAS_DOE       =    "BME_GAS_DOE"
+
+BME_TEMP_DOE_R      =    "BME_TEMP_DOE_R"
+BME_HUMID_DOE_R     =    "BME_HUMID_DOE_R" 
+BME_PRESS_DOE_R     =    "BME_PRESS_DOE_R"
+BME_GAS_DOE_R       =    "BME_GAS_DOE_R"
+
+BME_TEMP_DOE_L      =    "BME_TEMP_DOE_L"
+BME_HUMID_DOE_L     =    "BME_HUMID_DOE_L" 
+BME_PRESS_DOE_L     =    "BME_PRESS_DOE_L"
+BME_GAS_DOE_L       =    "BME_GAS_DOE_L"
+
+
+DATETIME          =    "DATETIME"
+SECONDS           =    "SECONDS"
+HOURS             =    "HOURS"
+
+BLOWER_PTC_T      =    "BLOWER_PTC_T"
+MAIN_PTC_T        =    "MAIN_PTC_T"
+INTAKE_PTC_T      =    "INTAKE_PTC_T"
+
+INTAKE_FAN_PWM    =    "INTAKE_FAN_PWM"
+DEPLETION_FLAG    =    "DEPLETION_FLAG"
+DEPLETION_TIME    =    "DEPLETION_TIME"
+
+LEFT_PAD_T        =    "LEFT_PAD_T"
+LEFT_PTC_T        =    "LEFT_PTC_T"
+
+RIGHT_PAD_T       =    "RIGHT_PAD_T"
+RIGHT_PTC_T       =    "RIGHT_PTC_T"
+
+
+MOTOR_ON          =    "MOTOR_ON"
+PTC_ON            =    "PTC_ON"
+
+PTC_FREQ          =    "PTC_FREQ"
+PTC_DUR           =    "PTC_DUR" 
+MOTOR_FREQ        =    "MOTOR_FREQ" 
+MOTOR_DUR         =    "MOTOR_DUR"
+DOE               =    "DOE"
+MOISTURE          =    "MOISTURE"
+IS_SOIL           =    "IS_SOIL" 
+
+WINDOW_SIZE       =    "WINDOW"
+
+
+AI_MOISTURE_LEFT        = "AI_MOISTURE_LEFT"
+AI_MOISTURE_RIGHT       = "AI_MOISTURE_RIGHT"
+
+MOISTURE_LEFT           = "MOISTURE_LEFT"
+MOISTURE_RIGHT          = "MOISTURE_RIGHT"
+
+
+CHAMBER                = "Chamber"
+RANGE                  = "RANGE"
+
+DEVICE_STATE           = "DEVICE_STATE"
+COMPOSTING_STATE       = "COMPOSTING_STATE"
+
+RIGHT_COMPOSTING_STATE = "RIGHT_COMPOSTING_STATE"
+LEFT_COMPOSTING_STATE  = "LEFT_COMPOSTING_STATE"
+
+ID                     = "id"
+TEST_ID                = "test_id"
+
+WINDOW_ORDER           = "window_order"
+
+#################################### Acuator Information ###################################
+
+RIGHT_PAD_RNG      = "RIGHT_PAD_RNG"
+LEFT_PAD_RNG       = "LEFT_PAD_RNG"
+PAD_RNG            = "PAD_RNG"
+
+
+PTC_T              =  "PTC_T"
+PAD_T              =  "PAD_T"
+
+PTC_FAN_PWM        =  "PTC_FAN_PWM"
+PTC_HTR_RNG        =  "PTC_HTR_RNG" 
+
+BLOWER_PWM         =  "BLOWER_PWM"
+
+# PAD_HTR_PWM        =  "PAD_HTR_PWM"
+
+EXHAUST_FAN_PWM    =  "EXHAUST_FAN_PWM"
+AIR_FAN_PWM        =  "AIR_FAN_PWM"
+FILTER_FAN_PWM     =  "FILTER_FAN_PWM"
+
+
+EXHAUST_PWM        =  "EXHAUST_PWM"
+
+PLASMA_FLAG        =  "PLASMA_FLAG"
+
+
+ODOR_TYPE          = "ODOR_TYPE"
+AI_OXYGEN          = "AI_OXYGEN"
+
+
+##################################### DATA COLLECTION ###################################
+
+CHAMBER_T_RANGE_COUNTER         = "CHAMBER_T_RANGE_COUNTER"
+CHAMBER_INCREASING_TEMP_FLAG    = "CHAMBER_INCREASING_TEMP_FLAG"
+
+BLOWER_FAN_PWM_COUNTER          = "BLOWER_FAN_PWM_COUNTER" 
+BLOWER_INCREASING_FAN_PWM_FLAG  = "BLOWER_INCREASING_FAN_PWM_FLAG" 
+
+INTAKE_FAN_PWM_COUNTER          = "INTAKE_FAN_PWM_COUNTER"
+            
+
+PAD_T_INCREASING_FLAG_L        = "PAD_T_INCREASING_FLAG_L"
+PAD_T_INCREASING_FLAG_R        = "PAD_T_INCREASING_FLAG_R"
+PAD_T_RANGE_COUNTER            = "PAD_T_RANGE_COUNTER"
+
