@@ -59,41 +59,7 @@ class TaskGui(threading.Thread):
         self.mutex.unlock()
         return flag
 
-    """ def CloseAllConnection(self):
-        self.ChargerState.terminate()
-        if self.ChargerState.wait(1000):
-            self.GpioState.terminate()
-        elif self.GpioState.wait(1000):
-            self.ServiceData.terminate()
-        elif self.ServiceData.wait(1000):
-            return TASK_GUI_RESULT_OK
-        else:
-            return TASK_GUI_RESULT_ERROR """
-
-    """ def WaitingHardwareServer(self):
-        while True:
-            exit_flag = self.GetExitFlag()
-            if exit_flag is False:
-                return TASK_GUI_EXIT_FROM_APPLICATION
-
-            if self.SettingsScreen.GetFlagPresentHardwareSensor() is False:
-                time.sleep(0.2)
-                test_button_clicked = self.SettingsScreen.GetTestButtonClicked()
-                if test_button_clicked is True:
-                    self.SettingsScreen.TestPresentHwServer()
-                    if self.SettingsScreen.GetFlagPresentHardwareSensor() is True:
-                        self.SettingsScreen.SetHwServerPresent()
-                    else:
-                        self.SettingsScreen.SetHwServerNotPresent()
-                        time.sleep(1.0)
-                        continue
-                else:
-                    continue
-            else:
-                return TASK_GUI_RESULT_OK """
-
     def run(self):
-
         while True:
 
             """ if self.WaitingHardwareServer() == TASK_GUI_EXIT_FROM_APPLICATION:

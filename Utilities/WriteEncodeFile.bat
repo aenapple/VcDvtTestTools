@@ -1,1 +1,1 @@
-ApplicationWriter.exe LL01-AMB-001.00G_en.bin COM15
+ApplicationWriter.exe LL01-AMB-001.000_en.bin COM15

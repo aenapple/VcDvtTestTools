@@ -383,7 +383,7 @@ class InterfaceVIP:
 
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_START_TEST, write_data)
         if read_result != 0:
-            return 254, read_data
+            return 1, read_data
         #  DEBUG
         #  return 0, read_data
         #  DEBUG
@@ -404,8 +404,7 @@ class InterfaceVIP:
                 else:
                     return 2, read_data  # timeout
 
-            # return - IFC_VIP_TEST_RESULT_OK or IFC_VIP_TEST_RESULT_ERROR
-            return self.state, read_data
+            return 0, read_data
 
     def cmd_control_fan(self, num_fan, pwm):
         write_data = self.get_component_packet(num_fan)
@@ -625,7 +624,7 @@ class InterfaceVIP:
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM15", 115200)
+    result = interfaceVIP.open("COM9", 115200)
     if result != 0:
         SystemExit(1)
 

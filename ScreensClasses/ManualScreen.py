@@ -4,10 +4,18 @@ from ScreensClasses.ScreenIndex import AUTOMATIC_SCREEN_INDEX
 from Screens_py.VcDvtTestTools_screen_manual_mode import Ui_Manual
 from ScreensClasses.SettingsScreen import *
 from Interfaces.InterfaceVIP import *
+import ctypes
+import datetime
 
 TS_COLOR_PASSED = 'background-color: #9df793'
 TS_COLOR_NOTPASSED = 'background-color: #fe9393'
 TS_COLOR_INIT = 'background-color: self.color'
+
+RESULT_TEST_PASSED = "1"
+RESULT_TEST_NOT_PASSED = "0"
+RESULT_TEST_NOT_TESTED = "2"
+RESULT_TEST_INCORRECT = "3"
+
 
 class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
     def __init__(self, w, interface_vip, parent=None):
@@ -15,6 +23,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.setupUi(self)
         self.widget = w
         self.InterfaceVIP = interface_vip
+        self.nameReportFile = None
 
         #self.widget.setWindowTitle("VcDvtTestTools | Manual Mode")
         self.btn_AutomaticManual.clicked.connect(self.AutomaticManual)
@@ -70,6 +79,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_WeightRight_Test.clicked.connect(self.WeightRight_Test)
 
         self.btn_CatalyticBoard_Test.clicked.connect(self.CatalyticBoard_Test)
+
+        self.pButtonCreateReport.clicked.connect(self.CreateReport)
 
 
     def AutomaticManual(self):
@@ -174,28 +185,22 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.checkBox_TestCatalyticBoard_NotPassed.setChecked(0)
 
     def MainMotor_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_1)
-        if test_result == IFC_VIP_TEST_RESULT_OK:
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_1)
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestMainMotor_Passed.setChecked(1)
             self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_PASSED)
-            # self.checkBox_TestMainMotor_NotPassed.setChecked(0)
-            # self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_INIT)
         else:
-            # self.checkBox_TestMainMotor_Passed.setChecked(0)
-            # self.checkBox_TestMainMotor_Passed.setStyleSheet(TS_COLOR_INIT)
             self.checkBox_TestMainMotor_NotPassed.setChecked(1)
             self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def AcMainPower_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_AC_POWER)
-        if test_result == IFC_VIP_TEST_RESULT_OK:
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_AC_POWER)
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestAcMainPower_Passed.setChecked(1)
             self.checkBox_TestAcMainPower_Passed.setStyleSheet(TS_COLOR_PASSED)
-            # self.checkBox_TestAcMainPower_NotPassed.setChecked(0)
-            # self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_INIT)
         else:
-            # self.checkBox_TestAcMainPower_Passed.setChecked(0)
-            # self.checkBox_TestAcMainPower_Passed.setStyleSheet(TS_COLOR_INIT)
             self.checkBox_TestAcMainPower_NotPassed.setChecked(1)
             self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
@@ -207,7 +212,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def ChamberMotorLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_2)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestChamberMotorLeft_Passed.setChecked(1)
             self.checkBox_TestChamberMotorLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -222,7 +228,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def ChamberMotorRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_3)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestChamberMotorRight_Passed.setChecked(1)
             self.checkBox_TestChamberMotorRight_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -237,7 +244,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def PtcHeaterIntake_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_1)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestPtcHeaterIntake_Passed.setChecked(1)
             self.checkBox_TestPtcHeaterIntake_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -252,7 +260,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def PtcHeaterInternal_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_2)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestPtcHeaterInternal_Passed.setChecked(1)
             self.checkBox_TestPtcHeaterInternal_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -267,7 +276,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def PadHeaterLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_1)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestPadHeaterLeft_Passed.setChecked(1)
             self.checkBox_TestPadHeaterLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -282,7 +292,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def PadHeaterRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_2)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestPadHeaterRight_Passed.setChecked(1)
             self.checkBox_TestPadHeaterRight_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -291,7 +302,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def Lamp_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestLamp_Passed.setChecked(1)
             self.checkBox_TestLamp_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -336,8 +348,9 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def IntakeFan_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_1)
-        if test_result == IFC_VIP_TEST_RESULT_OK:
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_2)
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestIntakeFan_Passed.setChecked(1)
             self.checkBox_TestIntakeFan_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -352,8 +365,9 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         pass
 
     def Blower_Test(self):
-        test_result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_2)
-        if test_result == IFC_VIP_TEST_RESULT_OK:
+        result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_1)
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestBlower_Passed.setChecked(1)
             self.checkBox_TestBlower_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -363,7 +377,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def Bme688_Exhaust_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_4)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestBme688_Exhaust_Passed.setChecked(1)
             self.checkBox_TestBme688_Exhaust_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -372,7 +387,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def Bme688_Intake_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_3)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestBme688_Intake_Passed.setChecked(1)
             self.checkBox_TestBme688_Intake_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -381,7 +397,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def Bme688_Left_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_1)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestBme688_Left_Passed.setChecked(1)
             self.checkBox_TestBme688_Left_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -390,7 +407,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def Bme688_Right_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_BME688_2)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestBme688_Right_Passed.setChecked(1)
             self.checkBox_TestBme688_Right_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -400,7 +418,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def WeightLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_1)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestWeightLeft_Passed.setChecked(1)
             self.checkBox_TestWeightLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -409,7 +428,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def WeightRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_2)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestWeightRight_Passed.setChecked(1)
             self.checkBox_TestWeightRight_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
@@ -419,12 +439,215 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
     def CatalyticBoard_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_CATALYTIC_BOARD)
-        if result == 0:
+        # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
+        if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
             self.checkBox_TestCatalyticBoard_Passed.setChecked(1)
             self.checkBox_TestCatalyticBoard_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
             self.checkBox_TestCatalyticBoard_NotPassed.setChecked(1)
             self.checkBox_TestCatalyticBoard_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def GetResultTest(self, name_test, check_box_passed, check_box_not_passed):
+        if check_box_passed.isChecked():
+            if check_box_not_passed.isChecked():
+                ctypes.windll.user32.MessageBoxW(0, name_test + " is not correct!", "", 16)
+                return RESULT_TEST_INCORRECT
+            else:
+                return RESULT_TEST_PASSED
+        else:
+            if check_box_not_passed.isChecked():
+                return RESULT_TEST_NOT_PASSED
+            else:
+                ctypes.windll.user32.MessageBoxW(0, name_test + " is not tested!", "", 16)
+                return RESULT_TEST_NOT_TESTED
+
+    def CreateReport(self):
+        # read and check serial number
+        # DEBUG
+        string_sn = "LL01-000000000"
+        # DEBUG
+        string_check = "LL01"
+        string_sn_check = string_sn.split("-")
+        if string_check != string_sn_check[0]:
+            ctypes.windll.user32.MessageBoxW(0, "Incorrect Serial Number!", "Error!", 16)
+            return
+
+        datetime_object = datetime.datetime.now()
+        string_result = datetime_object.strftime("%m/%d/%Y-%H:%M:%S,")
+        # for Walter
+        string_result += "Walter,L3600-TA001,"
+        # for Howell
+        # string_result += "Howell,L3600-TB001,"
+
+        # Main Motor test result
+        result_test = self.GetResultTest("Main Motor", self.checkBox_TestMainMotor_Passed,
+                                         self.checkBox_TestMainMotor_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # AC Main Power test result
+        result_test = self.GetResultTest("AC Main Power", self.checkBox_TestAcMainPower_Passed,
+                                         self.checkBox_TestAcMainPower_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Chamber Motor Left test result
+        result_test = self.GetResultTest("Chamber Motor Left", self.checkBox_TestChamberMotorLeft_Passed,
+                                         self.checkBox_TestChamberMotorLeft_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Chamber Motor Right test result
+        result_test = self.GetResultTest("Chamber Motor Right", self.checkBox_TestChamberMotorRight_Passed,
+                                         self.checkBox_TestChamberMotorRight_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # PTC Heater Intake test result
+        result_test = self.GetResultTest("PTC Heater Intake", self.checkBox_TestPtcHeaterIntake_Passed,
+                                         self.checkBox_TestPtcHeaterIntake_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # PTC Heater Internal test result
+        result_test = self.GetResultTest("PTC Heater Internal", self.checkBox_TestPtcHeaterInternal_Passed,
+                                         self.checkBox_TestPtcHeaterInternal_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Pad Heater Left test result
+        result_test = self.GetResultTest("Pad Heater Left", self.checkBox_TestPadHeaterLeft_Passed,
+                                         self.checkBox_TestPadHeaterLeft_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Pad Heater Right test result
+        result_test = self.GetResultTest("Pad Heater Right", self.checkBox_TestPadHeaterRight_Passed,
+                                         self.checkBox_TestPadHeaterRight_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Lamp test result
+        result_test = self.GetResultTest("Lamp", self.checkBox_TestLamp_Passed,
+                                         self.checkBox_TestLamp_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # switch - Chamber Left Present result
+        result_test = self.GetResultTest("Chamber Left Present", self.checkBox_PresentChamberLeft_Yes,
+                                         self.checkBox_PresentChamberLeft_No)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # switch - Chamber Right Present result
+        result_test = self.GetResultTest("Chamber Right Present", self.checkBox_PresentChamberRight_Yes,
+                                         self.checkBox_PresentChamberRight_No)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # switch - Back Lid Open result
+        result_test = self.GetResultTest("Back Lid Open", self.checkBox_BackLidOpen_Yes,
+                                         self.checkBox_BackLidOpen_No)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # switch - Front Lid Open result
+        result_test = self.GetResultTest("Front Lid Open", self.checkBox_FrontLidOpen_Yes,
+                                         self.checkBox_FrontLidOpen_No)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # switch - Top Locked result
+        result_test = self.GetResultTest("Top Locked", self.checkBox_TopLocked_Yes,
+                                         self.checkBox_TopLocked_No)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Intake Fan test result
+        result_test = self.GetResultTest("Intake Fan", self.checkBox_TestIntakeFan_Passed,
+                                         self.checkBox_TestIntakeFan_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Blower test result
+        result_test = self.GetResultTest("Blower", self.checkBox_TestBlower_Passed,
+                                         self.checkBox_TestBlower_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # BME688 Exhaust test result
+        result_test = self.GetResultTest("BME688 Exhaust", self.checkBox_TestBme688_Exhaust_Passed,
+                                         self.checkBox_TestBme688_Exhaust_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # BME688 Intake test result
+        result_test = self.GetResultTest("BME688 Intake", self.checkBox_TestBme688_Intake_Passed,
+                                         self.checkBox_TestBme688_Intake_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # BME688 Chamber Left test result
+        result_test = self.GetResultTest("BME688 Chamber Left", self.checkBox_TestBme688_Left_Passed,
+                                         self.checkBox_TestBme688_Left_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # BME688 Chamber Right test result
+        result_test = self.GetResultTest("BME688 Chamber Right", self.checkBox_TestBme688_Right_Passed,
+                                         self.checkBox_TestBme688_Right_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Weight Sensor Chamber Left test result
+        result_test = self.GetResultTest("Weight Sensor Chamber Left", self.checkBox_TestWeightLeft_Passed,
+                                         self.checkBox_TestWeightLeft_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Weight Sensor Chamber Right test result
+        result_test = self.GetResultTest("Weight Sensor Chamber Right", self.checkBox_TestWeightRight_Passed,
+                                         self.checkBox_TestWeightRight_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test + ","
+
+        # Catalytic Board test result
+        result_test = self.GetResultTest("Catalytic Board", self.checkBox_TestCatalyticBoard_Passed,
+                                         self.checkBox_TestCatalyticBoard_NotPassed)
+        if result_test == RESULT_TEST_INCORRECT or result_test == RESULT_TEST_NOT_TESTED:
+            return
+        string_result = string_result + result_test
+
+        self.nameReportFile = ".\\Reports\\" + string_sn + ".txt"  # DEBUG
+        # file_name = "Reports\\" + string_sn + ".txt"   # RELEASE
+        file_output = open(self.nameReportFile, 'w')
+        file_output.write(string_result)
+        file_output.close()
+
+        ctypes.windll.user32.MessageBoxW(0, "The report file has been successfully created!", "", 64)
+
 
 
 
