@@ -119,8 +119,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>190</y>
+      <x>240</x>
+      <y>460</y>
       <width>411</width>
       <height>83</height>
      </rect>
@@ -222,8 +222,8 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>300</y>
+      <x>240</x>
+      <y>560</y>
       <width>411</width>
       <height>111</height>
      </rect>
@@ -290,8 +290,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>170</y>
+      <x>680</x>
+      <y>460</y>
       <width>101</width>
       <height>111</height>
      </rect>
@@ -302,6 +302,71 @@
     <property name="pixmap">
      <pixmap>../connect_red.png</pixmap>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="gBoxSerialNumber">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>150</y>
+      <width>331</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Serial Number</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>40</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>LL01-00000000000</string>
+     </property>
+     <property name="maxLength">
+      <number>16</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pButtonWriteSN">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Write</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pButtonReadSN_2">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>80</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Read</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

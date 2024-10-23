@@ -66,14 +66,19 @@ def write_application(file_output_name, open_com_port):
         output_data = file_output.read(8)
         result, read_data = interface_vip.cmd_write_packet(IFC_VIP_MEMORY_FLASH_CPU1, address, output_data)
         if result > 0:
-            print("Communication - ERROR")
+            pbar.close()
+            print("\nCommunication - ERROR")
             return
+
         result, read_data = interface_vip.read_state()
         if result > 0:
-            print("Communication - ERROR")
+            pbar.close()
+            print("\nCommunication - ERROR")
             return
+
         if interface_vip.get_state() != IFC_VIP_STATE_IDLE:
-            print("Write Flash - ERROR")
+            pbar.close()
+            print("\nWrite Flash - ERROR")
             return
 
         if file_size > 0:
@@ -102,19 +107,19 @@ def write_application(file_output_name, open_com_port):
         print("Communication - ERROR")
         return
 
-    pbar = tqdm(desc='Waiting', total=20, colour='green')
+    pbar = tqdm(desc='Waiting', total=50, colour='green')
     for i in range(50):
         time.sleep(0.2)
         pbar.update(1)
 
-    pbar.close();
+    pbar.close()
     """ time.sleep(2)
     print("Waiting")
     time.sleep(8) """
 
     result, read_data = interface_vip.read_state()
     if result > 0:
-        print("Communication - ERROR")
+        print("\nCommunication - ERROR")
         return
 
     if interface_vip.get_state() == IFC_VIP_STATE_IDLE:

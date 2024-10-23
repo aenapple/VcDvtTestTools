@@ -78,7 +78,7 @@
        <x>10</x>
        <y>30</y>
        <width>231</width>
-       <height>51</height>
+       <height>52</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_MainMotor">
@@ -127,6 +127,9 @@
           </property>
           <item>
            <widget class="QCheckBox" name="checkBox_TestMainMotor_Passed">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
             <property name="font">
              <font>
               <family>MS Shell Dlg 2</family>
@@ -141,6 +144,12 @@
             </property>
             <property name="text">
              <string>Passed</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -160,6 +169,9 @@
             </property>
             <property name="text">
              <string>Not Passed</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -1968,8 +1980,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_11">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>550</y>
+      <x>50</x>
+      <y>500</y>
       <width>141</width>
       <height>95</height>
      </rect>
@@ -3082,6 +3094,26 @@
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pButtonCreateReport">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>640</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Create report</string>
+    </property>
    </widget>
   </widget>
  </widget>
