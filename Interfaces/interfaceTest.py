@@ -174,14 +174,31 @@ def getMotorCurrent():
 
     pass
 
+def ReadState():
+    print()
+    print("ReadState")
+    result, data = pvtIntefaceVIP.read_state()
+    state_sensors = pvtIntefaceVIP.get_sensor_state()
+
+    print("Switches Lock:", state_sensors & IFC_VIP_STATE_SWITCHES_LOCK)
+    print("Front Lid Open:", state_sensors & IFC_VIP_STATE_SWITCH_FRONT_LID_OPEN)
+    print("Back Lid Open:", state_sensors & IFC_VIP_STATE_SWITCH_BACK_LID_OPEN)
+    print("Switch Left:", state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_LEFT)
+    print("Switch Right:",state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_RIGHT)
 
 
+def GetSerial():
+    result, result = pvtIntefaceVIP.get_serial(1)
+    part_1, ser_part2  = struct.unpack('<xbQxxxxxx', result)
+
+    result, result = pvtIntefaceVIP.get_serial(2)
+    part_2, ser_part2  = struct.unpack('<xbQxxxxxx', result)
 
 
 if __name__ == '__main__':
 
 
-    PVT_COMPORT = "COM4"
+    PVT_COMPORT = "COM7"
         
     pvtIntefaceVIP = InterfaceVIP50()
     result = pvtIntefaceVIP.open(PVT_COMPORT, 115200)
@@ -194,6 +211,9 @@ if __name__ == '__main__':
 
     # keyboard.add_hotkey('-',     main_motor_cw)
     # keyboard.add_hotkey('=',     main_motor_ccw)
+
+    keyboard.add_hotkey('shift+q', ReadState)
+
 
     keyboard.add_hotkey('q', stopAll)
 

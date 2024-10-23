@@ -61,6 +61,8 @@ IFC_VIP_COMMAND_SET_RTC = 0x23
 IFC_VIP_COMMAND_GET_RTC = 0x24
 IFC_VIP_COMMAND_GET_WEIGHT_SENSOR = 0x27
 IFC_VIP_COMMAND_GET_AI_PREDICTION = 0x28
+IFC_VIP_COMMAND_SET_SERIAL_NUMBER = 0x29
+IFC_VIP_COMMAND_GET_SERIAL_NUMBER = 0x28
 
 IFC_VIP_COMMAND_NACK = 0xFF
 
@@ -136,10 +138,11 @@ IFC_VIP_COMPONENT_WEIGHT_SENSOR_2 = 0x10  # right
 IFC_VIP_COMPONENT_CATALYTIC_BOARD = 0x11
 IFC_VIP_COMPONENT_AC_POWER = 0x12
 
-IFC_VIP_BME688_LEFT = 0x00
-IFC_VIP_BME688_RIGHT = 0x01
-IFC_VIP_BME688_INTAKE = 0x02
-IFC_VIP_BME688_EXHAUST = 0x03
+IFC_VIP_BME688_LEFT = 0x01
+IFC_VIP_BME688_RIGHT = 0x02
+IFC_VIP_BME688_INTAKE = 0x03
+IFC_VIP_BME688_EXHAUST = 0x04
+
 
 IFC_VIP_T_PAD_HEATER_LEFT = 0x01
 IFC_VIP_T_PAD_HEATER_RIGHT = 0x02
@@ -536,6 +539,16 @@ class InterfaceVIP50:
         write_data = self.get_component_packet(1)
         write_data[1] = ai_prediction
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_AI_PREDICTION, write_data)
+        if read_result != 0:
+            return read_result, read_data
+        
+        return 0, read_data
+
+
+    def get_serial(self, part):
+        write_data = self.get_component_packet(1)
+        write_data[1] = part
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_SERIAL_NUMBER, write_data)
         if read_result != 0:
             return read_result, read_data
         

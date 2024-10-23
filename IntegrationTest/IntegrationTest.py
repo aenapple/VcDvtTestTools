@@ -373,10 +373,17 @@ class IntegrationTest():
                     self.AiLeft.mixIntervalTime, self.AiLeft.mixingCounter,     self.AiLeft.mixPhase, self.AiLeft.mixDuration, \
                     self.AiLeft.bmeData.currBme,   self.AiLeft.compostingState, self.AiLeft.motorCurrent
 
-    def SummaryTests(self):
-        
-        return 
+    def GetState(self):
+        result, data = self.interfaceVIP.read_state()
+        state_sensors = self.interfaceVIP.get_sensor_state()
 
+        switches_lock = state_sensors & IFC_VIP_STATE_SWITCHES_LOCK
+        switch_front_lid_open =  state_sensors & IFC_VIP_STATE_SWITCH_FRONT_LID_OPEN
+        switch_back_lid_open = state_sensors & IFC_VIP_STATE_SWITCH_BACK_LID_OPEN
+        switch_left = state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_LEFT
+        switch_right = state_sensors & IFC_VIP_STATE_SWITCH_PRESENT_CH_RIGHT
+
+        return switches_lock,  switch_front_lid_open,  switch_back_lid_open, switch_left, switch_right
     def PrintChamberOutput(SIDE: str, 
                         compostingState: int, 
                         bmeValues: TBme688Sensor, mass: list,
@@ -418,6 +425,11 @@ if __name__ == '__main__':
 
 
     ## TODO get serial number here and make it the file name
+    result, result = p50IntefaceVIP.get_serial(1)
+    part_1, ser_part2  = struct.unpack('<xbQxxxxxx', result)
+
+    result, result = p50IntefaceVIP.get_serial(2)
+    part_2, ser_part2  = struct.unpack('<xbQxxxxxx', result)
 
     file_path_name = f"{folder_name}\\{P50_COMPORT}_Integration_Test.csv"
 
@@ -454,6 +466,7 @@ if __name__ == '__main__':
         chamberTempRange, chamberTempRangeCounter, increasingChamberTempFlag,  padTempRangeCounter, leftIncreasingPadTempFlag, rightIncreasingPadTempFlag, \
             blowerIncreasingFanPwmFlag,  blowerFanPwmCounter, blowerIncreasingPtcTempRangeFlag, blowerTempRangeCounter, intakeFanPwmCounter, depletionFlag, depletionCounter  = p50Collection.DataCollectionCounters()
         
+        switches_lock,  switch_front_lid_open,  switch_back_lid_open, switch_left, switch_right = p50Collection.GetState() 
 
         print(dt)
 
@@ -488,6 +501,8 @@ if __name__ == '__main__':
         print(f"Blower_Pwm_Counter: {blowerFanPwmCounter} s    \tBlower_PWM: {blowerPwm};\t\tIncreasing_Fan_Flag: {blowerIncreasingFanPwmFlag};")
         print(f"    Plasma Counter: {plasmaCounter} s\tPlasma Flag: {plasmaFlag};\t\tOdor Flag: {odorFlag}"         )
 
+        print()
+        print("Switches Lock:", switches_lock, "Front Lid Open:", switch_front_lid_open, "Back Lid Open:", switch_back_lid_open, "Switch Left:", switch_left, "Switch Right:",switch_right)
 
         print()
         print(f"        Chamber_T_Range: {chamberTempRange};")
@@ -531,6 +546,9 @@ if __name__ == '__main__':
             "chamberTempRangeCounter": chamberTempRangeCounter, "increasingChamberTempFlag": increasingChamberTempFlag,
             "blowerFanPwmCounter": blowerFanPwmCounter, "blowerIncreasingFanPwmFlag": blowerIncreasingFanPwmFlag,
             "intakeFanPwmCounter": intakeFanPwmCounter, 
+
+            STATE_SWITCHES_LOCK: switches_lock, STATE_SWITCH_FRONT_LID_OPEN: switch_front_lid_open,
+            STATE_SWITCH_BACK_LID_OPEN: switch_back_lid_open,  STATE_SWITCH_PRESENT_CH_LEFT: switch_left, STATE_SWITCH_PRESENT_CH_RIGHT: switch_right
         }
 
 
