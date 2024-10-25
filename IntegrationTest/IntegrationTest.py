@@ -136,13 +136,13 @@ class IntegrationTest():
                 
 
 
-            # if self.AiLeft.mixingCounter <= 0:
-            #     if self.AiRight.mixPhase == 0:
-            #         self.AiLeft.mixPhase, self.AiLeft.mixingCounter   = MixingCycle(self.interfaceVIP, IFC_VIP_MOTOR_CHAMBER_LEFT, 
-            #                                                                                         self.AiLeft.mixPhase, self.AiLeft.mixIntervalTime, 
-            #                                                                                         self.AiLeft.mixDuration[0], self.AiLeft.mixDuration[1])
-            # else:
-            #     self.AiLeft.mixingCounter -= 1
+            if self.AiLeft.mixingCounter <= 0:
+                if self.AiRight.mixPhase == 0:
+                    self.AiLeft.mixPhase, self.AiLeft.mixingCounter   = MixingCycle(self.interfaceVIP, IFC_VIP_MOTOR_CHAMBER_LEFT, 
+                                                                                                    self.AiLeft.mixPhase, self.AiLeft.mixIntervalTime, 
+                                                                                                    self.AiLeft.mixDuration[0], self.AiLeft.mixDuration[1])
+            else:
+                self.AiLeft.mixingCounter -= 1
 
             return 1
         else:
