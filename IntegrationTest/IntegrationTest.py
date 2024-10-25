@@ -136,13 +136,13 @@ class IntegrationTest():
                 
 
 
-            if self.AiLeft.mixingCounter <= 0:
-                if self.AiRight.mixPhase == 0:
-                    self.AiLeft.mixPhase, self.AiLeft.mixingCounter   = MixingCycle(self.interfaceVIP, IFC_VIP_MOTOR_CHAMBER_LEFT, 
-                                                                                                    self.AiLeft.mixPhase, self.AiLeft.mixIntervalTime, 
-                                                                                                    self.AiLeft.mixDuration[0], self.AiLeft.mixDuration[1])
-            else:
-                self.AiLeft.mixingCounter -= 1
+            # if self.AiLeft.mixingCounter <= 0:
+            #     if self.AiRight.mixPhase == 0:
+            #         self.AiLeft.mixPhase, self.AiLeft.mixingCounter   = MixingCycle(self.interfaceVIP, IFC_VIP_MOTOR_CHAMBER_LEFT, 
+            #                                                                                         self.AiLeft.mixPhase, self.AiLeft.mixIntervalTime, 
+            #                                                                                         self.AiLeft.mixDuration[0], self.AiLeft.mixDuration[1])
+            # else:
+            #     self.AiLeft.mixingCounter -= 1
 
             return 1
         else:
@@ -425,11 +425,11 @@ if __name__ == '__main__':
 
 
     ## TODO get serial number here and make it the file name
-    result, result = p50IntefaceVIP.get_serial(1)
-    part_1, ser_part2  = struct.unpack('<xbQxxxxxx', result)
+    # result, result = p50IntefaceVIP.get_serial(1)
+    # part_1, ser_part2  = struct.unpack('<xbQxxxxxx', result)
 
-    result, result = p50IntefaceVIP.get_serial(2)
-    part_2, ser_part2  = struct.unpack('<xbQxxxxxx', result)
+    # result, result = p50IntefaceVIP.get_serial(2)
+    # part_2, ser_part2  = struct.unpack('<xbQxxxxxx', result)
 
     file_path_name = f"{folder_name}\\{P50_COMPORT}_Integration_Test.csv"
 
@@ -525,11 +525,14 @@ if __name__ == '__main__':
             RIGHT_MASS:    rightMass, 
             LEFT_MASS:     leftMass,  
                         
-                    
+            RIGHT_MOT_CURRENT: rightMotorCurrent, LEFT_MOT_CURRENT: leftMotorCurrent,
+            
+            STATE_SWITCHES_LOCK: switches_lock, STATE_SWITCH_FRONT_LID_OPEN: switch_front_lid_open,
+            STATE_SWITCH_BACK_LID_OPEN: switch_back_lid_open,  STATE_SWITCH_PRESENT_CH_LEFT: switch_left, STATE_SWITCH_PRESENT_CH_RIGHT: switch_right,
+
             RIGHT_MIX_PHASE: rightMixPhase, LEFT_MIX_PHASE: leftMixPhase, 
             RIGHT_MIX_DUR: rightMixDuration, LEFT_MIX_DUR: leftMixDuration, 
 
-            RIGHT_MOT_CURRENT: rightMotorCurrent, LEFT_MOT_CURRENT: leftMotorCurrent,
 
             RIGHT_PAD_RNG: rightPadHeater[0][0], 
             LEFT_PAD_RNG:  leftPadHeater[0][0], 
@@ -545,10 +548,9 @@ if __name__ == '__main__':
 
             "chamberTempRangeCounter": chamberTempRangeCounter, "increasingChamberTempFlag": increasingChamberTempFlag,
             "blowerFanPwmCounter": blowerFanPwmCounter, "blowerIncreasingFanPwmFlag": blowerIncreasingFanPwmFlag,
-            "intakeFanPwmCounter": intakeFanPwmCounter, 
+            "intakeFanPwmCounter": intakeFanPwmCounter
 
-            STATE_SWITCHES_LOCK: switches_lock, STATE_SWITCH_FRONT_LID_OPEN: switch_front_lid_open,
-            STATE_SWITCH_BACK_LID_OPEN: switch_back_lid_open,  STATE_SWITCH_PRESENT_CH_LEFT: switch_left, STATE_SWITCH_PRESENT_CH_RIGHT: switch_right
+
         }
 
 
