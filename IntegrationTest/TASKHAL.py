@@ -151,8 +151,8 @@ def GetMotorCurrent(interfaceVIP, motor):
 
 def GetWeightData(interfaceVIP):
 
-    left_result,    left = interfaceVIP.get_weight(IFC_VIP_WEIGHT_LEFT)
-    right_result,   right  = interfaceVIP.get_weight(IFC_VIP_WEIGHT_RIGHT)
+    left_result,    left = interfaceVIP.get_weight(IFC_VIP_WEIGHT_BACK)
+    right_result,   right  = interfaceVIP.get_weight(IFC_VIP_WEIGHT_FRONT)
     try:
         sens_num,front = struct.unpack('<xbIxxxxxxxxxx', right)
         sens_num, back  = struct.unpack('<xbIxxxxxxxxxx', right)
