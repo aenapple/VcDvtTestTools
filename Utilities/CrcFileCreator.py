@@ -15,10 +15,10 @@ BINFILE_SIZE_CRC = 4
 BINFILE_ADR_SIZE_FILE = BINFILE_ADR_CRC + BINFILE_SIZE_CRC
 BINFILE_SIZE_SIZE_FILE = 4
 
-BINFILE_ADR_SRL_NUM = BINFILE_ADR_SIZE_FILE + BINFILE_SIZE_SIZE_FILE
-BINFILE_SIZE_SRL_NUM = 16
+BINFILE_ADR_RESERVED = BINFILE_ADR_SIZE_FILE + BINFILE_SIZE_SIZE_FILE
+BINFILE_SIZE_RESERVED = 16
 
-BINFILE_ADR_KEY = BINFILE_ADR_SRL_NUM + BINFILE_SIZE_SRL_NUM
+BINFILE_ADR_KEY = BINFILE_ADR_RESERVED + BINFILE_SIZE_RESERVED
 BINFILE_SIZE_KEY = 16
 
 BINFILE_BUFFER_SIZE = 256
@@ -113,8 +113,7 @@ def GenerateCRCFile(str_file_input):
     str_file_output = string_version + '.bin'
     
     file_output = open(str_file_output, 'wb')
-    
-    serial_number = "0000000000000000"
+    reserved = "0000000000000000"
     encryption_key = "0000000000000000"
 
     # --------------------------  BIN START  --------------------------------------   
@@ -124,8 +123,14 @@ def GenerateCRCFile(str_file_input):
     file_output.write(string_version.encode())
     file_output.write((crc & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
     file_output.write((number_bytes & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_SIZE_FILE, byteorder="little"))
-    file_output.write(serial_number.encode())
+    file_output.write(reserved.encode())
     file_output.write(encryption_key.encode())
+
+    file_ident = open('ident.bin', 'wb')
+    file_ident.write(string_version.encode())
+    file_ident.write((crc & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
+    file_ident.write((number_bytes & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_SIZE_FILE, byteorder="little"))
+    file_ident.close()
     
     #  Fill in remaining bytes in Ident File
     for k in range(BINFILE_SIZE_IDENT - (BINFILE_ADR_KEY + BINFILE_SIZE_KEY)):
