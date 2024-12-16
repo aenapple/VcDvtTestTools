@@ -59,8 +59,12 @@ IFC_VIP_COMMAND_GET_RESULT_TEST = 0x21
 IFC_VIP_COMMAND_GET_POSITION = 0x22
 IFC_VIP_COMMAND_SET_RTC = 0x23
 IFC_VIP_COMMAND_GET_RTC = 0x24
+IFC_VIP_COMMAND_GET_VERSION = 0x25
+IFC_VIP_COMMAND_GET_CRC32 = 0x26
 IFC_VIP_COMMAND_GET_WEIGHT_SENSOR = 0x27
 IFC_VIP_COMMAND_GET_AI_PREDICTION = 0x28
+IFC_VIP_COMMAND_SET_SERIAL_NUMBER = 0x29
+IFC_VIP_COMMAND_GET_SERIAL_NUMBER = 0x2A
 
 IFC_VIP_COMMAND_NACK = 0xFF
 
@@ -162,6 +166,9 @@ IFC_VIP_MEMORY_FLASH_CPU1 = 0x01
 IFC_VIP_MEMORY_FLASH_CPU2 = 0x02
 IFC_VIP_MEMORY_EEPROM = 0x03
 
+IFC_VIP_VERSION_PART1 = 0x01
+IFC_VIP_VERSION_PART2 = 0x02
+
 IFC_VIP_FAN_MAIN = 0x01
 IFC_VIP_FAN_PTC_LEFT = 0x02
 IFC_VIP_FAN_PTC_RIGHT = 0x03
@@ -223,14 +230,11 @@ class InterfaceVIP:
         self.bmeHumidity = 0
         self.bmePressure = 0
         self.bmeGasResistance = 0
-        self.bmeNumSensor = 0;
+        self.bmeNumSensor = 0
+        self.versionFirmware = "No version"
 
     def get_null_packet(self):
         return self.get_component_packet(0)
-        """ packet = buf_array.array('B', b'\x00')
-        for i in range(1, INTERFACE_VIP_SIZE_PACKET - 2):
-            packet.append(0)
-        return packet """
 
     def get_component_packet(self, component):
         packet = buf_array.array('B', [component])
@@ -292,6 +296,9 @@ class InterfaceVIP:
     def get_sensor_state(self):
         return self.sensorStates
 
+    def get_version_string(self):
+        return self.versionFirmware
+
     def cmd_write_packet(self, type_memory, address, packet):
         write_data = buf_array.array('B', [type_memory])
         write_data.append(address & 0xFF)
@@ -334,7 +341,28 @@ class InterfaceVIP:
         if read_result != 0:
             return read_result, read_data
         return 0, read_data
-        
+
+    def cmd_get_version(self):
+        write_data = self.get_component_packet(IFC_VIP_VERSION_PART1)
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_VERSION, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        version_data = buf_array.array('B', [read_data[1]])
+        for i in range(1, 8):
+            version_data.append(read_data[1 + i])
+
+        write_data = self.get_component_packet(IFC_VIP_VERSION_PART2)
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_VERSION, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        for i in range(8):
+            version_data.append(read_data[i])
+
+        self.versionFirmware = version_data.decode(encoding="utf-8")
+
+        return 0, read_data
     
     def cmd_set_rtc(self):
         date_now = datetime.now()
@@ -626,7 +654,7 @@ class InterfaceVIP:
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM9", 115200)
+    result = interfaceVIP.open("COM7", 115200)
     if result != 0:
         SystemExit(1)
 
