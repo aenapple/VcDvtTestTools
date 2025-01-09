@@ -318,7 +318,7 @@
     <property name="alignment">
      <set>Qt::AlignHCenter|Qt::AlignTop</set>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_SN">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -354,7 +354,7 @@
       <string>Write</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pButtonReadSN_2">
+    <widget class="QPushButton" name="pButtonReadSN">
      <property name="geometry">
       <rect>
        <x>170</x>

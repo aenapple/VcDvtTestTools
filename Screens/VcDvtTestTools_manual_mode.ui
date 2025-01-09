@@ -846,6 +846,9 @@
         </property>
         <item>
          <widget class="QCheckBox" name="checkBox_TestAcMainPower_Passed">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -861,10 +864,16 @@
           <property name="text">
            <string>Passed</string>
           </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
          <widget class="QCheckBox" name="checkBox_TestAcMainPower_NotPassed">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -879,6 +888,9 @@
           </property>
           <property name="text">
            <string>Not Passed</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -2713,7 +2725,7 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_WeightBack">
+   <widget class="QGroupBox" name="grBox_WeightLeft">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -2734,7 +2746,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Weight Sensors Back</string>
+     <string>Weight Sensors Left</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -2756,7 +2768,7 @@
        <number>3</number>
       </property>
       <item>
-       <widget class="QPushButton" name="btn_WeightBack_Test">
+       <widget class="QPushButton" name="btn_WeightLeft_Test">
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2800,7 +2812,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestWeightBack_Passed">
+         <widget class="QCheckBox" name="checkBox_TestWeightLeft_Passed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2819,7 +2831,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestWeightBack_NotPassed">
+         <widget class="QCheckBox" name="checkBox_TestWeightLeft_NotPassed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2842,7 +2854,7 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="grBox_WeightFront">
+   <widget class="QGroupBox" name="grBox_WeightRight">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -2863,7 +2875,7 @@
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Weight Sensors Front</string>
+     <string>Weight Sensors Right</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -2885,7 +2897,7 @@
        <number>3</number>
       </property>
       <item>
-       <widget class="QPushButton" name="btn_WeightFront_Test">
+       <widget class="QPushButton" name="btn_WeightRight_Test">
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2929,7 +2941,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestWeightFront_Passed">
+         <widget class="QCheckBox" name="checkBox_TestWeightRight_Passed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -2948,7 +2960,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_TestWeightFront_NotPassed">
+         <widget class="QCheckBox" name="checkBox_TestWeightRight_NotPassed">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>

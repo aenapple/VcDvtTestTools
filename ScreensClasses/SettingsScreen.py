@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from Screens_py.VcDvtTestTools_screen_settings import Ui_Settings
 from ScreensClasses.ScreenIndex import *
+from Interfaces.InterfaceVIP import *
+import ctypes
 from IniFile import IniFile
 
 from images import *
@@ -29,6 +31,9 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
         pixmap = QPixmap("connect_red.png")
         self.connectLabel.setPixmap(pixmap)
         self.connectLabel.setEnabled(1)
+
+        self.pButtonWriteSN.clicked.connect(self.WriteSN)
+        self.pButtonReadSN.clicked.connect(self.ReadSN)
 
     def init(self):
         f = IniFile()
@@ -76,6 +81,20 @@ class SettingsScreen(PyQt5.QtWidgets.QMainWindow, Ui_Settings):
     def getstate_sett(self):
         self.lineEdit_GetState.setText('State')
 
+    def WriteSN(self):
+        serial_number = self.lineEdit_SN.text()
+        result, read_data = self.InterfaceVIP.cmd_set_sn(str.encode(serial_number))
+        if result == 0:
+            ctypes.windll.user32.MessageBoxW(0, "S/N was written successfully!", "", 64)
+        else:
+            ctypes.windll.user32.MessageBoxW(0, "S/N was not written!", "", 16)
+
+    def ReadSN(self):
+        result, read_data = self.InterfaceVIP.cmd_get_sn()
+        if result == 0:
+            self.lineEdit_SN.setText(self.InterfaceVIP.get_sn_string())
+        else:
+            self.lineEdit_SN.setText("0000000000000000")
 
 
 

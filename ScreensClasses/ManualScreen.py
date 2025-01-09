@@ -91,8 +91,8 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_Bme688_Left_Test.clicked.connect(self.Bme688_Left_Test)
         self.btn_Bme688_Right_Test.clicked.connect(self.Bme688_Right_Test)
 
-        self.btn_WeightBack_Test.clicked.connect(self.WeightBack_Test)
-        self.btn_WeightFront_Test.clicked.connect(self.WeightFront_Test)
+        self.btn_WeightLeft_Test.clicked.connect(self.WeightLeft_Test)
+        self.btn_WeightRight_Test.clicked.connect(self.WeightRight_Test)
 
         self.btn_CatalyticBoard_Test.clicked.connect(self.CatalyticBoard_Test)
 
@@ -433,7 +433,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestBme688_Right_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
-    def WeightBack_Test(self):
+    def WeightLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_1)
         # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
         if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
@@ -443,7 +443,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestWeightBack_NotPassed.setChecked(1)
             self.checkBox_TestWeightBack_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
-    def WeightFront_Test(self):
+    def WeightRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_2)
         # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
         if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:

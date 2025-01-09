@@ -7,3 +7,6 @@
 /Reports
 */__pycache__
 Interfaces/__pycache__
+/output
+/build
+/dist
