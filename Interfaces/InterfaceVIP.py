@@ -285,7 +285,6 @@ class InterfaceVIP:
         else:
             self.stateString = "Error"
 
-
         return 0, read_data
 
     def get_state(self):

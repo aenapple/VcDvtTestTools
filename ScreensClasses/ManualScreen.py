@@ -36,10 +36,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.widget = w
         self.InterfaceVIP = interface_vip
         self.nameReportFile = None
-        self.assemblyTest = PRE_ASSEMBLY_TEST  # for Walter
-        # self.assemblyTest = POST_ASSEMBLY_TEST  # for Howell
-        self.versionApp = DEBUG_APP  # for debug
-        # self.versionApp = RELEASE_APP  # for release
+        # self.assemblyTest = PRE_ASSEMBLY_TEST  # for Walter
+        self.assemblyTest = POST_ASSEMBLY_TEST  # for Howell
+        # self.versionApp = DEBUG_APP  # for debug
+        self.versionApp = RELEASE_APP  # for release
 
         # self.widget.setWindowTitle("VcDvtTestTools | Manual Mode")
         self.btn_AutomaticManual.clicked.connect(self.AutomaticManual)
@@ -437,21 +437,21 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_1)
         # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
         if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
-            self.checkBox_TestWeightBack_Passed.setChecked(1)
-            self.checkBox_TestWeightBack_Passed.setStyleSheet(TS_COLOR_PASSED)
+            self.checkBox_TestWeightLeft_Passed.setChecked(1)
+            self.checkBox_TestWeightLeft_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestWeightBack_NotPassed.setChecked(1)
-            self.checkBox_TestWeightBack_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestWeightLeft_NotPassed.setChecked(1)
+            self.checkBox_TestWeightLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def WeightRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_WEIGHT_SENSOR_2)
         # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
         if result == 0 and self.InterfaceVIP.get_state() == IFC_VIP_STATE_IDLE:
-            self.checkBox_TestWeightFront_Passed.setChecked(1)
-            self.checkBox_TestWeightFront_Passed.setStyleSheet(TS_COLOR_PASSED)
+            self.checkBox_TestWeightRight_Passed.setChecked(1)
+            self.checkBox_TestWeightRight_Passed.setStyleSheet(TS_COLOR_PASSED)
         else:
-            self.checkBox_TestWeightFront_NotPassed.setChecked(1)
-            self.checkBox_TestWeightFront_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+            self.checkBox_TestWeightRight_NotPassed.setChecked(1)
+            self.checkBox_TestWeightRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
 
     def CatalyticBoard_Test(self):
@@ -479,9 +479,13 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
                 return RESULT_TEST_NOT_TESTED
 
     def CreateReport(self):
-        # read and check serial number
+        result, read_data = self.InterfaceVIP.cmd_get_sn()
+        if result == 0:
+            string_sn = self.InterfaceVIP.get_sn_string()
+        else:
+            self.lineEdit_SN.setText("0000000000000000")
         # DEBUG
-        string_sn = "LL01-000000000"
+        # string_sn = "LL01-000000000"
         # DEBUG
         string_check = "LL01"
         string_sn_check = string_sn.split("-")
@@ -661,9 +665,15 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         string_result = string_result + result_test
 
         if self.versionApp == DEBUG_APP:
-            self.nameReportFile = ".\\Reports\\" + string_sn + ".vctr"  # DEBUG
+            if self.assemblyTest == PRE_ASSEMBLY_TEST:
+                self.nameReportFile = ".\\Reports\\" + string_sn + "_pre.vctr"  # DEBUG
+            else:
+                self.nameReportFile = ".\\Reports\\" + string_sn + "_post.vctr"  # DEBUG
         else:
-            self.nameReportFile = "Reports\\" + string_sn + ".vctr"  # RELEASE
+            if self.assemblyTest == PRE_ASSEMBLY_TEST:
+                self.nameReportFile = string_sn + "_pre.vctr"  # RELEASE
+            else:
+                self.nameReportFile = string_sn + "_post.vctr"  # RELEASE
         file_output = open(self.nameReportFile, 'w')
         file_output.write(string_result)
         file_output.close()
@@ -671,7 +681,7 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         if self.versionApp == DEBUG_APP:
             name_zip_file = ".\\Reports\\" + string_sn + ".zip"  # DEBUG
         else:
-            name_zip_file = "Reports\\" + string_sn + ".zip"  # RELEASE
+            name_zip_file = string_sn + ".zip"  # RELEASE
 
         pyminizip.compress(self.nameReportFile, None, name_zip_file, "vctr", 5)
         os.remove(self.nameReportFile)

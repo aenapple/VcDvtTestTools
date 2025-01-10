@@ -58,6 +58,6 @@ if __name__ == '__main__':
 
     args = sys.argv[1:]
     # str_file_output = args[0]
-    str_file_output = "../Reports/LL01-000000000.vctr"
+    str_file_output = "../Reports/LL01-00000000300_post.vctr"
 
     file_decoder(str_file_output)
