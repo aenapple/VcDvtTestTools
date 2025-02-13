@@ -159,12 +159,13 @@ IFC_VIP_MOTOR_CHAMBER_RIGHT = 0x03
 
 IFC_VIP_HEATER_PAD_LEFT = 0x01
 IFC_VIP_HEATER_PAD_RIGHT = 0x02
-IFC_VIP_HEATER_PTC_LEFT = 0x03
-IFC_VIP_HEATER_PTC_RIGHT = 0x04
+IFC_VIP_HEATER_PTC_INTAKE = 0x03
+IFC_VIP_HEATER_PTC_INTERNAL = 0x04
 
 IFC_VIP_MEMORY_FLASH_CPU1 = 0x01
 IFC_VIP_MEMORY_FLASH_CPU2 = 0x02
 IFC_VIP_MEMORY_EEPROM = 0x03
+IFC_VIP_MEMORY_AI_DATA = 0x04
 
 IFC_VIP_VERSION_PART1 = 0x01
 IFC_VIP_VERSION_PART2 = 0x02
@@ -172,11 +173,8 @@ IFC_VIP_VERSION_PART2 = 0x02
 IFC_VIP_SN_PART1 = 0x01
 IFC_VIP_SN_PART2 = 0x02
 
-IFC_VIP_FAN_MAIN = 0x01
-IFC_VIP_FAN_PTC_LEFT = 0x02
-IFC_VIP_FAN_PTC_RIGHT = 0x03
-IFC_VIP_FAN_AIR_LEFT = 0x04
-IFC_VIP_FAN_AIR_RIGHT = 0x05
+IFC_VIP_FAN_BLOWER = 0x01
+IFC_VIP_FAN_INTAKE = 0x02
 
 IFC_VIP_TEST_RESULT_OK = 0x00
 IFC_VIP_TEST_RESULT_PROCESS = 0x01
@@ -463,7 +461,7 @@ class InterfaceVIP:
         #  return 0, read_data
         #  DEBUG
 
-        timeout = 18.0  # 18 + 2 = 20 Sec
+        timeout = 58.0  # 58 + 2 = 60 Sec
         time.sleep(2)
         while True:
             result, read_data = self.read_state()
@@ -493,7 +491,7 @@ class InterfaceVIP:
     def cmd_control_motor(self, num_motor, pwm, direction):
         write_data = self.get_component_packet(num_motor)
         write_data[1] = pwm        # 0-100%, 0% - stop
-        write_data[2] = direction  # '0' - CW, '0' - CCW
+        write_data[2] = direction  # '0' - CW, '1' - CCW
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_CONTROL_MOTOR, write_data)
         if read_result != 0:
             return read_result, read_data
@@ -731,8 +729,8 @@ if __name__ == '__main__':
         else:
             print(result)
             SystemExit(2)
-        # print(result)
-        # continue
+        print(result)
+        continue
         # time.sleep(10)
 
         """ result, read_data = interfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_OZONE)
@@ -761,8 +759,8 @@ if __name__ == '__main__':
                 print(result)
                 SystemExit(2) """
 
-        time.sleep(2.0)
-        continue
+        # time.sleep(2.0)
+        # continue
 
         """ result, read_data = interfaceVIP.set_dam_postion(1)  # left open
         if result != 0:
@@ -789,10 +787,10 @@ if __name__ == '__main__':
 
         # continue
 
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 0)
         # time.sleep(5.0)
 
-        for i in range(10):
+        """ for i in range(10):
             time.sleep(1.0)
 
             result, read_data = interfaceVIP.get_state_motor(IFC_VIP_MOTOR_CHAMBER_LEFT)
@@ -807,14 +805,18 @@ if __name__ == '__main__':
                 currentMotor = (read_data[7] << 8) + read_data[6]
                 print("Motor Right - " + str(currentMotor))
             else:
-                print(result)
+                print(result) """
 
-        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
+        time.sleep(2.0)
 
-        # time.sleep(2.0)
-        # interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 1)
-        # time.sleep(5.0)
-        # interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
+
+        time.sleep(2.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 1)
+        time.sleep(2.0)
+        interfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
+        time.sleep(2.0)
+        continue
 
         for i in range(10):
             time.sleep(1.0)

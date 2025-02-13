@@ -46,10 +46,10 @@
    <widget class="QGroupBox" name="grBox_mainMotor">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>40</y>
+      <x>70</x>
+      <y>130</y>
       <width>250</width>
-      <height>91</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
@@ -89,6 +89,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_MainMotor_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -184,6 +187,58 @@
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="btn_MainMotor_On">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>ON</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_MainMotor_Off">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="grBox_ChamberMotorLeft">
     <property name="geometry">
@@ -224,7 +279,7 @@
       <item>
        <widget class="QPushButton" name="btn_ChamberMotorLeft_Start">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -240,7 +295,7 @@
       <item>
        <widget class="QPushButton" name="btn_ChamberMotorLeft_Stop">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -260,6 +315,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_ChamberMotorLeft_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -386,7 +444,7 @@
       <item>
        <widget class="QPushButton" name="btn_ChamberMotorRight_Start">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -402,7 +460,7 @@
       <item>
        <widget class="QPushButton" name="btn_ChamberMotorRight_Stop">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -422,6 +480,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_ChamberMotorRight_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -512,10 +573,10 @@
    <widget class="QGroupBox" name="grBox_Lamp">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>250</y>
+      <x>70</x>
+      <y>240</y>
       <width>250</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -552,6 +613,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_Lamp_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -638,6 +702,58 @@
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="btn_Lamp_On">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>90</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>ON</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Lamp_Off">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="grBox_Blower">
     <property name="geometry">
@@ -678,7 +794,7 @@
       <item>
        <widget class="QPushButton" name="btn_Blower_On">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -694,7 +810,7 @@
       <item>
        <widget class="QPushButton" name="btn_Blower_Off">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -714,6 +830,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_Blower_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -806,8 +925,8 @@
    <widget class="QGroupBox" name="grBox_AcMainPower">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>140</y>
+      <x>70</x>
+      <y>30</y>
       <width>250</width>
       <height>101</height>
      </rect>
@@ -847,6 +966,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_AcMainPower_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -991,7 +1113,7 @@
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterIntake_On">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1008,7 +1130,7 @@
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterIntake_Off">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1031,6 +1153,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterIntake_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1165,7 +1290,7 @@
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterInternal_On">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1182,7 +1307,7 @@
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterInternal_Off">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1205,6 +1330,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_PtcHeaterInternal_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1339,7 +1467,7 @@
         <item>
          <widget class="QPushButton" name="btn_PadHeaterLeft_On">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1356,7 +1484,7 @@
         <item>
          <widget class="QPushButton" name="btn_PadHeaterLeft_Off">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1379,6 +1507,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_PadHeaterLeft_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -1513,7 +1644,7 @@
         <item>
          <widget class="QPushButton" name="btn_PadHeaterRight_On">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1530,7 +1661,7 @@
         <item>
          <widget class="QPushButton" name="btn_PadHeaterRight_Off">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="font">
            <font>
@@ -1553,6 +1684,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_PadHeaterRight_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -2116,7 +2250,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>500</y>
+      <y>530</y>
       <width>141</width>
       <height>95</height>
      </rect>
@@ -2221,7 +2355,7 @@
       <item>
        <widget class="QPushButton" name="btn_IntakeFan_On">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -2237,7 +2371,7 @@
       <item>
        <widget class="QPushButton" name="btn_IntakeFan_Off">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="font">
          <font>
@@ -2257,6 +2391,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_IntakeFan_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -2347,7 +2484,7 @@
    <widget class="QGroupBox" name="grBox_Bme688_Left">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>730</x>
       <y>490</y>
       <width>221</width>
       <height>101</height>
@@ -2388,6 +2525,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_Bme688_Left_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2482,7 +2622,7 @@
    <widget class="QGroupBox" name="grBox_Bme688_Right">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>730</x>
       <y>600</y>
       <width>221</width>
       <height>101</height>
@@ -2523,6 +2663,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_Bme688_Right_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2617,7 +2760,7 @@
    <widget class="QGroupBox" name="grBox_Bme688_Intake">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>500</x>
       <y>490</y>
       <width>221</width>
       <height>101</height>
@@ -2658,6 +2801,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_Bme688_Intake_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2752,7 +2898,7 @@
    <widget class="QGroupBox" name="grBox_Bme688_Exhaust">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>500</x>
       <y>600</y>
       <width>221</width>
       <height>101</height>
@@ -2793,6 +2939,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_Bme688_Exhaust_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -2887,7 +3036,7 @@
    <widget class="QGroupBox" name="grBox_WeightLeft">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>270</x>
       <y>490</y>
       <width>221</width>
       <height>101</height>
@@ -2928,6 +3077,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_WeightLeft_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -3022,7 +3174,7 @@
    <widget class="QGroupBox" name="grBox_WeightRight">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>270</x>
       <y>600</y>
       <width>221</width>
       <height>101</height>
@@ -3063,6 +3215,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="btn_WeightRight_Test">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="baseSize">
          <size>
           <width>150</width>
@@ -3157,10 +3312,10 @@
    <widget class="QGroupBox" name="grBox_CatalyticBoard">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>70</x>
       <y>360</y>
       <width>250</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -3197,6 +3352,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="btn_CatalyticBoard_Test">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="baseSize">
            <size>
             <width>150</width>
@@ -3282,6 +3440,58 @@
        </layout>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="btn_CatalyticBoard_On">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>ON</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_CatalyticBoard_Off">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>75</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>150</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="pButtonCreateReport">

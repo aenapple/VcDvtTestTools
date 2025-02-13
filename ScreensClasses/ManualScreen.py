@@ -46,9 +46,11 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_SettingsManual.clicked.connect(self.SettingsManual)
         self.btn_CleanManual.clicked.connect(self.CleanManual)
 
-        self.btn_MainMotor_Test.clicked.connect(self.MainMotor_Test)
-
         self.btn_AcMainPower_Test.clicked.connect(self.AcMainPower_Test)
+
+        self.btn_MainMotor_On.clicked.connect(self.MainMotor_On)
+        self.btn_MainMotor_Off.clicked.connect(self.MainMotor_Off)
+        self.btn_MainMotor_Test.clicked.connect(self.MainMotor_Test)
 
         self.btn_ChamberMotorLeft_Start.clicked.connect(self.ChamberMotorLeft_Start)
         self.btn_ChamberMotorLeft_Stop.clicked.connect(self.ChamberMotorLeft_Stop)
@@ -74,7 +76,13 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         self.btn_PadHeaterRight_Off.clicked.connect(self.PadHeaterRight_Off)
         self.btn_PadHeaterRight_Test.clicked.connect(self.PadHeaterRight_Test)
 
+        self.btn_Lamp_On.clicked.connect(self.Lamp_On)
+        self.btn_Lamp_Off.clicked.connect(self.Lamp_Off)
         self.btn_Lamp_Test.clicked.connect(self.Lamp_Test)
+
+        self.btn_CatalyticBoard_On.clicked.connect(self.CatalyticBoard_On)
+        self.btn_CatalyticBoard_Off.clicked.connect(self.CatalyticBoard_Off)
+        self.btn_CatalyticBoard_Test.clicked.connect(self.CatalyticBoard_Test)
 
         self.btn_IntakeFan_On.clicked.connect(self.IntakeFan_On)
         self.btn_IntakeFan_Off.clicked.connect(self.IntakeFan_Off)
@@ -93,8 +101,6 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
         self.btn_WeightLeft_Test.clicked.connect(self.WeightLeft_Test)
         self.btn_WeightRight_Test.clicked.connect(self.WeightRight_Test)
-
-        self.btn_CatalyticBoard_Test.clicked.connect(self.CatalyticBoard_Test)
 
         self.pButtonCreateReport.clicked.connect(self.CreateReport)
 
@@ -211,6 +217,12 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestMainMotor_NotPassed.setChecked(1)
             self.checkBox_TestMainMotor_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
+    def MainMotor_On(self):
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 10, 0)
+
+    def MainMotor_Off(self):
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_MAIN, 0, 0)
+
     def AcMainPower_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_AC_POWER)
         # state - IFC_VIP_STATE_IDLE or IFC_VIP_TEST_RESULT_ERROR
@@ -222,10 +234,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestAcMainPower_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def ChamberMotorLeft_Start(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 10, 0)
 
     def ChamberMotorLeft_Stop(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_LEFT, 0, 0)
 
     def ChamberMotorLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_2)
@@ -238,10 +250,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestChamberMotorLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def ChamberMotorRight_Start(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 10, 0)
 
     def ChamberMotorRight_Stop(self):
-        self.checkBox_UnlockTopRight.setChecked(0)
+        self.InterfaceVIP.cmd_control_motor(IFC_VIP_MOTOR_CHAMBER_RIGHT, 0, 0)
 
     def ChamberMotorRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_MOTOR_3)
@@ -254,10 +266,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestChamberMotorRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def PtcHeaterIntake_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_INTAKE, 100)
 
     def PtcHeaterIntake_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_INTAKE, 0)
 
     def PtcHeaterIntake_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_1)
@@ -270,10 +282,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPtcHeaterIntake_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def PtcHeaterInternal_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_INTERNAL, 100)
 
     def PtcHeaterInternal_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PTC_INTERNAL, 0)
 
     def PtcHeaterInternal_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PTC_HEATER_2)
@@ -286,10 +298,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPtcHeaterInternal_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def PadHeaterLeft_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 100)
 
     def PadHeaterLeft_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_LEFT, 0)
 
     def PadHeaterLeft_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_1)
@@ -302,10 +314,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestPadHeaterLeft_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
     def PadHeaterRight_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_RIGHT, 100)
 
     def PadHeaterRight_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_heater(IFC_VIP_HEATER_PAD_RIGHT, 0)
 
     def PadHeaterRight_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_PAD_HEATER_2)
@@ -316,6 +328,12 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
         else:
             self.checkBox_TestPadHeaterRight_NotPassed.setChecked(1)
             self.checkBox_TestPadHeaterRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
+
+    def Lamp_On(self):
+        self.InterfaceVIP.cmd_control_lamp(IFC_VIP_LAMP_PLASMA, 1)
+
+    def Lamp_Off(self):
+        self.InterfaceVIP.cmd_control_lamp(IFC_VIP_LAMP_PLASMA, 0)
 
     def Lamp_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_LAMP_1)
@@ -357,12 +375,11 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             else:
                 self.checkBox_PresentChamberRight_Yes.setChecked(1)
 
-
     def IntakeFan_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_fan(IFC_VIP_FAN_INTAKE, 100)
 
     def IntakeFan_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_fan(IFC_VIP_FAN_INTAKE, 0)
 
     def IntakeFan_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_2)
@@ -376,10 +393,10 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
 
 
     def Blower_On(self):
-        pass
+        self.InterfaceVIP.cmd_control_fan(IFC_VIP_FAN_BLOWER, 100)
 
     def Blower_Off(self):
-        pass
+        self.InterfaceVIP.cmd_control_fan(IFC_VIP_FAN_BLOWER, 0)
 
     def Blower_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_FAN_1)
@@ -453,6 +470,11 @@ class ManualScreen(QtWidgets.QMainWindow, Ui_Manual):
             self.checkBox_TestWeightRight_NotPassed.setChecked(1)
             self.checkBox_TestWeightRight_NotPassed.setStyleSheet(TS_COLOR_NOTPASSED)
 
+    def CatalyticBoard_On(self):
+        self.InterfaceVIP.cmd_control_lamp(IFC_VIP_LAMP_CATALYTIC_LED, 1)
+
+    def CatalyticBoard_Off(self):
+        self.InterfaceVIP.cmd_control_lamp(IFC_VIP_LAMP_CATALYTIC_LED, 0)
 
     def CatalyticBoard_Test(self):
         result, read_data = self.InterfaceVIP.cmd_test(IFC_VIP_COMPONENT_CATALYTIC_BOARD)
