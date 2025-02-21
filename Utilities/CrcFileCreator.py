@@ -110,7 +110,7 @@ def GenerateCRCFile(str_file_input):
     number_bytes += add_number_bytes  
 
     print(string_version)             
-    str_file_output = string_version + '.bin'
+    str_file_output = 'Files/' + string_version + '.bin'
     
     file_output = open(str_file_output, 'wb')
     reserved = "0000000000000000"
@@ -157,8 +157,8 @@ if __name__ == '__main__':
     """
 
     args = sys.argv[1:]
-    str_file_input = args[0]
-    # str_file_input = 'ApplicationTest.bin'
+    # str_file_input = args[0]
+    str_file_input = 'Files/s_qspi.bin'
 
     str_file_output = GenerateCRCFile(str_file_input)
     print(str_file_output)
