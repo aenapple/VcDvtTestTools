@@ -1,15 +1,20 @@
-
+import sys
 from intelhex import IntelHex
 
 FLASH_START_ADDRESS = 0x8000000
-FLASH_END_ADDRESS = 0x8100000  # 1MB
-QSPI_START_ADDRESS = 0x90000000
-QSPI_END_ADDRESS = 0x93600000  # 54MB
+FLASH_END_ADDRESS = 0x8080000  # 512K
+QSPI_START_ADDRESS = 0x20050000
+QSPI_END_ADDRESS = 0x200C0000  # 448K
 
 
 if __name__ == '__main__':
+    args = sys.argv[1:]
+    # str_file_input = args[0]
+    str_file_input = 'Debug_Ram\RND_SRC_MainCpu_v5.hex'
+
     ih = IntelHex()
-    ih.loadhex('Files/RND_SRC_MainCpu_v5.hex')
+    # ih.loadhex('Files/RND_SRC_MainCpu_v5.hex')
+    ih.loadhex(str_file_input)
 
     #  print(ih.addresses())
 

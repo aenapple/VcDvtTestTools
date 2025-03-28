@@ -35,5 +35,6 @@ if __name__ == '__main__':
         # print(pos)
         # print(string)
         print(read_data)
+        # file_output.writelines(string)
         file_output.write(read_data)
         # file_output.writelines(read_data)
