@@ -149,7 +149,7 @@ class Encryption:
         print(binascii.hexlify(bytearray(self.encryption_key)))
 
         file_input = open(file_output_name, 'rb')
-        file_output = open('DecodedFile.bin', 'wb')
+        file_output = open('Files/DecodedFile.bin', 'wb')
 
         file_size = os.stat(file_output_name).st_size
         read_bytes = 0

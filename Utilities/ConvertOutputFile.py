@@ -9,8 +9,8 @@ QSPI_END_ADDRESS = 0x200C0000  # 448K
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    # str_file_input = args[0]
-    str_file_input = 'Debug_Ram\RND_SRC_MainCpu_v5.hex'
+    str_file_input = args[0]
+    # str_file_input = 'Debug_Ram\RND_SRC_MainCpu_v5.hex'
 
     ih = IntelHex()
     # ih.loadhex('Files/RND_SRC_MainCpu_v5.hex')

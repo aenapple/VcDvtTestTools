@@ -126,7 +126,7 @@ def GenerateCRCFile(str_file_input):
     file_output.write(reserved.encode())
     file_output.write(encryption_key.encode())
 
-    file_ident = open('ident.bin', 'wb')
+    file_ident = open('Files/ident.bin', 'wb')
     file_ident.write(string_version.encode())
     file_ident.write((crc & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_CRC, byteorder="little"))
     file_ident.write((number_bytes & 0xFFFFFFFF).to_bytes(BINFILE_SIZE_SIZE_FILE, byteorder="little"))
@@ -157,8 +157,8 @@ if __name__ == '__main__':
     """
 
     args = sys.argv[1:]
-    # str_file_input = args[0]
-    str_file_input = 'Files/s_qspi.bin'
+    str_file_input = args[0]
+    # str_file_input = 'Files/s_qspi.bin'
 
     str_file_output = GenerateCRCFile(str_file_input)
     print(str_file_output)
