@@ -13,13 +13,13 @@ if __name__ == '__main__':
     # sys.exit(0)
 
     try:
-        com_port = serial.Serial('COM6', 115200, timeout=0.5)
+        com_port = serial.Serial('COM3', 115200, timeout=0.5)
     except serial.SerialException:
         print("Serial Exception:")
         print(sys.exc_info())
         sys.exit(1)
 
-    file_output = open("debug_output.txt", 'wb')
+    file_output = open("DebugOutput/debug_output.txt", 'wb')
     while True:
         time.sleep(0.2)
         # read_data = com_port.read(256)
