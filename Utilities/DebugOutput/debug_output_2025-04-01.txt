@@ -478,7 +478,7 @@ Temperature: Left - 29, Right - 25, Intake - 23, Exhaust - 21
 Temperature: Pad Left - 63, Pad Right - 66, PTC Intake - 38, PTC Internal - 24
 Counter Time Process - 2241
 12:31:28.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
-S/N - LL01-00000000001à
+S/N - LL01-00000000001ï¿½
 Counter Time Process - 2196
 00:00:00.521 - SYS: Start check states switches.
 00:00:00.521 - SYS: States switches - Ok.
@@ -1093,59 +1093,3 @@ Temperature: Left - 23, Right - 23, Intake - 23, Exhaust - 22
 Temperature: Pad Left - 73, Pad Right - 81, PTC Intake - 49, PTC Internal - 21
 Counter Time Process - 2282
 14:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
-S/N - LL01-00000000001à
-Counter Time Process - 2226
-00:00:00.521 - SYS: Start check states switches.
-00:00:00.521 - SYS: States switches - Ok.
-00:00:00.621 - SYS: Set 'SysState_SelsfTest'
-00:00:00.621 - SYS: Set 'SysState_Busy'
-00:00:01.726 - SYS: Started !!!
-00:00:01.726 - SYS: Set 'SysState_Idle'
-00:00:01.736 - CHM: START Chamber Motor LEFT
-S/N - LL01-00000000001à
-Counter Time Process - 2226
-00:00:00.521 - SYS: Start check states switches.
-00:00:00.521 - SYS: States switches - Ok.
-00:00:00.621 - SYS: Set 'SysState_SelsfTest'
-00:00:00.621 - SYS: Set 'SysState_Busy'
-00:00:01.726 - SYS: Started !!!
-00:00:01.726 - SYS: Set 'SysState_Idle'
-00:00:01.736 - CHM: START Chamber Motor LEFT
-00:00:01.736 - SYS: Set 'SysError_MotorChamberLeft'
-00:00:01.736 - CHM: STOP Chamber Motor LEFT
-00:00:02.736 - SYS: ERROR !!!
-00:00:03.736 - SYS: ERROR !!!
-00:00:04.736 - SYS: ERROR !!!
-00:00:05.736 - SYS: ERROR !!!
-00:00:06.736 - SYS: ERROR !!!
-00:00:07.736 - SYS: ERROR !!!
-00:00:08.736 - SYS: ERROR !!!
-00:00:09.736 - SYS: ERROR !!!
-00:00:10.736 - SYS: ERROR !!!
-00:00:11.736 - SYS: ERROR !!!
-00:00:12.736 - SYS: ERROR !!!
-00:00:13.736 - SYS: ERROR !!!
-00:00:14.736 - SYS: ERROR !!!
-00:00:15.736 - SYS: ERROR !!!
-00:00:16.736 - SYS: ERROR !!!
-00:00:17.736 - SYS: ERROR !!!
-00:00:18.736 - SYS: ERROR !!!
-00:00:19.736 - SYS: ERROR !!!
-00:00:20.736 - SYS: ERROR !!!
-00:00:21.736 - SYS: ERROR !!!
-00:00:22.736 - SYS: ERROR !!!
-00:00:23.736 - SYS: ERROR !!!
-00:00:24.736 - SYS: ERROR !!!
-00:00:25.736 - SYS: ERROR !!!
-00:00:26.736 - SYS: ERROR !!!
-00:00:27.736 - SYS: ERROR !!!
-00:00:28.736 - SYS: ERROR !!!
-00:00:29.736 - SYS: ERROR !!!
-00:00:30.736 - SYS: ERROR !!!
-00:00:31.736 - SYS: ERROR !!!
-00:00:32.736 - SYS: ERROR !!!
-00:00:33.736 - SYS: ERROR !!!
-00:00:34.736 - SYS: ERROR !!!
-00:00:35.736 - SYS: ERROR !!!
-00:00:36.736 - SYS: ERROR !!!
-00:00:37.736 - SYS: ERROR !!!
