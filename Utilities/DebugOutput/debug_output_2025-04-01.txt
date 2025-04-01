@@ -1,0 +1,1151 @@
+Humidity: Left - 32, Right - 55, Intake - 20, Exhaust - 60
+Moisture Prediction: Left - 59, Right - 59
+Temperature: Left - 44, Right - 42, Intake - 33, Exhaust - 32
+Temperature: Pad Left - 73, Pad Right - 68, PTC Intake - 48, PTC Internal - 54
+Counter Time Process - 2174
+01:22:57.045 - CHM: STOP Chamber Motor RIGHT
+01:28:51.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 44, Right - 44, Intake - 20, Exhaust - 60
+Moisture Prediction: Left - 54, Right - 61
+Temperature: Left - 43, Right - 41, Intake - 33, Exhaust - 32
+Temperature: Pad Left - 70, Pad Right - 70, PTC Intake - 52, PTC Internal - 55
+Counter Time Process - 2175
+01:35:52.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 34, Right - 42, Intake - 18, Exhaust - 61
+Moisture Prediction: Left - 60, Right - 66
+Temperature: Left - 44, Right - 40, Intake - 33, Exhaust - 32
+Temperature: Pad Left - 71, Pad Right - 77, PTC Intake - 52, PTC Internal - 54
+Counter Time Process - 2176
+01:46:25.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 32, Right - 55, Intake - 18, Exhaust - 60
+Moisture Prediction: Left - 59, Right - 56
+Temperature: Left - 43, Right - 42, Intake - 34, Exhaust - 32
+Temperature: Pad Left - 70, Pad Right - 77, PTC Intake - 44, PTC Internal - 54
+Counter Time Process - 2177
+01:53:26.145 - CHM: STOP Chamber Motor RIGHT
+01:59:20.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 32, Right - 44, Intake - 17, Exhaust - 60
+Moisture Prediction: Left - 54, Right - 63
+Temperature: Left - 44, Right - 40, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 72, PTC Intake - 46, PTC Internal - 53
+Counter Time Process - 2178
+02:06:21.155 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 34, Right - 42, Intake - 16, Exhaust - 61
+Moisture Prediction: Left - 62, Right - 64
+Temperature: Left - 45, Right - 40, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 71, Pad Right - 75, PTC Intake - 44, PTC Internal - 57
+Counter Time Process - 2179
+02:16:54.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 32, Right - 53, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 56, Right - 56
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 70, Pad Right - 68, PTC Intake - 49, PTC Internal - 58
+Counter Time Process - 2180
+02:23:55.069 - CHM: STOP Chamber Motor RIGHT
+02:29:49.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 31, Right - 41, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 53, Right - 62
+Temperature: Left - 45, Right - 41, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 75, Pad Right - 74, PTC Intake - 47, PTC Internal - 59
+Counter Time Process - 2181
+02:36:50.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 33, Right - 39, Intake - 16, Exhaust - 61
+Moisture Prediction: Left - 62, Right - 65
+Temperature: Left - 45, Right - 42, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 71, Pad Right - 74, PTC Intake - 45, PTC Internal - 59
+Counter Time Process - 2182
+02:47:23.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 32, Right - 52, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 59, Right - 53
+Temperature: Left - 45, Right - 43, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 69, Pad Right - 70, PTC Intake - 46, PTC Internal - 62
+Counter Time Process - 2183
+02:54:24.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 42, Intake - 15, Exhaust - 60
+Moisture Prediction: Left - 55, Right - 60
+Temperature: Left - 46, Right - 42, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 75, Pad Right - 74, PTC Intake - 49, PTC Internal - 62
+Counter Time Process - 2184
+03:00:18.621 - CHM: START Chamber Motor LEFT
+03:07:19.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 33, Right - 41, Intake - 16, Exhaust - 61
+Moisture Prediction: Left - 61, Right - 64
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 70, Pad Right - 70, PTC Intake - 49, PTC Internal - 59
+Counter Time Process - 2185
+03:17:52.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 32, Right - 55, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 59, Right - 54
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 74, Pad Right - 68, PTC Intake - 46, PTC Internal - 61
+Counter Time Process - 2186
+03:24:53.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 41, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 57, Right - 57
+Temperature: Left - 45, Right - 41, Intake - 35, Exhaust - 34
+Temperature: Pad Left - 73, Pad Right - 71, PTC Intake - 46, PTC Internal - 54
+Counter Time Process - 2187
+03:30:47.621 - CHM: START Chamber Motor LEFT
+03:37:48.154 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 34, Right - 40, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 62, Right - 63
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 34
+Temperature: Pad Left - 77, Pad Right - 76, PTC Intake - 47, PTC Internal - 57
+Counter Time Process - 2188
+03:48:21.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 32, Right - 54, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 60, Right - 55
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 70, Pad Right - 78, PTC Intake - 44, PTC Internal - 59
+Counter Time Process - 2189
+03:55:22.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 42, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 58, Right - 61
+Temperature: Left - 45, Right - 41, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 76, Pad Right - 71, PTC Intake - 49, PTC Internal - 57
+Counter Time Process - 2190
+04:01:16.621 - CHM: START Chamber Motor LEFT
+04:08:17.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 34, Right - 40, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 61, Right - 63
+Temperature: Left - 44, Right - 42, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 69, Pad Right - 78, PTC Intake - 51, PTC Internal - 56
+Counter Time Process - 2191
+04:18:50.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 31, Right - 54, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 61, Right - 55
+Temperature: Left - 45, Right - 42, Intake - 36, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 74, PTC Intake - 47, PTC Internal - 59
+Counter Time Process - 2192
+04:25:51.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 42, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 55, Right - 51
+Temperature: Left - 45, Right - 41, Intake - 36, Exhaust - 32
+Temperature: Pad Left - 72, Pad Right - 70, PTC Intake - 46, PTC Internal - 56
+Counter Time Process - 2193
+04:31:45.621 - CHM: START Chamber Motor LEFT
+04:38:46.153 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 34, Right - 41, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 59, Right - 65
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 73, Pad Right - 74, PTC Intake - 51, PTC Internal - 58
+Counter Time Process - 2194
+04:49:19.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 30, Right - 55, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 62, Right - 56
+Temperature: Left - 45, Right - 41, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 72, Pad Right - 74, PTC Intake - 47, PTC Internal - 59
+Counter Time Process - 2195
+04:56:20.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 41, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 57, Right - 53
+Temperature: Left - 45, Right - 41, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 73, Pad Right - 70, PTC Intake - 44, PTC Internal - 61
+Counter Time Process - 2196
+05:02:14.621 - CHM: START Chamber Motor LEFT
+05:09:15.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 36, Right - 40, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 60, Right - 64
+Temperature: Left - 44, Right - 42, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 71, Pad Right - 73, PTC Intake - 49, PTC Internal - 55
+Counter Time Process - 2197
+05:10:00.731 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:19:48.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 30, Right - 38, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 64, Right - 54
+Temperature: Left - 45, Right - 40, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 71, Pad Right - 70, PTC Intake - 53, PTC Internal - 54
+Counter Time Process - 2198
+05:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:26:49.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 42, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 58, Right - 56
+Temperature: Left - 44, Right - 41, Intake - 34, Exhaust - 32
+Temperature: Pad Left - 73, Pad Right - 73, PTC Intake - 47, PTC Internal - 56
+Counter Time Process - 2199
+05:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:32:43.621 - CHM: START Chamber Motor LEFT
+05:39:44.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 38, Right - 41, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 58, Right - 64
+Temperature: Left - 44, Right - 41, Intake - 34, Exhaust - 33
+Temperature: Pad Left - 69, Pad Right - 80, PTC Intake - 44, PTC Internal - 55
+Counter Time Process - 2200
+05:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 29, Right - 38, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 63, Right - 51
+Temperature: Left - 46, Right - 40, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 71, PTC Intake - 48, PTC Internal - 58
+Counter Time Process - 2201
+05:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:50:17.621 - CHM: START Chamber Motor RIGHT
+05:57:18.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 43, Intake - 16, Exhaust - 60
+Moisture Prediction: Left - 56, Right - 53
+Temperature: Left - 44, Right - 42, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 72, Pad Right - 73, PTC Intake - 53, PTC Internal - 54
+Counter Time Process - 2202
+06:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:03:12.621 - CHM: START Chamber Motor LEFT
+06:08:24.669 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 33, Right - 41, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 60, Right - 62
+Temperature: Left - 44, Right - 41, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 73, Pad Right - 71, PTC Intake - 44, PTC Internal - 54
+Counter Time Process - 2203
+06:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 29, Right - 38, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 64, Right - 49
+Temperature: Left - 44, Right - 41, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 71, Pad Right - 73, PTC Intake - 45, PTC Internal - 55
+Counter Time Process - 2204
+06:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:20:46.621 - CHM: START Chamber Motor RIGHT
+06:27:47.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 43, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 55, Right - 55
+Temperature: Left - 43, Right - 42, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 72, Pad Right - 74, PTC Intake - 45, PTC Internal - 56
+Counter Time Process - 2205
+06:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:33:41.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 37, Right - 42, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 60, Right - 64
+Temperature: Left - 44, Right - 40, Intake - 36, Exhaust - 33
+Temperature: Pad Left - 72, Pad Right - 75, PTC Intake - 52, PTC Internal - 54
+Counter Time Process - 2206
+06:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:40:42.021 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 30, Right - 39, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 62, Right - 59
+Temperature: Left - 44, Right - 40, Intake - 35, Exhaust - 33
+Temperature: Pad Left - 71, Pad Right - 69, PTC Intake - 49, PTC Internal - 56
+Counter Time Process - 2207
+06:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:52:17.621 - CHM: START Chamber Motor RIGHT
+06:59:18.169 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 46, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 60, Right - 57
+Temperature: Left - 43, Right - 42, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 75, Pad Right - 74, PTC Intake - 51, PTC Internal - 55
+Counter Time Process - 2208
+07:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:04:10.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 37, Right - 38, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 64, Right - 65
+Temperature: Left - 45, Right - 41, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 71, Pad Right - 70, PTC Intake - 49, PTC Internal - 55
+Counter Time Process - 2209
+07:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:11:11.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 31, Right - 35, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 62, Right - 67
+Temperature: Left - 42, Right - 41, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 76, Pad Right - 72, PTC Intake - 52, PTC Internal - 55
+Counter Time Process - 2210
+07:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:25:52.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 33, Right - 48, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 58, Right - 55
+Temperature: Left - 42, Right - 42, Intake - 34, Exhaust - 31
+Temperature: Pad Left - 65, Pad Right - 78, PTC Intake - 53, PTC Internal - 55
+Counter Time Process - 2211
+07:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:32:53.069 - CHM: STOP Chamber Motor RIGHT
+07:34:39.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 37, Right - 40, Intake - 16, Exhaust - 59
+Moisture Prediction: Left - 60, Right - 60
+Temperature: Left - 44, Right - 40, Intake - 34, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 75, PTC Intake - 49, PTC Internal - 56
+Counter Time Process - 2212
+07:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:41:40.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 31, Right - 38, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 61, Right - 61
+Temperature: Left - 42, Right - 40, Intake - 35, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 69, PTC Intake - 49, PTC Internal - 55
+Counter Time Process - 2213
+07:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:56:21.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 31, Right - 51, Intake - 16, Exhaust - 58
+Moisture Prediction: Left - 58, Right - 52
+Temperature: Left - 44, Right - 41, Intake - 35, Exhaust - 31
+Temperature: Pad Left - 73, Pad Right - 73, PTC Intake - 46, PTC Internal - 58
+Counter Time Process - 2214
+08:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:03:22.045 - CHM: STOP Chamber Motor RIGHT
+08:05:08.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 35, Right - 39, Intake - 15, Exhaust - 59
+Moisture Prediction: Left - 63, Right - 61
+Temperature: Left - 43, Right - 41, Intake - 36, Exhaust - 32
+Temperature: Pad Left - 72, Pad Right - 81, PTC Intake - 43, PTC Internal - 56
+Counter Time Process - 2215
+08:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:11:02.645 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 30, Right - 36, Intake - 15, Exhaust - 58
+Moisture Prediction: Left - 61, Right - 50
+Temperature: Left - 43, Right - 42, Intake - 36, Exhaust - 32
+Temperature: Pad Left - 76, Pad Right - 74, PTC Intake - 44, PTC Internal - 55
+Counter Time Process - 2216
+08:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:26:50.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 30, Right - 50, Intake - 15, Exhaust - 58
+Moisture Prediction: Left - 55, Right - 49
+Temperature: Left - 44, Right - 41, Intake - 36, Exhaust - 32
+Temperature: Pad Left - 73, Pad Right - 68, PTC Intake - 46, PTC Internal - 53
+Counter Time Process - 2217
+08:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:33:51.045 - CHM: STOP Chamber Motor RIGHT
+08:35:37.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 34, Right - 39, Intake - 15, Exhaust - 59
+Moisture Prediction: Left - 64, Right - 60
+Temperature: Left - 43, Right - 40, Intake - 34, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 76, PTC Intake - 47, PTC Internal - 54
+Counter Time Process - 2218
+08:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:42:38.169 - CHM: STOP Chamber Motor LEFT
+08:44:10.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 31, Right - 50, Intake - 15, Exhaust - 58
+Moisture Prediction: Left - 53, Right - 53
+Temperature: Left - 43, Right - 41, Intake - 34, Exhaust - 33
+Temperature: Pad Left - 70, Pad Right - 77, PTC Intake - 49, PTC Internal - 38
+Counter Time Process - 2219
+08:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:51:10.969 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 40, Intake - 16, Exhaust - 56
+Moisture Prediction: Left - 64, Right - 60
+Temperature: Left - 39, Right - 36, Intake - 33, Exhaust - 32
+Temperature: Pad Left - 75, Pad Right - 69, PTC Intake - 52, PTC Internal - 34
+Counter Time Process - 2220
+09:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:01:30.621 - CHM: START Chamber Motor RIGHT
+09:08:31.045 - CHM: STOP Chamber Motor RIGHT
+09:08:31.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 42, Right - 45, Intake - 17, Exhaust - 56
+Moisture Prediction: Left - 64, Right - 60
+Temperature: Left - 38, Right - 35, Intake - 31, Exhaust - 31
+Temperature: Pad Left - 74, Pad Right - 74, PTC Intake - 51, PTC Internal - 32
+Counter Time Process - 2221
+09:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:13:45.145 - CHM: STOP Chamber Motor LEFT
+09:18:50.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 34, Right - 51, Intake - 22, Exhaust - 56
+Moisture Prediction: Left - 62, Right - 65
+Temperature: Left - 36, Right - 34, Intake - 31, Exhaust - 29
+Temperature: Pad Left - 69, Pad Right - 78, PTC Intake - 43, PTC Internal - 30
+Counter Time Process - 2222
+09:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:25:51.055 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 35, Right - 43, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 76, Right - 52
+Temperature: Left - 35, Right - 32, Intake - 32, Exhaust - 29
+Temperature: Pad Left - 66, Pad Right - 67, PTC Intake - 49, PTC Internal - 30
+Counter Time Process - 2223
+09:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:36:10.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 36, Right - 53, Intake - 18, Exhaust - 55
+Moisture Prediction: Left - 67, Right - 66
+Temperature: Left - 33, Right - 32, Intake - 29, Exhaust - 28
+Temperature: Pad Left - 72, Pad Right - 70, PTC Intake - 51, PTC Internal - 29
+Counter Time Process - 2224
+09:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:43:11.069 - CHM: STOP Chamber Motor RIGHT
+09:43:11.621 - CHM: START Chamber Motor LEFT
+09:49:00.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 39, Right - 45, Intake - 19, Exhaust - 56
+Moisture Prediction: Left - 69, Right - 53
+Temperature: Left - 34, Right - 31, Intake - 29, Exhaust - 28
+Temperature: Pad Left - 79, Pad Right - 71, PTC Intake - 48, PTC Internal - 28
+Counter Time Process - 2225
+09:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 36, Right - 43, Intake - 19, Exhaust - 55
+Moisture Prediction: Left - 66, Right - 58
+Temperature: Left - 32, Right - 29, Intake - 29, Exhaust - 28
+Temperature: Pad Left - 78, Pad Right - 70, PTC Intake - 47, PTC Internal - 27
+Counter Time Process - 2226
+10:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:07:04.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 38, Right - 57, Intake - 19, Exhaust - 54
+Moisture Prediction: Left - 42, Right - 57
+Temperature: Left - 30, Right - 30, Intake - 30, Exhaust - 27
+Temperature: Pad Left - 72, Pad Right - 72, PTC Intake - 47, PTC Internal - 26
+Counter Time Process - 2227
+10:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:14:05.069 - CHM: STOP Chamber Motor RIGHT
+10:19:28.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 38, Right - 45, Intake - 20, Exhaust - 54
+Moisture Prediction: Left - 80, Right - 49
+Temperature: Left - 31, Right - 28, Intake - 28, Exhaust - 26
+Temperature: Pad Left - 77, Pad Right - 70, PTC Intake - 47, PTC Internal - 26
+Counter Time Process - 2228
+10:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:26:29.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 37, Right - 45, Intake - 19, Exhaust - 54
+Moisture Prediction: Left - 67, Right - 55
+Temperature: Left - 31, Right - 29, Intake - 28, Exhaust - 26
+Temperature: Pad Left - 64, Pad Right - 70, PTC Intake - 49, PTC Internal - 26
+Counter Time Process - 2229
+10:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:37:33.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 38, Right - 59, Intake - 21, Exhaust - 54
+Moisture Prediction: Left - 62, Right - 59
+Temperature: Left - 29, Right - 28, Intake - 28, Exhaust - 26
+Temperature: Pad Left - 68, Pad Right - 66, PTC Intake - 46, PTC Internal - 25
+Counter Time Process - 2230
+10:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:44:34.045 - CHM: STOP Chamber Motor RIGHT
+10:49:57.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 38, Right - 45, Intake - 20, Exhaust - 55
+Moisture Prediction: Left - 79, Right - 52
+Temperature: Left - 29, Right - 28, Intake - 29, Exhaust - 26
+Temperature: Pad Left - 72, Pad Right - 70, PTC Intake - 48, PTC Internal - 25
+Counter Time Process - 2231
+10:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:56:58.055 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 38, Right - 45, Intake - 20, Exhaust - 54
+Moisture Prediction: Left - 51, Right - 51
+Temperature: Left - 30, Right - 27, Intake - 27, Exhaust - 25
+Temperature: Pad Left - 78, Pad Right - 78, PTC Intake - 43, PTC Internal - 25
+Counter Time Process - 2232
+11:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:05:58.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 39, Right - 58, Intake - 20, Exhaust - 54
+Moisture Prediction: Left - 65, Right - 62
+Temperature: Left - 28, Right - 27, Intake - 27, Exhaust - 25
+Temperature: Pad Left - 75, Pad Right - 70, PTC Intake - 46, PTC Internal - 25
+Counter Time Process - 2233
+11:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:12:59.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 39, Right - 47, Intake - 20, Exhaust - 55
+Moisture Prediction: Left - 73, Right - 55
+Temperature: Left - 28, Right - 28, Intake - 28, Exhaust - 25
+Temperature: Pad Left - 71, Pad Right - 65, PTC Intake - 47, PTC Internal - 25
+Counter Time Process - 2234
+11:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:20:26.621 - CHM: START Chamber Motor LEFT
+11:25:48.169 - CHM: STOP Chamber Motor LEFT
+11:25:48.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 40, Right - 57, Intake - 20, Exhaust - 55
+Moisture Prediction: Left - 78, Right - 50
+Temperature: Left - 30, Right - 27, Intake - 27, Exhaust - 26
+Temperature: Pad Left - 64, Pad Right - 73, PTC Intake - 48, PTC Internal - 25
+Counter Time Process - 2235
+11:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:32:49.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 39, Right - 46, Intake - 19, Exhaust - 54
+Moisture Prediction: Left - 76, Right - 61
+Temperature: Left - 28, Right - 27, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 66, Pad Right - 78, PTC Intake - 51, PTC Internal - 24
+Counter Time Process - 2236
+11:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:43:08.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 40, Right - 55, Intake - 21, Exhaust - 54
+Moisture Prediction: Left - 70, Right - 58
+Temperature: Left - 27, Right - 26, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 69, Pad Right - 75, PTC Intake - 49, PTC Internal - 24
+Counter Time Process - 2237
+11:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:50:09.121 - CHM: STOP Chamber Motor RIGHT
+11:50:55.621 - CHM: START Chamber Motor LEFT
+11:57:56.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 39, Right - 47, Intake - 20, Exhaust - 55
+Moisture Prediction: Left - 80, Right - 50
+Temperature: Left - 29, Right - 26, Intake - 28, Exhaust - 25
+Temperature: Pad Left - 76, Pad Right - 68, PTC Intake - 48, PTC Internal - 24
+Counter Time Process - 2238
+12:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:00:28.621 - CHM: START Chamber Motor RIGHT
+12:07:29.099 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 40, Right - 49, Intake - 20, Exhaust - 55
+Moisture Prediction: Left - 43, Right - 54
+Temperature: Left - 28, Right - 27, Intake - 26, Exhaust - 25
+Temperature: Pad Left - 76, Pad Right - 67, PTC Intake - 46, PTC Internal - 25
+Counter Time Process - 2239
+12:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 40, Right - 47, Intake - 20, Exhaust - 54
+Moisture Prediction: Left - 72, Right - 53
+Temperature: Left - 27, Right - 25, Intake - 26, Exhaust - 24
+Temperature: Pad Left - 68, Pad Right - 76, PTC Intake - 46, PTC Internal - 25
+Counter Time Process - 2240
+12:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:21:24.621 - CHM: START Chamber Motor LEFT
+12:28:25.069 - CHM: STOP Chamber Motor LEFT
+12:29:37.221 - SYS: Set 'SysState_BackLidOpen'
+12:31:05.721 - SYS: Set 'SysState_Idle'
+Humidity: Left - 40, Right - 46, Intake - 23, Exhaust - 37
+Moisture Prediction: Left - 46, Right - 55
+Temperature: Left - 29, Right - 25, Intake - 23, Exhaust - 21
+Temperature: Pad Left - 63, Pad Right - 66, PTC Intake - 38, PTC Internal - 24
+Counter Time Process - 2241
+12:31:28.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+S/N - LL01-00000000001à
+Counter Time Process - 2196
+00:00:00.521 - SYS: Start check states switches.
+00:00:00.521 - SYS: States switches - Ok.
+00:00:00.621 - SYS: Set 'SysState_SelsfTest'
+00:00:00.621 - SYS: Set 'SysState_Busy'
+00:00:01.726 - SYS: Started !!!
+00:00:01.726 - SYS: Set 'SysState_Idle'
+00:00:01.736 - CHM: START Chamber Motor LEFT
+00:05:35.645 - CHM: STOP Chamber Motor LEFT
+00:05:36.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 49, Right - 2, Intake - 37, Exhaust - 55
+Moisture Prediction: Left - -1, Right - -1
+Temperature: Left - 28, Right - 26, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 73, Pad Right - 73, PTC Intake - 48, PTC Internal - 25
+Counter Time Process - 2197
+00:12:37.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 48, Right - 59, Intake - 35, Exhaust - 57
+Moisture Prediction: Left - 97, Right - 67
+Temperature: Left - 26, Right - 26, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 77, Pad Right - 77, PTC Intake - 51, PTC Internal - 25
+Counter Time Process - 2198
+00:26:15.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 59, Right - 59, Intake - 32, Exhaust - 58
+Moisture Prediction: Left - 74, Right - 39
+Temperature: Left - 28, Right - 25, Intake - 29, Exhaust - 25
+Temperature: Pad Left - 70, Pad Right - 79, PTC Intake - 51, PTC Internal - 25
+Counter Time Process - 2199
+00:33:16.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 52, Right - 58, Intake - 30, Exhaust - 57
+Moisture Prediction: Left - 89, Right - 64
+Temperature: Left - 28, Right - 24, Intake - 28, Exhaust - 25
+Temperature: Pad Left - 66, Pad Right - 71, PTC Intake - 42, PTC Internal - 25
+Counter Time Process - 2200
+00:43:36.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 51, Right - 2, Intake - 28, Exhaust - 58
+Moisture Prediction: Left - 65, Right - 89
+Temperature: Left - 26, Right - 27, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 69, Pad Right - 67, PTC Intake - 45, PTC Internal - 24
+Counter Time Process - 2201
+00:50:37.045 - CHM: STOP Chamber Motor RIGHT
+00:56:49.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 60, Right - 58, Intake - 29, Exhaust - 58
+Moisture Prediction: Left - 97, Right - 57
+Temperature: Left - 27, Right - 24, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 72, Pad Right - 73, PTC Intake - 46, PTC Internal - 24
+Counter Time Process - 2202
+01:03:50.105 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 53, Right - 57, Intake - 30, Exhaust - 58
+Moisture Prediction: Left - 79, Right - 65
+Temperature: Left - 28, Right - 26, Intake - 29, Exhaust - 24
+Temperature: Pad Left - 78, Pad Right - 79, PTC Intake - 49, PTC Internal - 24
+Counter Time Process - 2203
+01:13:52.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 52, Right - 2, Intake - 30, Exhaust - 58
+Moisture Prediction: Left - 60, Right - 83
+Temperature: Left - 26, Right - 26, Intake - 28, Exhaust - 25
+Temperature: Pad Left - 76, Pad Right - 73, PTC Intake - 46, PTC Internal - 24
+Counter Time Process - 2204
+01:20:53.069 - CHM: STOP Chamber Motor RIGHT
+01:27:18.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 60, Right - 59, Intake - 31, Exhaust - 58
+Moisture Prediction: Left - 99, Right - 56
+Temperature: Left - 26, Right - 24, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 73, Pad Right - 67, PTC Intake - 49, PTC Internal - 24
+Counter Time Process - 2205
+01:34:19.045 - CHM: STOP Chamber Motor LEFT
+01:34:19.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 54, Right - 2, Intake - 33, Exhaust - 59
+Moisture Prediction: Left - 59, Right - 75
+Temperature: Left - 26, Right - 26, Intake - 29, Exhaust - 24
+Temperature: Pad Left - 64, Pad Right - 68, PTC Intake - 44, PTC Internal - 24
+Counter Time Process - 2206
+01:41:20.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 58, Intake - 26, Exhaust - 59
+Moisture Prediction: Left - 100, Right - 67
+Temperature: Left - 27, Right - 24, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 68, Pad Right - 71, PTC Intake - 43, PTC Internal - 24
+Counter Time Process - 2207
+01:57:47.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 58, Right - 58, Intake - 30, Exhaust - 58
+Moisture Prediction: Left - 67, Right - 66
+Temperature: Left - 27, Right - 25, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 69, Pad Right - 77, PTC Intake - 45, PTC Internal - 23
+Counter Time Process - 2208
+02:04:48.045 - CHM: STOP Chamber Motor LEFT
+02:05:01.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 2, Intake - 33, Exhaust - 58
+Moisture Prediction: Left - 92, Right - 77
+Temperature: Left - 26, Right - 25, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 75, Pad Right - 78, PTC Intake - 44, PTC Internal - 23
+Counter Time Process - 2209
+02:12:02.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 59, Intake - 30, Exhaust - 58
+Moisture Prediction: Left - 81, Right - 81
+Temperature: Left - 25, Right - 25, Intake - 29, Exhaust - 24
+Temperature: Pad Left - 72, Pad Right - 72, PTC Intake - 43, PTC Internal - 23
+Counter Time Process - 2210
+02:28:16.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 57, Right - 58, Intake - 34, Exhaust - 58
+Moisture Prediction: Left - 91, Right - 47
+Temperature: Left - 27, Right - 23, Intake - 27, Exhaust - 23
+Temperature: Pad Left - 68, Pad Right - 66, PTC Intake - 42, PTC Internal - 23
+Counter Time Process - 2211
+02:35:17.045 - CHM: STOP Chamber Motor LEFT
+02:35:30.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 54, Right - 3, Intake - 36, Exhaust - 58
+Moisture Prediction: Left - 75, Right - 63
+Temperature: Left - 26, Right - 26, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 71, Pad Right - 73, PTC Intake - 44, PTC Internal - 23
+Counter Time Process - 2212
+02:42:31.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 59, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 86, Right - 86
+Temperature: Left - 25, Right - 24, Intake - 28, Exhaust - 24
+Temperature: Pad Left - 76, Pad Right - 75, PTC Intake - 43, PTC Internal - 23
+Counter Time Process - 2213
+02:58:45.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 55, Right - 57, Intake - 20, Exhaust - 57
+Moisture Prediction: Left - 98, Right - 59
+Temperature: Left - 25, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 79, Pad Right - 79, PTC Intake - 48, PTC Internal - 23
+Counter Time Process - 2214
+03:03:46.145 - CHM: STOP Chamber Motor LEFT
+03:05:59.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 52, Right - 4, Intake - 21, Exhaust - 57
+Moisture Prediction: Left - 52, Right - 52
+Temperature: Left - 26, Right - 25, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 72, Pad Right - 67, PTC Intake - 47, PTC Internal - 23
+Counter Time Process - 2215
+03:12:59.969 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 59, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 100, Right - 74
+Temperature: Left - 25, Right - 24, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 68, Pad Right - 66, PTC Intake - 45, PTC Internal - 23
+Counter Time Process - 2216
+03:29:14.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 52, Right - 58, Intake - 21, Exhaust - 57
+Moisture Prediction: Left - 83, Right - 66
+Temperature: Left - 25, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 65, Pad Right - 71, PTC Intake - 51, PTC Internal - 23
+Counter Time Process - 2217
+03:36:15.045 - CHM: STOP Chamber Motor LEFT
+03:36:28.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 55, Right - 3, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 76, Right - 57
+Temperature: Left - 25, Right - 25, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 72, Pad Right - 74, PTC Intake - 48, PTC Internal - 23
+Counter Time Process - 2218
+03:43:29.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 59, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 101, Right - 66
+Temperature: Left - 26, Right - 25, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 78, Pad Right - 76, PTC Intake - 46, PTC Internal - 23
+Counter Time Process - 2219
+03:57:39.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 2, Intake - 21, Exhaust - 58
+Moisture Prediction: Left - 94, Right - 75
+Temperature: Left - 25, Right - 24, Intake - 25, Exhaust - 24
+Temperature: Pad Left - 79, Pad Right - 77, PTC Intake - 49, PTC Internal - 22
+Counter Time Process - 2220
+04:04:40.069 - CHM: STOP Chamber Motor RIGHT
+04:04:40.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 61, Right - 60, Intake - 21, Exhaust - 58
+Moisture Prediction: Left - 77, Right - 45
+Temperature: Left - 26, Right - 24, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 75, Pad Right - 71, PTC Intake - 54, PTC Internal - 23
+Counter Time Process - 2221
+04:11:41.069 - CHM: STOP Chamber Motor LEFT
+04:14:59.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 1, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 61, Right - 87
+Temperature: Left - 25, Right - 25, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 68, Pad Right - 66, PTC Intake - 44, PTC Internal - 23
+Counter Time Process - 2222
+04:22:00.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 58, Intake - 22, Exhaust - 58
+Moisture Prediction: Left - 98, Right - 56
+Temperature: Left - 26, Right - 24, Intake - 26, Exhaust - 24
+Temperature: Pad Left - 64, Pad Right - 71, PTC Intake - 51, PTC Internal - 23
+Counter Time Process - 2223
+04:35:22.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 60, Right - 58, Intake - 21, Exhaust - 58
+Moisture Prediction: Left - 76, Right - 74
+Temperature: Left - 26, Right - 24, Intake - 25, Exhaust - 24
+Temperature: Pad Left - 63, Pad Right - 79, PTC Intake - 52, PTC Internal - 23
+Counter Time Process - 2224
+04:42:23.045 - CHM: STOP Chamber Motor LEFT
+04:45:42.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 52, Right - 1, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 87, Right - 89
+Temperature: Left - 25, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 74, Pad Right - 69, PTC Intake - 51, PTC Internal - 23
+Counter Time Process - 2225
+04:52:43.121 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 57, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 75, Right - 61
+Temperature: Left - 24, Right - 25, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 75, Pad Right - 64, PTC Intake - 49, PTC Internal - 23
+Counter Time Process - 2226
+05:05:51.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 60, Right - 57, Intake - 20, Exhaust - 57
+Moisture Prediction: Left - 74, Right - 41
+Temperature: Left - 27, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 78, Pad Right - 75, PTC Intake - 47, PTC Internal - 22
+Counter Time Process - 2227
+05:10:00.731 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:12:52.045 - CHM: STOP Chamber Motor LEFT
+05:16:11.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 3, Intake - 19, Exhaust - 58
+Moisture Prediction: Left - 63, Right - 73
+Temperature: Left - 25, Right - 25, Intake - 27, Exhaust - 23
+Temperature: Pad Left - 76, Pad Right - 78, PTC Intake - 44, PTC Internal - 22
+Counter Time Process - 2228
+05:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:23:12.105 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 59, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 66, Right - 86
+Temperature: Left - 24, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 75, Pad Right - 68, PTC Intake - 44, PTC Internal - 23
+Counter Time Process - 2229
+05:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:33:31.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 0, Intake - 20, Exhaust - 58
+Moisture Prediction: Left - 63, Right - 58
+Temperature: Left - 24, Right - 24, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 75, Pad Right - 68, PTC Intake - 49, PTC Internal - 22
+Counter Time Process - 2230
+05:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:40:32.069 - CHM: STOP Chamber Motor RIGHT
+05:40:32.621 - CHM: START Chamber Motor LEFT
+05:47:33.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 59, Right - 59, Intake - 20, Exhaust - 56
+Moisture Prediction: Left - 94, Right - 43
+Temperature: Left - 27, Right - 24, Intake - 27, Exhaust - 23
+Temperature: Pad Left - 67, Pad Right - 76, PTC Intake - 43, PTC Internal - 23
+Counter Time Process - 2231
+05:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+05:50:51.621 - CHM: START Chamber Motor RIGHT
+05:57:52.054 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 53, Right - 62, Intake - 19, Exhaust - 58
+Moisture Prediction: Left - 63, Right - 87
+Temperature: Left - 26, Right - 24, Intake - 27, Exhaust - 23
+Temperature: Pad Left - 65, Pad Right - 78, PTC Intake - 48, PTC Internal - 23
+Counter Time Process - 2232
+06:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 51, Right - 57, Intake - 19, Exhaust - 58
+Moisture Prediction: Left - 103, Right - 81
+Temperature: Left - 24, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 64, Pad Right - 69, PTC Intake - 54, PTC Internal - 23
+Counter Time Process - 2233
+06:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:11:28.621 - CHM: START Chamber Motor LEFT
+06:18:29.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 59, Right - 57, Intake - 19, Exhaust - 59
+Moisture Prediction: Left - 84, Right - 52
+Temperature: Left - 26, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 67, Pad Right - 74, PTC Intake - 44, PTC Internal - 23
+Counter Time Process - 2234
+06:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:21:48.621 - CHM: START Chamber Motor RIGHT
+06:28:49.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 65, Intake - 19, Exhaust - 59
+Moisture Prediction: Left - 77, Right - 67
+Temperature: Left - 26, Right - 26, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 70, Pad Right - 75, PTC Intake - 49, PTC Internal - 23
+Counter Time Process - 2235
+06:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:39:08.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 58, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 90, Right - 46
+Temperature: Left - 26, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 71, Pad Right - 74, PTC Intake - 42, PTC Internal - 23
+Counter Time Process - 2236
+06:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:46:09.069 - CHM: STOP Chamber Motor RIGHT
+06:46:09.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 60, Right - 59, Intake - 19, Exhaust - 59
+Moisture Prediction: Left - 76, Right - 37
+Temperature: Left - 25, Right - 24, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 76, Pad Right - 65, PTC Intake - 52, PTC Internal - 23
+Counter Time Process - 2237
+06:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+06:53:10.069 - CHM: STOP Chamber Motor LEFT
+06:56:28.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 52, Right - 2, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 63, Right - 83
+Temperature: Left - 25, Right - 25, Intake - 27, Exhaust - 24
+Temperature: Pad Left - 78, Pad Right - 72, PTC Intake - 43, PTC Internal - 23
+Counter Time Process - 2238
+07:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:03:29.145 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 58, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 94, Right - 52
+Temperature: Left - 25, Right - 24, Intake - 26, Exhaust - 24
+Temperature: Pad Left - 78, Pad Right - 77, PTC Intake - 49, PTC Internal - 23
+Counter Time Process - 2239
+07:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:17:05.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 61, Right - 57, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 85, Right - 39
+Temperature: Left - 26, Right - 24, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 75, Pad Right - 74, PTC Intake - 49, PTC Internal - 23
+Counter Time Process - 2240
+07:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:24:06.169 - CHM: STOP Chamber Motor LEFT
+07:27:25.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 2, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 80, Right - 63
+Temperature: Left - 25, Right - 24, Intake - 27, Exhaust - 23
+Temperature: Pad Left - 73, Pad Right - 70, PTC Intake - 45, PTC Internal - 22
+Counter Time Process - 2241
+07:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:34:26.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 57, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 95, Right - 84
+Temperature: Left - 24, Right - 25, Intake - 25, Exhaust - 24
+Temperature: Pad Left - 71, Pad Right - 75, PTC Intake - 45, PTC Internal - 22
+Counter Time Process - 2242
+07:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:47:34.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 59, Right - 56, Intake - 19, Exhaust - 57
+Moisture Prediction: Left - 79, Right - 42
+Temperature: Left - 25, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 69, Pad Right - 78, PTC Intake - 51, PTC Internal - 22
+Counter Time Process - 2243
+07:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+07:54:35.155 - CHM: STOP Chamber Motor LEFT
+07:57:54.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 54, Right - 1, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 64, Right - 50
+Temperature: Left - 26, Right - 24, Intake - 27, Exhaust - 22
+Temperature: Pad Left - 65, Pad Right - 67, PTC Intake - 44, PTC Internal - 22
+Counter Time Process - 2244
+08:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:04:55.069 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 58, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 65, Right - 91
+Temperature: Left - 25, Right - 24, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 67, Pad Right - 72, PTC Intake - 51, PTC Internal - 22
+Counter Time Process - 2245
+08:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:18:03.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 58, Right - 56, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 104, Right - 77
+Temperature: Left - 25, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 67, Pad Right - 80, PTC Intake - 52, PTC Internal - 22
+Counter Time Process - 2246
+08:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:25:04.045 - CHM: STOP Chamber Motor LEFT
+08:28:23.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 52, Right - 2, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 56, Right - 66
+Temperature: Left - 25, Right - 24, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 77, Pad Right - 74, PTC Intake - 43, PTC Internal - 22
+Counter Time Process - 2247
+08:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:35:24.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 59, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 75, Right - 53
+Temperature: Left - 25, Right - 23, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 76, Pad Right - 65, PTC Intake - 46, PTC Internal - 22
+Counter Time Process - 2248
+08:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:48:32.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 58, Right - 57, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 94, Right - 76
+Temperature: Left - 25, Right - 24, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 74, Pad Right - 74, PTC Intake - 46, PTC Internal - 22
+Counter Time Process - 2249
+08:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+08:55:33.069 - CHM: STOP Chamber Motor LEFT
+08:58:52.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 0, Intake - 18, Exhaust - 57
+Moisture Prediction: Left - 80, Right - 63
+Temperature: Left - 25, Right - 23, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 64, Pad Right - 82, PTC Intake - 45, PTC Internal - 22
+Counter Time Process - 2250
+09:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:05:53.093 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 58, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 69, Right - 78
+Temperature: Left - 24, Right - 25, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 65, Pad Right - 72, PTC Intake - 54, PTC Internal - 22
+Counter Time Process - 2251
+09:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:19:01.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 56, Right - 56, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 83, Right - 43
+Temperature: Left - 26, Right - 22, Intake - 25, Exhaust - 23
+Temperature: Pad Left - 68, Pad Right - 67, PTC Intake - 46, PTC Internal - 22
+Counter Time Process - 2252
+09:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:26:02.069 - CHM: STOP Chamber Motor LEFT
+09:29:21.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 53, Right - 64, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 87, Right - 55
+Temperature: Left - 25, Right - 23, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 78, Pad Right - 78, PTC Intake - 48, PTC Internal - 22
+Counter Time Process - 2253
+09:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:36:22.100 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 50, Right - 62, Intake - 18, Exhaust - 59
+Moisture Prediction: Left - 53, Right - 88
+Temperature: Left - 24, Right - 24, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 78, Pad Right - 77, PTC Intake - 49, PTC Internal - 22
+Counter Time Process - 2254
+09:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:49:30.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 49, Right - 57, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 108, Right - 60
+Temperature: Left - 23, Right - 22, Intake - 24, Exhaust - 23
+Temperature: Pad Left - 76, Pad Right - 75, PTC Intake - 45, PTC Internal - 22
+Counter Time Process - 2255
+09:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+09:56:31.045 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 53, Right - 58, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 61, Right - 41
+Temperature: Left - 25, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 64, Pad Right - 67, PTC Intake - 44, PTC Internal - 22
+Counter Time Process - 2256
+10:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:00:52.621 - CHM: START Chamber Motor RIGHT
+10:07:53.055 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 61, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 64, Right - 55
+Temperature: Left - 25, Right - 24, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 68, Pad Right - 66, PTC Intake - 51, PTC Internal - 22
+Counter Time Process - 2257
+10:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:19:59.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 49, Right - 57, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 97, Right - 75
+Temperature: Left - 24, Right - 24, Intake - 24, Exhaust - 23
+Temperature: Pad Left - 71, Pad Right - 72, PTC Intake - 48, PTC Internal - 22
+Counter Time Process - 2258
+10:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:27:00.145 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 53, Right - 57, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 80, Right - 49
+Temperature: Left - 24, Right - 22, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 72, Pad Right - 77, PTC Intake - 44, PTC Internal - 22
+Counter Time Process - 2259
+10:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:31:21.621 - CHM: START Chamber Motor RIGHT
+10:38:22.054 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 49, Right - 62, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 73, Right - 70
+Temperature: Left - 24, Right - 25, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 66, Pad Right - 75, PTC Intake - 52, PTC Internal - 22
+Counter Time Process - 2260
+10:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 48, Right - 55, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 74, Right - 40
+Temperature: Left - 24, Right - 22, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 64, Pad Right - 80, PTC Intake - 45, PTC Internal - 21
+Counter Time Process - 2261
+10:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+10:50:28.621 - CHM: START Chamber Motor LEFT
+10:57:28.945 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 55, Right - 55, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 73, Right - 37
+Temperature: Left - 26, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 76, Pad Right - 67, PTC Intake - 46, PTC Internal - 22
+Counter Time Process - 2262
+11:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:01:50.621 - CHM: START Chamber Motor RIGHT
+11:08:51.121 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 51, Right - 64, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 45, Right - 75
+Temperature: Left - 24, Right - 24, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 78, Pad Right - 68, PTC Intake - 46, PTC Internal - 22
+Counter Time Process - 2263
+11:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+Humidity: Left - 49, Right - 55, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 103, Right - 65
+Temperature: Left - 23, Right - 22, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 73, Pad Right - 66, PTC Intake - 47, PTC Internal - 22
+Counter Time Process - 2264
+11:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:20:57.621 - CHM: START Chamber Motor LEFT
+11:27:58.154 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 54, Right - 56, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 45, Right - 37
+Temperature: Left - 25, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 66, Pad Right - 74, PTC Intake - 53, PTC Internal - 22
+Counter Time Process - 2265
+11:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:33:52.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 1, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 81, Right - 55
+Temperature: Left - 25, Right - 24, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 73, Pad Right - 76, PTC Intake - 44, PTC Internal - 22
+Counter Time Process - 2266
+11:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:40:53.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 49, Right - 55, Intake - 18, Exhaust - 58
+Moisture Prediction: Left - 63, Right - 69
+Temperature: Left - 24, Right - 24, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 76, Pad Right - 79, PTC Intake - 49, PTC Internal - 22
+Counter Time Process - 2267
+11:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+11:51:12.621 - CHM: START Chamber Motor RIGHT
+11:58:13.045 - CHM: STOP Chamber Motor RIGHT
+11:58:13.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 59, Right - 60, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 56, Right - 72
+Temperature: Left - 24, Right - 23, Intake - 26, Exhaust - 23
+Temperature: Pad Left - 79, Pad Right - 78, PTC Intake - 47, PTC Internal - 22
+Counter Time Process - 2268
+12:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:05:14.045 - CHM: STOP Chamber Motor LEFT
+12:08:32.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 65, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 77, Right - 59
+Temperature: Left - 24, Right - 24, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 69, Pad Right - 74, PTC Intake - 45, PTC Internal - 22
+Counter Time Process - 2269
+12:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:15:33.045 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 48, Right - 56, Intake - 17, Exhaust - 58
+Moisture Prediction: Left - 81, Right - 48
+Temperature: Left - 24, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 63, Pad Right - 72, PTC Intake - 48, PTC Internal - 22
+Counter Time Process - 2270
+12:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:29:09.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 47, Right - 54, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 90, Right - 44
+Temperature: Left - 25, Right - 24, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 66, Pad Right - 69, PTC Intake - 43, PTC Internal - 21
+Counter Time Process - 2271
+12:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:36:10.145 - CHM: STOP Chamber Motor LEFT
+12:39:29.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 51, Right - 55, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 52, Right - 66
+Temperature: Left - 25, Right - 22, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 76, Pad Right - 57, PTC Intake - 44, PTC Internal - 21
+Counter Time Process - 2272
+12:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:46:30.145 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 48, Right - 56, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 67, Right - 82
+Temperature: Left - 24, Right - 23, Intake - 26, Exhaust - 22
+Temperature: Pad Left - 73, Pad Right - 77, PTC Intake - 47, PTC Internal - 21
+Counter Time Process - 2273
+12:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+12:56:49.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 47, Right - 65, Intake - 16, Exhaust - 57
+Moisture Prediction: Left - 49, Right - 59
+Temperature: Left - 23, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 70, Pad Right - 77, PTC Intake - 51, PTC Internal - 21
+Counter Time Process - 2274
+13:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:03:50.069 - CHM: STOP Chamber Motor RIGHT
+13:03:50.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 59, Right - 56, Intake - 16, Exhaust - 57
+Moisture Prediction: Left - 92, Right - 32
+Temperature: Left - 25, Right - 22, Intake - 24, Exhaust - 23
+Temperature: Pad Left - 63, Pad Right - 75, PTC Intake - 53, PTC Internal - 21
+Counter Time Process - 2275
+13:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:10:50.969 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 49, Right - 54, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 48, Right - 62
+Temperature: Left - 25, Right - 23, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 74, Pad Right - 77, PTC Intake - 48, PTC Internal - 21
+Counter Time Process - 2276
+13:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:27:32.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 48, Right - 0, Intake - 16, Exhaust - 57
+Moisture Prediction: Left - 57, Right - 75
+Temperature: Left - 24, Right - 23, Intake - 24, Exhaust - 22
+Temperature: Pad Left - 78, Pad Right - 68, PTC Intake - 43, PTC Internal - 21
+Counter Time Process - 2277
+13:30:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:34:33.069 - CHM: STOP Chamber Motor RIGHT
+13:35:48.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 59, Right - 57, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 71, Right - 37
+Temperature: Left - 24, Right - 23, Intake - 24, Exhaust - 23
+Temperature: Pad Left - 75, Pad Right - 66, PTC Intake - 51, PTC Internal - 21
+Counter Time Process - 2278
+13:40:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:42:49.069 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 49, Right - 54, Intake - 17, Exhaust - 57
+Moisture Prediction: Left - 89, Right - 53
+Temperature: Left - 24, Right - 22, Intake - 25, Exhaust - 22
+Temperature: Pad Left - 64, Pad Right - 73, PTC Intake - 49, PTC Internal - 21
+Counter Time Process - 2279
+13:50:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+13:58:01.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 48, Right - 1, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 57, Right - 41
+Temperature: Left - 24, Right - 24, Intake - 23, Exhaust - 22
+Temperature: Pad Left - 69, Pad Right - 78, PTC Intake - 46, PTC Internal - 21
+Counter Time Process - 2280
+14:00:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+14:05:02.145 - CHM: STOP Chamber Motor RIGHT
+14:06:17.621 - CHM: START Chamber Motor LEFT
+Humidity: Left - 58, Right - 56, Intake - 18, Exhaust - 57
+Moisture Prediction: Left - 73, Right - 56
+Temperature: Left - 25, Right - 22, Intake - 24, Exhaust - 23
+Temperature: Pad Left - 79, Pad Right - 76, PTC Intake - 46, PTC Internal - 21
+Counter Time Process - 2281
+14:10:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+14:13:18.055 - CHM: STOP Chamber Motor LEFT
+14:19:43.621 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 50, Right - 54, Intake - 18, Exhaust - 56
+Moisture Prediction: Left - 82, Right - 66
+Temperature: Left - 23, Right - 23, Intake - 23, Exhaust - 22
+Temperature: Pad Left - 73, Pad Right - 81, PTC Intake - 49, PTC Internal - 21
+Counter Time Process - 2282
+14:20:00.631 - SYS: ERROR - this->IncrementSdCounter(SdCounter_ProcessTime)
+S/N - LL01-00000000001à
+Counter Time Process - 2226
+00:00:00.521 - SYS: Start check states switches.
+00:00:00.521 - SYS: States switches - Ok.
+00:00:00.621 - SYS: Set 'SysState_SelsfTest'
+00:00:00.621 - SYS: Set 'SysState_Busy'
+00:00:01.726 - SYS: Started !!!
+00:00:01.726 - SYS: Set 'SysState_Idle'
+00:00:01.736 - CHM: START Chamber Motor LEFT
+S/N - LL01-00000000001à
+Counter Time Process - 2226
+00:00:00.521 - SYS: Start check states switches.
+00:00:00.521 - SYS: States switches - Ok.
+00:00:00.621 - SYS: Set 'SysState_SelsfTest'
+00:00:00.621 - SYS: Set 'SysState_Busy'
+00:00:01.726 - SYS: Started !!!
+00:00:01.726 - SYS: Set 'SysState_Idle'
+00:00:01.736 - CHM: START Chamber Motor LEFT
+00:00:01.736 - SYS: Set 'SysError_MotorChamberLeft'
+00:00:01.736 - CHM: STOP Chamber Motor LEFT
+00:00:02.736 - SYS: ERROR !!!
+00:00:03.736 - SYS: ERROR !!!
+00:00:04.736 - SYS: ERROR !!!
+00:00:05.736 - SYS: ERROR !!!
+00:00:06.736 - SYS: ERROR !!!
+00:00:07.736 - SYS: ERROR !!!
+00:00:08.736 - SYS: ERROR !!!
+00:00:09.736 - SYS: ERROR !!!
+00:00:10.736 - SYS: ERROR !!!
+00:00:11.736 - SYS: ERROR !!!
+00:00:12.736 - SYS: ERROR !!!
+00:00:13.736 - SYS: ERROR !!!
+00:00:14.736 - SYS: ERROR !!!
+00:00:15.736 - SYS: ERROR !!!
+00:00:16.736 - SYS: ERROR !!!
+00:00:17.736 - SYS: ERROR !!!
+00:00:18.736 - SYS: ERROR !!!
+00:00:19.736 - SYS: ERROR !!!
+00:00:20.736 - SYS: ERROR !!!
+00:00:21.736 - SYS: ERROR !!!
+00:00:22.736 - SYS: ERROR !!!
+00:00:23.736 - SYS: ERROR !!!
+00:00:24.736 - SYS: ERROR !!!
+00:00:25.736 - SYS: ERROR !!!
+00:00:26.736 - SYS: ERROR !!!
+00:00:27.736 - SYS: ERROR !!!
+00:00:28.736 - SYS: ERROR !!!
+00:00:29.736 - SYS: ERROR !!!
+00:00:30.736 - SYS: ERROR !!!
+00:00:31.736 - SYS: ERROR !!!
+00:00:32.736 - SYS: ERROR !!!
+00:00:33.736 - SYS: ERROR !!!
+00:00:34.736 - SYS: ERROR !!!
+00:00:35.736 - SYS: ERROR !!!
+00:00:36.736 - SYS: ERROR !!!
+00:00:37.736 - SYS: ERROR !!!
