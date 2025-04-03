@@ -705,7 +705,7 @@ class InterfaceVIP:
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM16", 115200)
+    result = interfaceVIP.open("COM19", 115200)
     if result != 0:
         SystemExit(1)
 

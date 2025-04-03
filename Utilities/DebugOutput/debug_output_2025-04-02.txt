@@ -1,25 +1,4 @@
-S/N - LL01-00000000001à
-Counter Time Process - 2253
-00:00:01.021 - SYS: Start check states switches.
-00:00:01.021 - SYS: States switches - Ok.
-00:00:01.021 - SYS: Set 'SysState_SelsfTest'
-00:00:01.021 - SYS: Set 'SysState_Busy'
-00:00:02.126 - SYS: Started !!!
-00:00:02.126 - SYS: Set 'SysState_Idle'
-00:00:02.136 - CHM: START Chamber Motor LEFT
-00:00:02.136 - CHM: ERROR CRC - START Chamber Motor LEFT
-00:00:02.136 - SYS: Set 'SysError_MotorChamberLeft'
-00:00:02.136 - CHM: STOP Chamber Motor LEFT
-00:00:03.136 - SYS: ERROR !!!
-00:00:04.136 - SYS: ERROR !!!
-00:00:05.136 - SYS: ERROR !!!
-00:00:06.136 - SYS: ERROR !!!
-00:00:07.136 - SYS: ERROR !!!
-00:00:08.136 - SYS: ERROR !!!
-00:00:09.136 - SYS: ERROR !!!
-00:00:10.136 - SYS: ERROR !!!
-00:00:11.136 - SYS: ERROR !!!
-S/N - LL01-00000000001à
+S/N - LL01-00000000001ï¿½
 Counter Time Process - 2253
 00:00:01.021 - SYS: Start check states switches.
 00:00:01.021 - SYS: States switches - Ok.
@@ -558,53 +537,7 @@ Counter Time Process - 2335
 13:47:38.021 - CHM: START Chamber Motor LEFT
 13:50:08.721 - SYS: Set 'SysState_TopUnlocked'
 13:50:08.721 - CHM: STOP Chamber Motor LEFT
-S/N - LL01-00000000001à
-Counter Time Process - 2335
-00:00:01.021 - SYS: Start check states switches.
-00:00:01.021 - SYS: States switches - Ok.
-00:00:01.021 - SYS: Set 'SysState_SelsfTest'
-00:00:01.021 - SYS: Set 'SysState_Busy'
-00:00:01.387 - SYS: Set 'SysError_MainAcPower'
-00:00:01.721 - SYS: Set 'SysError_MainAcPower'
-00:00:02.387 - SYS: ERROR !!!
-00:00:03.387 - SYS: ERROR !!!
-00:00:04.387 - SYS: ERROR !!!
-00:00:05.387 - SYS: ERROR !!!
-00:00:06.387 - SYS: ERROR !!!
-00:00:07.387 - SYS: ERROR !!!
-00:00:08.387 - SYS: ERROR !!!
-00:00:09.387 - SYS: ERROR !!!
-00:00:10.387 - SYS: ERROR !!!
-00:00:11.387 - SYS: ERROR !!!
-00:00:12.387 - SYS: ERROR !!!
-00:00:13.387 - SYS: ERROR !!!
-00:00:14.387 - SYS: ERROR !!!
-00:00:15.387 - SYS: ERROR !!!
-00:00:16.387 - SYS: ERROR !!!
-00:00:17.387 - SYS: ERROR !!!
-00:00:18.387 - SYS: ERROR !!!
-00:00:19.387 - SYS: ERROR !!!
-00:00:20.387 - SYS: ERROR !!!
-00:00:21.387 - SYS: ERROR !!!
-00:00:22.387 - SYS: ERROR !!!
-00:00:23.387 - SYS: ERROR !!!
-00:00:24.387 - SYS: ERROR !!!
-00:00:25.387 - SYS: ERROR !!!
-00:00:26.387 - SYS: ERROR !!!
-00:00:27.387 - SYS: ERROR !!!
-00:00:28.387 - SYS: ERROR !!!
-00:00:29.387 - SYS: ERROR !!!
-00:00:30.387 - SYS: ERROR !!!
-00:00:31.387 - SYS: ERROR !!!
-00:00:32.387 - SYS: ERROR !!!
-00:00:33.387 - SYS: ERROR !!!
-00:00:34.387 - SYS: ERROR !!!
-00:00:35.387 - SYS: ERROR !!!
-00:00:36.387 - SYS: ERROR !!!
-00:00:37.387 - SYS: ERROR !!!
-00:00:38.387 - SYS: ERROR !!!
-00:00:38.821 - SYS: Set 'SysState_TopUnlocked'
-S/N - LL01-00000000001à
+S/N - LL01-00000000001ï¿½
 Counter Time Process - 2335
 00:00:01.021 - SYS: Start check states switches.
 00:00:01.021 - SYS: States switches - Ok.
