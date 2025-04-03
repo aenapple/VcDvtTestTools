@@ -1,0 +1,519 @@
+02:48:12.545 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 17, Exhaust - 56
+Moisture Prediction: Left - 63, Right - 73
+Temperature: Left - 42, Right - 38, Intake - 32, Exhaust - 30
+Temperature: Pad Left - 66, Pad Right - 81, PTC Intake - 49, PTC Internal - 53
+Counter Time Process - 2352
+Humidity: Left - 28, Right - 35, Intake - 17, Exhaust - 56
+Moisture Prediction: Left - 75, Right - 66
+Temperature: Left - 43, Right - 39, Intake - 31, Exhaust - 30
+Temperature: Pad Left - 67, Pad Right - 73, PTC Intake - 46, PTC Internal - 53
+Counter Time Process - 2353
+03:01:21.021 - CHM: START Chamber Motor LEFT
+03:08:21.445 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 27, Right - 34, Intake - 17, Exhaust - 55
+Moisture Prediction: Left - 63, Right - 64
+Temperature: Left - 42, Right - 38, Intake - 30, Exhaust - 30
+Temperature: Pad Left - 73, Pad Right - 74, PTC Intake - 47, PTC Internal - 48
+Counter Time Process - 2354
+03:11:41.021 - CHM: START Chamber Motor RIGHT
+03:18:41.369 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 38, Intake - 18, Exhaust - 55
+Moisture Prediction: Left - 73, Right - 82
+Temperature: Left - 42, Right - 38, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 78, Pad Right - 79, PTC Intake - 44, PTC Internal - 51
+Counter Time Process - 2355
+Humidity: Left - 28, Right - 36, Intake - 18, Exhaust - 55
+Moisture Prediction: Left - 60, Right - 68
+Temperature: Left - 41, Right - 37, Intake - 31, Exhaust - 31
+Temperature: Pad Left - 78, Pad Right - 75, PTC Intake - 44, PTC Internal - 47
+Counter Time Process - 2356
+03:31:50.021 - CHM: START Chamber Motor LEFT
+03:37:50.521 - HAL: Error Left Motor - CCW.
+Current = 106
+03:38:50.445 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 28, Right - 34, Intake - 18, Exhaust - 54
+Moisture Prediction: Left - 65, Right - 91
+Temperature: Left - 41, Right - 37, Intake - 31, Exhaust - 31
+Temperature: Pad Left - 71, Pad Right - 72, PTC Intake - 52, PTC Internal - 49
+Counter Time Process - 2357
+03:42:10.021 - CHM: START Chamber Motor RIGHT
+03:49:10.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 31, Right - 39, Intake - 18, Exhaust - 54
+Moisture Prediction: Left - 73, Right - 77
+Temperature: Left - 42, Right - 38, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 64, Pad Right - 78, PTC Intake - 47, PTC Internal - 47
+Counter Time Process - 2358
+Humidity: Left - 28, Right - 35, Intake - 18, Exhaust - 53
+Moisture Prediction: Left - 62, Right - 63
+Temperature: Left - 40, Right - 36, Intake - 29, Exhaust - 31
+Temperature: Pad Left - 68, Pad Right - 77, PTC Intake - 46, PTC Internal - 47
+Counter Time Process - 2359
+04:02:19.021 - CHM: START Chamber Motor LEFT
+04:09:19.469 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 28, Right - 34, Intake - 19, Exhaust - 52
+Moisture Prediction: Left - 65, Right - 75
+Temperature: Left - 42, Right - 37, Intake - 30, Exhaust - 30
+Temperature: Pad Left - 73, Pad Right - 69, PTC Intake - 44, PTC Internal - 47
+Counter Time Process - 2360
+04:12:39.021 - CHM: START Chamber Motor RIGHT
+04:19:39.454 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 32, Right - 40, Intake - 18, Exhaust - 52
+Moisture Prediction: Left - 72, Right - 63
+Temperature: Left - 40, Right - 37, Intake - 30, Exhaust - 30
+Temperature: Pad Left - 78, Pad Right - 75, PTC Intake - 45, PTC Internal - 46
+Counter Time Process - 2361
+04:29:59.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 36, Intake - 18, Exhaust - 52
+Moisture Prediction: Left - 66, Right - 78
+Temperature: Left - 41, Right - 36, Intake - 29, Exhaust - 30
+Temperature: Pad Left - 77, Pad Right - 82, PTC Intake - 47, PTC Internal - 46
+Counter Time Process - 2362
+04:36:59.445 - CHM: STOP Chamber Motor RIGHT
+04:37:00.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 28, Right - 37, Intake - 18, Exhaust - 51
+Moisture Prediction: Left - 70, Right - 65
+Temperature: Left - 41, Right - 38, Intake - 29, Exhaust - 30
+Temperature: Pad Left - 70, Pad Right - 72, PTC Intake - 44, PTC Internal - 53
+Counter Time Process - 2363
+04:44:00.445 - CHM: STOP Chamber Motor LEFT
+04:47:19.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 30, Right - 38, Intake - 19, Exhaust - 52
+Moisture Prediction: Left - 55, Right - 90
+Temperature: Left - 41, Right - 37, Intake - 30, Exhaust - 30
+Temperature: Pad Left - 65, Pad Right - 71, PTC Intake - 46, PTC Internal - 47
+Counter Time Process - 2364
+04:53:19.521 - HAL: Error Right Motor - CCW.
+Current = 107
+04:54:19.445 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 28, Right - 35, Intake - 18, Exhaust - 51
+Moisture Prediction: Left - 65, Right - 71
+Temperature: Left - 42, Right - 37, Intake - 31, Exhaust - 30
+Temperature: Pad Left - 70, Pad Right - 78, PTC Intake - 52, PTC Internal - 51
+Counter Time Process - 2365
+05:04:39.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 38, Intake - 18, Exhaust - 51
+Moisture Prediction: Left - 71, Right - 85
+Temperature: Left - 42, Right - 39, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 76, Pad Right - 78, PTC Intake - 43, PTC Internal - 52
+Counter Time Process - 2366
+05:11:39.521 - CHM: STOP Chamber Motor RIGHT
+05:11:40.021 - CHM: START Chamber Motor LEFT
+05:18:40.445 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 27, Right - 35, Intake - 18, Exhaust - 49
+Moisture Prediction: Left - 57, Right - 62
+Temperature: Left - 43, Right - 37, Intake - 29, Exhaust - 31
+Temperature: Pad Left - 79, Pad Right - 70, PTC Intake - 45, PTC Internal - 49
+Counter Time Process - 2367
+05:21:59.021 - CHM: START Chamber Motor RIGHT
+05:27:59.571 - HAL: Error Right Motor - CCW.
+Current = 101
+05:28:59.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 37, Intake - 18, Exhaust - 49
+Moisture Prediction: Left - 60, Right - 64
+Temperature: Left - 41, Right - 37, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 71, Pad Right - 75, PTC Intake - 46, PTC Internal - 49
+Counter Time Process - 2368
+Humidity: Left - 28, Right - 35, Intake - 19, Exhaust - 49
+Moisture Prediction: Left - 72, Right - 82
+Temperature: Left - 41, Right - 37, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 64, Pad Right - 82, PTC Intake - 46, PTC Internal - 48
+Counter Time Process - 2369
+05:42:33.021 - CHM: START Chamber Motor LEFT
+05:49:33.545 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 26, Right - 34, Intake - 18, Exhaust - 47
+Moisture Prediction: Left - 59, Right - 66
+Temperature: Left - 41, Right - 37, Intake - 30, Exhaust - 31
+Temperature: Pad Left - 69, Pad Right - 72, PTC Intake - 51, PTC Internal - 49
+Counter Time Process - 2370
+05:52:22.021 - CHM: START Chamber Motor RIGHT
+05:59:22.521 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 39, Intake - 17, Exhaust - 47
+Moisture Prediction: Left - 53, Right - 89
+Temperature: Left - 41, Right - 38, Intake - 29, Exhaust - 31
+Temperature: Pad Left - 74, Pad Right - 73, PTC Intake - 49, PTC Internal - 51
+Counter Time Process - 2371
+06:09:42.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 27, Right - 35, Intake - 18, Exhaust - 48
+Moisture Prediction: Left - 56, Right - 55
+Temperature: Left - 42, Right - 37, Intake - 28, Exhaust - 31
+Temperature: Pad Left - 80, Pad Right - 82, PTC Intake - 49, PTC Internal - 47
+Counter Time Process - 2372
+06:16:42.469 - CHM: STOP Chamber Motor RIGHT
+06:16:43.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 29, Right - 36, Intake - 26, Exhaust - 48
+Moisture Prediction: Left - 59, Right - 57
+Temperature: Left - 41, Right - 37, Intake - 27, Exhaust - 32
+Temperature: Pad Left - 75, Pad Right - 73, PTC Intake - 48, PTC Internal - 48
+Counter Time Process - 2373
+06:23:43.469 - CHM: STOP Chamber Motor LEFT
+06:27:02.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 26, Exhaust - 47
+Moisture Prediction: Left - 69, Right - 53
+Temperature: Left - 42, Right - 38, Intake - 27, Exhaust - 31
+Temperature: Pad Left - 66, Pad Right - 71, PTC Intake - 47, PTC Internal - 55
+Counter Time Process - 2374
+06:34:02.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 27, Right - 35, Intake - 25, Exhaust - 47
+Moisture Prediction: Left - 52, Right - 58
+Temperature: Left - 42, Right - 37, Intake - 27, Exhaust - 32
+Temperature: Pad Left - 67, Pad Right - 79, PTC Intake - 49, PTC Internal - 52
+Counter Time Process - 2375
+06:44:22.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 23, Exhaust - 46
+Moisture Prediction: Left - 57, Right - 77
+Temperature: Left - 43, Right - 38, Intake - 28, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 77, PTC Intake - 47, PTC Internal - 53
+Counter Time Process - 2376
+06:51:22.455 - CHM: STOP Chamber Motor RIGHT
+06:51:23.021 - CHM: START Chamber Motor LEFT
+06:58:23.455 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 27, Right - 34, Intake - 23, Exhaust - 46
+Moisture Prediction: Left - 70, Right - 62
+Temperature: Left - 42, Right - 39, Intake - 29, Exhaust - 32
+Temperature: Pad Left - 80, Pad Right - 68, PTC Intake - 48, PTC Internal - 48
+Counter Time Process - 2377
+07:01:42.021 - CHM: START Chamber Motor RIGHT
+07:08:42.369 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 30, Right - 37, Intake - 19, Exhaust - 46
+Moisture Prediction: Left - 59, Right - 69
+Temperature: Left - 41, Right - 37, Intake - 29, Exhaust - 32
+Temperature: Pad Left - 74, Pad Right - 76, PTC Intake - 49, PTC Internal - 49
+Counter Time Process - 2378
+07:19:02.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 34, Intake - 19, Exhaust - 45
+Moisture Prediction: Left - 52, Right - 58
+Temperature: Left - 42, Right - 37, Intake - 29, Exhaust - 32
+Temperature: Pad Left - 64, Pad Right - 80, PTC Intake - 49, PTC Internal - 49
+Counter Time Process - 2379
+07:26:02.469 - CHM: STOP Chamber Motor RIGHT
+07:26:03.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 27, Right - 35, Intake - 19, Exhaust - 47
+Moisture Prediction: Left - 68, Right - 56
+Temperature: Left - 42, Right - 38, Intake - 30, Exhaust - 33
+Temperature: Pad Left - 68, Pad Right - 70, PTC Intake - 44, PTC Internal - 52
+Counter Time Process - 2380
+07:33:03.469 - CHM: STOP Chamber Motor LEFT
+07:36:22.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 19, Exhaust - 44
+Moisture Prediction: Left - 51, Right - 56
+Temperature: Left - 44, Right - 37, Intake - 31, Exhaust - 33
+Temperature: Pad Left - 75, Pad Right - 74, PTC Intake - 53, PTC Internal - 54
+Counter Time Process - 2381
+07:43:22.445 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 26, Right - 34, Intake - 18, Exhaust - 43
+Moisture Prediction: Left - 61, Right - 65
+Temperature: Left - 42, Right - 39, Intake - 30, Exhaust - 33
+Temperature: Pad Left - 79, Pad Right - 82, PTC Intake - 51, PTC Internal - 55
+Counter Time Process - 2382
+07:53:42.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 17, Exhaust - 46
+Moisture Prediction: Left - 53, Right - 87
+Temperature: Left - 43, Right - 39, Intake - 29, Exhaust - 33
+Temperature: Pad Left - 69, Pad Right - 71, PTC Intake - 45, PTC Internal - 52
+Counter Time Process - 2383
+08:00:42.369 - CHM: STOP Chamber Motor RIGHT
+08:00:43.021 - CHM: START Chamber Motor LEFT
+08:07:43.469 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 26, Right - 33, Intake - 19, Exhaust - 44
+Moisture Prediction: Left - 56, Right - 68
+Temperature: Left - 44, Right - 38, Intake - 30, Exhaust - 32
+Temperature: Pad Left - 66, Pad Right - 72, PTC Intake - 48, PTC Internal - 52
+Counter Time Process - 2384
+Humidity: Left - 26, Right - 33, Intake - 18, Exhaust - 44
+Moisture Prediction: Left - 56, Right - 56
+Temperature: Left - 42, Right - 39, Intake - 31, Exhaust - 32
+Temperature: Pad Left - 72, Pad Right - 82, PTC Intake - 44, PTC Internal - 51
+Counter Time Process - 2385
+08:25:18.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 30, Right - 38, Intake - 18, Exhaust - 44
+Moisture Prediction: Left - 52, Right - 51
+Temperature: Left - 43, Right - 38, Intake - 29, Exhaust - 32
+Temperature: Pad Left - 78, Pad Right - 74, PTC Intake - 45, PTC Internal - 52
+Counter Time Process - 2386
+08:32:18.455 - CHM: STOP Chamber Motor RIGHT
+08:32:19.021 - CHM: START Chamber Motor LEFT
+08:39:19.345 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 26, Right - 34, Intake - 18, Exhaust - 43
+Moisture Prediction: Left - 54, Right - 56
+Temperature: Left - 42, Right - 38, Intake - 29, Exhaust - 32
+Temperature: Pad Left - 75, Pad Right - 71, PTC Intake - 49, PTC Internal - 54
+Counter Time Process - 2387
+08:42:38.021 - CHM: START Chamber Motor RIGHT
+08:49:38.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 29, Right - 37, Intake - 17, Exhaust - 38
+Moisture Prediction: Left - 67, Right - 63
+Temperature: Left - 43, Right - 39, Intake - 29, Exhaust - 31
+Temperature: Pad Left - 64, Pad Right - 80, PTC Intake - 44, PTC Internal - 49
+Counter Time Process - 2388
+Humidity: Left - 25, Right - 33, Intake - 20, Exhaust - 36
+Moisture Prediction: Left - 62, Right - 70
+Temperature: Left - 44, Right - 38, Intake - 28, Exhaust - 31
+Temperature: Pad Left - 70, Pad Right - 74, PTC Intake - 48, PTC Internal - 54
+Counter Time Process - 2389
+09:00:26.021 - CHM: START Chamber Motor RIGHT
+09:07:26.345 - CHM: STOP Chamber Motor RIGHT
+09:07:27.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 27, Right - 34, Intake - 22, Exhaust - 34
+Moisture Prediction: Left - 48, Right - 61
+Temperature: Left - 43, Right - 38, Intake - 27, Exhaust - 31
+Temperature: Pad Left - 77, Pad Right - 70, PTC Intake - 52, PTC Internal - 53
+Counter Time Process - 2390
+09:14:27.555 - CHM: STOP Chamber Motor LEFT
+09:17:46.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 28, Right - 35, Intake - 21, Exhaust - 35
+Moisture Prediction: Left - 70, Right - 51
+Temperature: Left - 43, Right - 38, Intake - 26, Exhaust - 30
+Temperature: Pad Left - 75, Pad Right - 80, PTC Intake - 45, PTC Internal - 49
+Counter Time Process - 2391
+09:24:46.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 26, Right - 33, Intake - 20, Exhaust - 36
+Moisture Prediction: Left - 63, Right - 59
+Temperature: Left - 42, Right - 38, Intake - 27, Exhaust - 31
+Temperature: Pad Left - 67, Pad Right - 74, PTC Intake - 49, PTC Internal - 49
+Counter Time Process - 2392
+09:35:06.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 35, Intake - 21, Exhaust - 35
+Moisture Prediction: Left - 61, Right - 66
+Temperature: Left - 43, Right - 39, Intake - 26, Exhaust - 30
+Temperature: Pad Left - 66, Pad Right - 71, PTC Intake - 49, PTC Internal - 52
+Counter Time Process - 2393
+09:42:06.469 - CHM: STOP Chamber Motor RIGHT
+09:44:56.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 25, Right - 33, Intake - 19, Exhaust - 36
+Moisture Prediction: Left - 59, Right - 63
+Temperature: Left - 42, Right - 38, Intake - 25, Exhaust - 31
+Temperature: Pad Left - 72, Pad Right - 80, PTC Intake - 49, PTC Internal - 49
+Counter Time Process - 2394
+09:51:56.445 - CHM: STOP Chamber Motor LEFT
+09:52:26.021 - CHM: START Chamber Motor RIGHT
+09:59:26.445 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 28, Right - 35, Intake - 21, Exhaust - 35
+Moisture Prediction: Left - 56, Right - 54
+Temperature: Left - 42, Right - 38, Intake - 26, Exhaust - 31
+Temperature: Pad Left - 79, Pad Right - 75, PTC Intake - 48, PTC Internal - 49
+Counter Time Process - 2395
+Humidity: Left - 25, Right - 32, Intake - 21, Exhaust - 35
+Moisture Prediction: Left - 51, Right - 67
+Temperature: Left - 43, Right - 39, Intake - 26, Exhaust - 31
+Temperature: Pad Left - 75, Pad Right - 69, PTC Intake - 46, PTC Internal - 48
+Counter Time Process - 2396
+10:15:52.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 25, Right - 31, Intake - 21, Exhaust - 35
+Moisture Prediction: Left - 53, Right - 65
+Temperature: Left - 40, Right - 37, Intake - 25, Exhaust - 31
+Temperature: Pad Left - 68, Pad Right - 79, PTC Intake - 44, PTC Internal - 47
+Counter Time Process - 2397
+10:22:52.445 - CHM: STOP Chamber Motor LEFT
+10:24:08.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 29, Right - 36, Intake - 20, Exhaust - 34
+Moisture Prediction: Left - 61, Right - 61
+Temperature: Left - 43, Right - 37, Intake - 25, Exhaust - 31
+Temperature: Pad Left - 66, Pad Right - 78, PTC Intake - 51, PTC Internal - 51
+Counter Time Process - 2398
+10:31:08.545 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 25, Right - 32, Intake - 20, Exhaust - 34
+Moisture Prediction: Left - 65, Right - 53
+Temperature: Left - 42, Right - 39, Intake - 26, Exhaust - 32
+Temperature: Pad Left - 72, Pad Right - 70, PTC Intake - 44, PTC Internal - 55
+Counter Time Process - 2399
+10:46:21.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 24, Right - 30, Intake - 20, Exhaust - 34
+Moisture Prediction: Left - 61, Right - 70
+Temperature: Left - 43, Right - 38, Intake - 25, Exhaust - 31
+Temperature: Pad Left - 78, Pad Right - 76, PTC Intake - 47, PTC Internal - 52
+Counter Time Process - 2400
+10:53:21.369 - CHM: STOP Chamber Motor LEFT
+10:54:37.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 27, Right - 35, Intake - 20, Exhaust - 34
+Moisture Prediction: Left - 50, Right - 62
+Temperature: Left - 42, Right - 39, Intake - 26, Exhaust - 31
+Temperature: Pad Left - 76, Pad Right - 81, PTC Intake - 47, PTC Internal - 48
+Counter Time Process - 2401
+11:01:37.569 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 26, Right - 31, Intake - 22, Exhaust - 33
+Moisture Prediction: Left - 69, Right - 55
+Temperature: Left - 41, Right - 38, Intake - 26, Exhaust - 31
+Temperature: Pad Left - 68, Pad Right - 73, PTC Intake - 47, PTC Internal - 47
+Counter Time Process - 2402
+11:11:57.021 - CHM: START Chamber Motor RIGHT
+11:18:57.445 - CHM: STOP Chamber Motor RIGHT
+11:18:58.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 28, Right - 35, Intake - 22, Exhaust - 30
+Moisture Prediction: Left - 54, Right - 60
+Temperature: Left - 42, Right - 37, Intake - 25, Exhaust - 30
+Temperature: Pad Left - 65, Pad Right - 71, PTC Intake - 48, PTC Internal - 47
+Counter Time Process - 2403
+11:25:58.545 - CHM: STOP Chamber Motor LEFT
+11:29:17.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 26, Right - 33, Intake - 22, Exhaust - 30
+Moisture Prediction: Left - 71, Right - 62
+Temperature: Left - 40, Right - 38, Intake - 25, Exhaust - 30
+Temperature: Pad Left - 70, Pad Right - 81, PTC Intake - 45, PTC Internal - 46
+Counter Time Process - 2404
+11:36:17.545 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 26, Right - 33, Intake - 21, Exhaust - 29
+Moisture Prediction: Left - 58, Right - 55
+Temperature: Left - 43, Right - 38, Intake - 26, Exhaust - 30
+Temperature: Pad Left - 76, Pad Right - 76, PTC Intake - 44, PTC Internal - 52
+Counter Time Process - 2405
+Humidity: Left - 24, Right - 30, Intake - 21, Exhaust - 29
+Moisture Prediction: Left - 49, Right - 55
+Temperature: Left - 42, Right - 38, Intake - 25, Exhaust - 30
+Temperature: Pad Left - 79, Pad Right - 69, PTC Intake - 46, PTC Internal - 54
+Counter Time Process - 2406
+11:51:17.021 - CHM: START Chamber Motor LEFT
+11:58:17.445 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 24, Right - 29, Intake - 21, Exhaust - 28
+Moisture Prediction: Left - 68, Right - 73
+Temperature: Left - 43, Right - 39, Intake - 24, Exhaust - 30
+Temperature: Pad Left - 70, Pad Right - 78, PTC Intake - 51, PTC Internal - 49
+Counter Time Process - 2407
+12:00:14.021 - CHM: START Chamber Motor RIGHT
+12:07:14.455 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 26, Right - 32, Intake - 21, Exhaust - 27
+Moisture Prediction: Left - 59, Right - 60
+Temperature: Left - 42, Right - 38, Intake - 26, Exhaust - 30
+Temperature: Pad Left - 64, Pad Right - 81, PTC Intake - 47, PTC Internal - 47
+Counter Time Process - 2408
+12:17:34.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 27, Right - 33, Intake - 21, Exhaust - 27
+Moisture Prediction: Left - 50, Right - 53
+Temperature: Left - 41, Right - 37, Intake - 24, Exhaust - 30
+Temperature: Pad Left - 69, Pad Right - 71, PTC Intake - 49, PTC Internal - 47
+Counter Time Process - 2409
+12:24:34.469 - CHM: STOP Chamber Motor RIGHT
+12:27:06.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 25, Right - 31, Intake - 22, Exhaust - 27
+Moisture Prediction: Left - 66, Right - 67
+Temperature: Left - 42, Right - 38, Intake - 24, Exhaust - 30
+Temperature: Pad Left - 74, Pad Right - 74, PTC Intake - 44, PTC Internal - 46
+Counter Time Process - 2410
+12:34:06.469 - CHM: STOP Chamber Motor LEFT
+12:34:54.021 - CHM: START Chamber Motor RIGHT
+12:36:54.321 - HAL: Error Right Motor - CCW.
+Current = 101
+Humidity: Left - 28, Right - 34, Intake - 20, Exhaust - 26
+Moisture Prediction: Left - 66, Right - 63
+Temperature: Left - 40, Right - 37, Intake - 25, Exhaust - 29
+Temperature: Pad Left - 79, Pad Right - 81, PTC Intake - 49, PTC Internal - 47
+Counter Time Process - 2411
+12:41:54.445 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 25, Right - 30, Intake - 21, Exhaust - 26
+Moisture Prediction: Left - 56, Right - 61
+Temperature: Left - 42, Right - 38, Intake - 23, Exhaust - 28
+Temperature: Pad Left - 77, Pad Right - 73, PTC Intake - 44, PTC Internal - 46
+Counter Time Process - 2412
+12:52:14.021 - CHM: START Chamber Motor RIGHT
+12:58:14.621 - HAL: Error Right Motor - CCW.
+Current = 109
+12:59:14.569 - CHM: STOP Chamber Motor RIGHT
+12:59:15.021 - CHM: START Chamber Motor LEFT
+Humidity: Left - 28, Right - 34, Intake - 22, Exhaust - 26
+Moisture Prediction: Left - 63, Right - 56
+Temperature: Left - 40, Right - 37, Intake - 23, Exhaust - 28
+Temperature: Pad Left - 71, Pad Right - 72, PTC Intake - 43, PTC Internal - 51
+Counter Time Process - 2413
+13:06:15.469 - CHM: STOP Chamber Motor LEFT
+13:09:34.021 - CHM: START Chamber Motor RIGHT
+Humidity: Left - 24, Right - 30, Intake - 22, Exhaust - 27
+Moisture Prediction: Left - 60, Right - 59
+Temperature: Left - 42, Right - 37, Intake - 24, Exhaust - 28
+Temperature: Pad Left - 64, Pad Right - 82, PTC Intake - 48, PTC Internal - 47
+Counter Time Process - 2414
+13:15:34.521 - HAL: Error Right Motor - CCW.
+Current = 105
+13:16:34.469 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 25, Right - 31, Intake - 22, Exhaust - 27
+Moisture Prediction: Left - 69, Right - 59
+Temperature: Left - 41, Right - 38, Intake - 23, Exhaust - 28
+Temperature: Pad Left - 68, Pad Right - 73, PTC Intake - 49, PTC Internal - 47
+Counter Time Process - 2415
+13:27:38.121 - SYS: Set 'SysState_TopUnlocked'
+S/N - LL01-00000000001à
+Counter Time Process - 2415
+00:00:01.021 - SYS: Start check states switches.
+00:00:01.021 - SYS: States switches - Ok.
+00:00:01.021 - SYS: Set 'SysState_SelsfTest'
+00:00:01.021 - SYS: Set 'SysState_Busy'
+00:00:02.126 - SYS: Started !!!
+00:00:02.126 - SYS: Set 'SysState_Idle'
+00:00:02.137 - CHM: START Chamber Motor LEFT
+00:01:22.471 - SYS: Set 'SysState_FrontLidOpen'
+00:01:23.071 - SYS: Set 'SysState_Idle'
+00:01:25.471 - SYS: Set 'SysState_FrontLidOpen'
+00:01:26.121 - SYS: Set 'SysState_Idle'
+00:01:28.371 - SYS: Set 'SysState_FrontLidOpen'
+00:01:29.071 - SYS: Set 'SysState_Idle'
+00:01:31.121 - SYS: Set 'SysState_FrontLidOpen'
+00:01:31.971 - SYS: Set 'SysState_Idle'
+00:01:34.071 - SYS: Set 'SysState_FrontLidOpen'
+00:01:34.871 - SYS: Set 'SysState_Idle'
+00:01:37.071 - SYS: Set 'SysState_FrontLidOpen'
+00:01:37.871 - SYS: Set 'SysState_Idle'
+00:01:39.971 - SYS: Set 'SysState_FrontLidOpen'
+00:01:40.771 - SYS: Set 'SysState_Idle'
+00:01:42.971 - SYS: Set 'SysState_FrontLidOpen'
+00:01:43.671 - SYS: Set 'SysState_Idle'
+00:01:45.871 - SYS: Set 'SysState_FrontLidOpen'
+00:01:46.471 - SYS: Set 'SysState_Idle'
+00:01:48.671 - SYS: Set 'SysState_FrontLidOpen'
+00:01:49.471 - SYS: Set 'SysState_Idle'
+00:01:51.571 - SYS: Set 'SysState_FrontLidOpen'
+00:01:52.471 - SYS: Set 'SysState_Idle'
+00:01:54.471 - SYS: Set 'SysState_FrontLidOpen'
+00:01:55.271 - SYS: Set 'SysState_Idle'
+00:01:57.471 - SYS: Set 'SysState_FrontLidOpen'
+00:01:58.271 - SYS: Set 'SysState_Idle'
+00:02:00.471 - SYS: Set 'SysState_FrontLidOpen'
+00:02:01.071 - SYS: Set 'SysState_Idle'
+00:02:23.771 - SYS: Set 'SysState_FrontLidOpen'
+00:02:24.371 - SYS: Set 'SysState_Idle'
+00:02:26.771 - SYS: Set 'SysState_FrontLidOpen'
+00:02:27.271 - SYS: Set 'SysState_Idle'
+00:02:30.121 - SYS: Set 'SysState_FrontLidOpen'
+00:02:30.671 - SYS: Set 'SysState_Idle'
+00:02:34.371 - SYS: Set 'SysState_FrontLidOpen'
+00:02:34.971 - SYS: Set 'SysState_Idle'
+00:03:28.671 - SYS: Set 'SysState_FrontLidOpen'
+00:03:29.571 - SYS: Set 'SysState_Idle'
+00:03:37.671 - SYS: Set 'SysState_FrontLidOpen'
+00:03:38.121 - SYS: Set 'SysState_Idle'
+00:03:40.771 - SYS: Set 'SysState_FrontLidOpen'
+00:03:41.371 - SYS: Set 'SysState_Idle'
+00:03:43.771 - SYS: Set 'SysState_FrontLidOpen'
+00:03:44.471 - SYS: Set 'SysState_Idle'
+00:03:46.871 - SYS: Set 'SysState_FrontLidOpen'
+00:03:47.471 - SYS: Set 'SysState_Idle'
+00:05:38.321 - SYS: Set 'SysState_BackLidOpen'
+00:05:38.321 - CHM: STOP Chamber Motor LEFT
+00:06:06.521 - SYS: Set 'SysState_Idle'
+00:06:06.521 - CHM: START Chamber Motor RIGHT
+00:06:06.591 - CHM: STOP Chamber Motor RIGHT
+00:06:14.621 - SYS: Set 'SysState_BackLidOpen'
+00:06:15.221 - SYS: Set 'SysState_Idle'
+Humidity: Left - 38, Right - 39, Intake - 21, Exhaust - 28
+Moisture Prediction: Left - -1, Right - -1
+Temperature: Left - 36, Right - 35, Intake - 23, Exhaust - 27
+Temperature: Pad Left - 74, Pad Right - 74, PTC Intake - 48, PTC Internal - 51
+Counter Time Process - 2416
+Humidity: Left - 36, Right - 39, Intake - 20, Exhaust - 30
+Moisture Prediction: Left - 59, Right - 64
+Temperature: Left - 39, Right - 36, Intake - 25, Exhaust - 28
+Temperature: Pad Left - 78, Pad Right - 78, PTC Intake - 49, PTC Internal - 54
+Counter Time Process - 2417
+00:26:45.021 - CHM: START Chamber Motor LEFT
+00:26:45.091 - CHM: STOP Chamber Motor LEFT
+Humidity: Left - 35, Right - 39, Intake - 19, Exhaust - 30
+Moisture Prediction: Left - 62, Right - 58
+Temperature: Left - 38, Right - 37, Intake - 26, Exhaust - 28
+Temperature: Pad Left - 72, Pad Right - 74, PTC Intake - 49, PTC Internal - 52
+Counter Time Process - 2418
+00:37:06.021 - CHM: START Chamber Motor RIGHT
+00:37:06.091 - CHM: STOP Chamber Motor RIGHT
+Humidity: Left - 34, Right - 37, Intake - 18, Exhaust - 30
+Moisture Prediction: Left - 56, Right - 52
+Temperature: Left - 40, Right - 36, Intake - 26, Exhaust - 28
+Temperature: Pad Left - 71, Pad Right - 68, PTC Intake - 46, PTC Internal - 52
+Counter Time Process - 2419
+00:43:01.121 - SYS: Set 'SysState_BackLidOpen'
