@@ -1,53 +1,8 @@
-S/N - LL01-00000000001à
+S/N - LL01-00000000001ï¿½
 Counter Time Process - 2422
 00:00:01.021 - SYS: Start check states switches.
 00:00:01.021 - SYS: Set 'SysState_WaitSwitches'
-S/N - LL01-00000000035à
-Counter Time Process - 603
-00:00:01.021 - SYS: Start check states switches.
-00:00:01.021 - SYS: Set 'SysState_WaitSwitches'
-00:00:16.548 - SYS: States switches - Ok.
-00:00:16.548 - SYS: Set 'SysState_Init'
-00:00:16.548 - SYS: Set 'SysState_SelsfTest'
-00:00:16.548 - SYS: Set 'SysState_Busy'
-00:00:16.934 - SYS: Set 'SysError_MainAcPower'
-00:00:16.934 - HAL: UART4 - ERROR
-00:00:16.938 - HAL: UART3 - ERROR
-00:00:17.934 - SYS: ERROR !!!
-00:00:18.848 - SYS: Set 'SysState_TopUnlocked'
-S/N - LL01-00000000035à
-Counter Time Process - 603
-00:00:01.021 - SYS: Start check states switches.
-00:00:01.021 - SYS: Set 'SysState_WaitSwitches'
-00:00:02.821 - SYS: States switches - Ok.
-00:00:02.821 - SYS: Set 'SysState_Init'
-00:00:02.821 - SYS: Set 'SysState_SelsfTest'
-00:00:02.821 - SYS: Set 'SysState_Busy'
-00:00:03.946 - SYS: Started !!!
-00:00:03.946 - SYS: Set 'SysState_Idle'
-00:00:03.956 - CHM: START Chamber Motor LEFT
-00:00:03.956 - CHM: ERROR CRC - START Chamber Motor LEFT
-00:00:03.956 - SYS: Set 'SysError_MotorChamberLeft'
-00:00:03.956 - CHM: STOP Chamber Motor LEFT
-00:00:04.196 - HAL: UART4 - ERROR
-00:00:04.200 - HAL: UART3 - ERROR
-00:00:04.956 - SYS: ERROR !!!
-00:00:05.956 - SYS: ERROR !!!
-00:00:06.521 - SYS: Set 'SysState_TopUnlocked'
-S/N - LL01-00000000035à
-Counter Time Process - 603
-00:00:01.021 - SYS: Start check states switches.
-00:00:01.021 - SYS: Set 'SysState_WaitSwitches'
-00:00:03.821 - SYS: States switches - Ok.
-00:00:03.821 - SYS: Set 'SysState_Init'
-00:00:03.821 - SYS: Set 'SysState_SelsfTest'
-00:00:03.821 - SYS: Set 'SysState_Busy'
-00:00:04.207 - SYS: Set 'SysError_MainAcPower'
-00:00:04.207 - HAL: UART4 - ERROR
-00:00:04.211 - HAL: UART3 - ERROR
-00:00:05.207 - SYS: ERROR !!!
-00:00:06.121 - SYS: Set 'SysState_TopUnlocked'
-S/N - LL01-00000000035à
+S/N - LL01-00000000035ï¿½
 Counter Time Process - 603
 00:00:01.021 - SYS: Start check states switches.
 00:00:01.021 - SYS: States switches - Ok.
