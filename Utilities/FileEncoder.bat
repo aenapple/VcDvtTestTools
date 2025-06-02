@@ -1,0 +1,1 @@
+C:\Programs\Python\Python39\python.exe FileEncoder.py Files/LL01-AMO-001.006.bin

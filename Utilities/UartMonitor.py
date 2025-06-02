@@ -13,7 +13,7 @@ if __name__ == '__main__':
     # sys.exit(0)
 
     try:
-        com_port = serial.Serial('COM3', 115200, timeout=0.5)
+        com_port = serial.Serial('COM13', 115200, timeout=0.5)
     except serial.SerialException:
         print("Serial Exception:")
         print(sys.exc_info())

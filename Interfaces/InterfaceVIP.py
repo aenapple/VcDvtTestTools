@@ -65,6 +65,8 @@ IFC_VIP_COMMAND_GET_WEIGHT_SENSOR = 0x27
 IFC_VIP_COMMAND_GET_AI_PREDICTION = 0x28
 IFC_VIP_COMMAND_SET_SERIAL_NUMBER = 0x29
 IFC_VIP_COMMAND_GET_SERIAL_NUMBER = 0x2A
+IFC_VIP_COMMAND_GET_STATISTICS = 0x2B
+IFC_VIP_COMMAND_GET_LOG = 0x2C
 
 IFC_VIP_COMMAND_NACK = 0xFF
 
@@ -173,6 +175,10 @@ IFC_VIP_VERSION_PART2 = 0x02
 IFC_VIP_SN_PART1 = 0x01
 IFC_VIP_SN_PART2 = 0x02
 
+IFC_VIP_LOG_PART1 = 0x01
+IFC_VIP_LOG_PART2 = 0x02
+IFC_VIP_LOG_SIZE = 10 # 20000
+
 IFC_VIP_FAN_BLOWER = 0x01
 IFC_VIP_FAN_INTAKE = 0x02
 
@@ -234,6 +240,7 @@ class InterfaceVIP:
         self.bmeNumSensor = 0
         self.versionFirmware = "No version"
         self.serialNumber = "Serial Number"
+        self.logRecord = "No record"
 
     def get_null_packet(self):
         return self.get_component_packet(0)
@@ -303,6 +310,9 @@ class InterfaceVIP:
     def get_sn_string(self):
         return self.serialNumber
 
+    def get_log_record(self):
+        return self.logRecord
+
     def cmd_write_packet(self, type_memory, address, packet):
         write_data = buf_array.array('B', [type_memory])
         write_data.append(address & 0xFF)
@@ -336,6 +346,43 @@ class InterfaceVIP:
         read_result, read_data = self.read_module(IFC_VIP_COMMAND_READ_PACKET, write_data)
         if read_result != 0:
             return read_result, read_data
+
+        return 0, read_data
+
+    def cmd_read_log(self, index_record):
+        """ write_data = buf_array.array('B', [type_memory])
+        write_data.append(address & 0xFF)
+        write_data.append((address >> 8) & 0xFF)
+        write_data.append((address >> 16) & 0xFF)
+        write_data.append((address >> 24) & 0xFF) """
+        write_data = self.get_component_packet(IFC_VIP_LOG_PART1)
+        write_data[1] = (index_record & 0xFF)
+        write_data[2] = ((index_record >> 8) & 0xFF)
+        write_data[3] = ((index_record >> 16) & 0xFF)
+        write_data[4] = ((index_record >> 24) & 0xFF)
+
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_LOG, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        log_record = buf_array.array('B', [read_data[1]])
+        for i in range(1, 8):
+            log_record.append(read_data[1 + i])
+
+        write_data = self.get_component_packet(IFC_VIP_LOG_PART2)
+        write_data[1] = (index_record & 0xFF)
+        write_data[2] = ((index_record >> 8) & 0xFF)
+        write_data[3] = ((index_record >> 16) & 0xFF)
+        write_data[4] = ((index_record >> 24) & 0xFF)
+
+        read_result, read_data = self.read_module(IFC_VIP_COMMAND_GET_LOG, write_data)
+        if read_result != 0:
+            return read_result, read_data
+
+        for i in range(8):
+            log_record.append(read_data[i])
+
+        self.logRecord = log_record.decode(encoding="utf-8")
 
         return 0, read_data
 
@@ -705,7 +752,7 @@ class InterfaceVIP:
 if __name__ == '__main__':
     interfaceVIP = InterfaceVIP()
 
-    result = interfaceVIP.open("COM19", 115200)
+    result = interfaceVIP.open("COM4", 115200)
     if result != 0:
         SystemExit(1)
 
