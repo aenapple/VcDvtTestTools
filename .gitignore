@@ -10,3 +10,6 @@ Interfaces/__pycache__
 /output
 /build
 /dist
+/Utilities/Files
+/Utilities/DebugOutput
+/Utilities/Debug_Ram
