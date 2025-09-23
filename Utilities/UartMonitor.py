@@ -3,6 +3,9 @@ import sys
 import serial
 
 
+# TODO 
+# Add Real Time logging for each event
+# Add arguement parsing for COM port 
 
 if __name__ == '__main__':
     __doc__ = """
@@ -12,16 +15,17 @@ if __name__ == '__main__':
     # print(len(buffer))
     # sys.exit(0)
 
+    COMPORT = sys.argv[1] 
     try:
-        com_port = serial.Serial('COM13', 115200, timeout=0.5)
+        com_port = serial.Serial(COMPORT, 115200, timeout=0.5)
     except serial.SerialException:
         print("Serial Exception:")
         print(sys.exc_info())
         sys.exit(1)
 
-    file_output = open("DebugOutput/debug_output.txt", 'wb')
+    file_output = open(f"DebugOutput/debug_output_{COMPORT}.txt", 'wb')
     while True:
-        time.sleep(0.2)
+        time.sleep(0.1)
         # read_data = com_port.read(256)
         read_data = com_port.readline()
         len_data = len(read_data)
@@ -34,7 +38,9 @@ if __name__ == '__main__':
         # string.replace(string[pos + 1], '', 2)
         # print(pos)
         # print(string)
-        print(read_data)
+
+        output = f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {read_data}"
+        print(output)
         # file_output.writelines(string)
-        file_output.write(read_data)
+        file_output.write(output)
         # file_output.writelines(read_data)

@@ -11,3 +11,6 @@ Interfaces/__pycache__
 /build
 /dist
 /Interfaces/.venv
+/Utilities/Files
+/Utilities/DebugOutput
+/Utilities/Debug_Ram
