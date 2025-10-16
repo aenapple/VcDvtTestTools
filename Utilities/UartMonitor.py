@@ -1,11 +1,9 @@
 import time
 import sys
 import serial
+import os
 
 
-# TODO 
-# Add Real Time logging for each event
-# Add arguement parsing for COM port 
 
 if __name__ == '__main__':
     __doc__ = """
@@ -15,32 +13,46 @@ if __name__ == '__main__':
     # print(len(buffer))
     # sys.exit(0)
 
-    COMPORT = sys.argv[1] 
+    com_port_number = input("Enter COM port number: COM")
+    
+    if not com_port_number.isdigit():
+        raise ValueError("Invalid COM port number. Please enter a numeric value.")
+    
+    com_port_number = "COM" + com_port_number
+
     try:
-        com_port = serial.Serial(COMPORT, 115200, timeout=0.5)
+        com_port = serial.Serial(com_port_number, 115200, timeout=0.5)
     except serial.SerialException:
         print("Serial Exception:")
         print(sys.exc_info())
         sys.exit(1)
 
-    file_output = open(f"DebugOutput/debug_output_{COMPORT}.txt", 'wb')
+    output_folder = "DebugOutput"
+    # Add the current date to the output file name
+    current_date = time.strftime("%Y-%m-%d")
+    output_file = os.path.join(output_folder, f"debug_output_{current_date}.txt")
+    # output_file = os.path.join(output_folder, "debug_output.txt")
+
+    # Create the folder if it doesn't exist
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # Open the file in write-binary mode
+    file_output = open(output_file, 'ab')  # Open in append-binary mode
+
     while True:
         time.sleep(0.1)
-        # read_data = com_port.read(256)
         read_data = com_port.readline()
         len_data = len(read_data)
-        if len_data == 0:  #
+        if len_data == 0:
             continue
 
-        # string = read_data.decode()
-        # pos = string.find("\r\n")
-        # string.replace("\r\n", '')
-        # string.replace(string[pos + 1], '', 2)
-        # print(pos)
-        # print(string)
+        try:
+            string = read_data.decode()
+            string = string.replace("\r\n", '')
+            print(string)
+        except UnicodeDecodeError:
+            pass
 
-        output = f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {read_data}"
-        print(output)
-        # file_output.writelines(string)
-        file_output.write(output)
-        # file_output.writelines(read_data)
+        file_output.write(read_data)
+        file_output.flush()  # Ensure data is written to the file in real time

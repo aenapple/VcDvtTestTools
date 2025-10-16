@@ -1,1 +1,1 @@
-C:\Programs\Python\Python39\python.exe UartMonitor.py
+python UartMonitor.py
