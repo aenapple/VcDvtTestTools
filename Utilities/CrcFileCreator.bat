@@ -1,1 +1,1 @@
-C:\Programs\Python\Python39\python.exe CrcFileCreator.py RND_SRC_TestMainCpu_v5.bin
+python CrcFileCreator.py RND_SRC_TestMainCpu_v5.bin

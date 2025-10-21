@@ -30,7 +30,7 @@ if __name__ == '__main__':
     output_folder = "DebugOutput"
     # Add the current date to the output file name
     current_date = time.strftime("%Y-%m-%d")
-    output_file = os.path.join(output_folder, f"debug_output_{current_date}.txt")
+    output_file = os.path.join(output_folder, f"debug_output_{current_date}_{com_port_number}.txt")
     # output_file = os.path.join(output_folder, "debug_output.txt")
 
     # Create the folder if it doesn't exist
